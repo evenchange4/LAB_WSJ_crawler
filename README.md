@@ -1,4 +1,6 @@
-## `daily_list_parser.rd`
+## 1. 每天份頁面連結
+- `daily_list_parser.rd`
+- parse  手動點擊打開的 `2013-2010.html`檔案
 - 產生 2010 ~ 2013 每天的連結
 	 - ex: [2013/11/26](http://search.proquest.com/publication.publicationissuebrowse:openissue/issuenav/02013Y11Y26$23Nov+26,+2013?t:ac=publications_10482)
 - 列表格式：`daily_list_index.txt`
