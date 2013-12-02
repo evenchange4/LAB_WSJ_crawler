@@ -1,0 +1,2535 @@
+/*=================================================================================================================
+							Morningstar OneSearch Page Layout v3.5 Stylesheet
+-------------------------------------------------------------------------------------------------------------------
+The purpose of this stylesheet is to reset all of the browser values so we start from a level playing field.
+This stylesheet should also contain all styles for the visual designs' CORE elements [listed below].
+
+Style guide:
+http://localhost:8080/OneSearch/maintain/styleguide OR http://localhost:8080/maintain/styleguide
+
+CSS best practices guide:
+to be reworked
+==================================================================================================================*/
+
+
+/*	Reset styles  */
+
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input { margin: 0; padding: 0; }
+
+img, input { vertical-align:bottom; }
+
+
+/*********************************************
+	Document styles
+*********************************************/
+
+/*	body - Setting the font size to 100% will equate to "medium" in browsers which is 16px.  Everything else taken from the style guide. */
+
+body {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	color: #4c4c4c;
+	line-height: 1.25; /* Unitless line-height */
+	background:#e7e7e7 url(../images/pagelayout/top_bar_bg.gif) repeat-x scroll top left !important;
+}
+
+/*	container
+	- A containing DIV which covers the whole page and allows the page to be centered.
+	- Padding left and right is default for the site.
+	- Sets the font size to 75% of the body size.  Assuming 16px for the body means 12px for the #container.
+ */
+
+#container {
+	width: 950px;	/* + padding = 980px */
+	background:#ffffff url(../images/pagelayout/top_bar_bg.gif) repeat-x 0 0;
+	margin: 0 auto;
+	padding: 0 15px;
+	font-size: 0.75em;	/* Everything will be contained within the #container so reduce to 12px */
+	min-height: 600px;
+	position:relative;
+}
+
+/*	container.fullscreen
+	- Removes the grey columns, currently used for help popup window
+ */
+#container.fullscreen { width: auto; margin: 0; }
+#container.pdfPage{ width: auto; margin: 0; min-width: 980px; min-height: 400px; }
+
+/*  Set Prototip & Lightview font sizes
+	- Lightview & Prototip do not sit inside the #container div so we need to set these font sizes here
+*/
+.prototip, .tbox { font-size:0.75em; }
+.prototip .default h4, .prototip .default .title { color: #4c4c4c; font-size: 1em; font-weight: bold; line-height: 1.3; }
+
+/*  Column styles
+	- Main content area has a margin-right
+	- Right hand column is floated right with a fixed width
+*/
+
+/* By default the side panel will be 245px wide (230px wide + 15px right margin).  260px is for the results page only (245px wide + 15px right margin) */
+#mainContentLeft { margin-right: 245px;	}
+
+/* By default the side panel will be 245px wide (230px wide + 15px right margin).  260px is for the results page only (245px wide + 15px right margin) */
+.results-wrapper #mainContentLeft { margin-right: 260px; }
+
+.column-collapse-right { cursor: pointer; }
+
+/* This class overwrites to reduce #mainContentLefts' right margin to help the main column to "grow" */
+.rightColumnClosed { margin-right: 32px !important; }
+
+/* This is the div that will hold the collapse/expand column arrow graphic */
+#columnArrow{ position: absolute; z-index: 99; }
+
+.right-column-collapse-rarrow, .results-wrapper .subject .right-column-collapse-rarrow { right: 199px; top: 22px; background: url(../images/icons/collapseCol_grey.gif) no-repeat 0 0; width: 31px; height: 14px; }
+
+/* Product & Subject level collapse arrow */
+.product .right-column-collapse-rarrow, .subject .right-column-collapse-rarrow, .results-wrapper .subject .right-column-collapse-rarrow, .subjectHome .right-column-collapse-rarrow, .productHome .right-column-collapse-rarrow{ background: url(../images/icons/collapseCol_white.gif) no-repeat 0 0; }
+
+.subjectHome .right-column-collapse-rarrow, .productHome .right-column-collapse-rarrow { top: -9px; }
+
+/* This class changes the position of the collapse arrow for the results page as the panel is bigger */
+.results-wrapper .right-column-collapse-rarrow, .results-wrapper .subject .right-column-collapse-rarrow { right: 214px; }
+
+.right-column-collapse-larrow, .results-wrapper .subject .right-column-collapse-larrow{ right: -10px; top: 22px; background: url(../images/icons/expandCol_grey.gif) no-repeat 0 0; width: 32px; height: 27px; }
+.results-wrapper .subject .right-column-collapse-larrow {right:-10px}
+
+/* Product & Subject level expand arrow */
+.product .right-column-collapse-larrow, .subject .right-column-collapse-larrow, .productHome .right-column-collapse-larrow, .subjectHome .right-column-collapse-larrow, .results-wrapper .subject .right-column-collapse-larrow{ background: url(../images/icons/expandCol_white.gif) no-repeat 0 0; }
+
+.productHome .right-column-collapse-larrow, .subjectHome .right-column-collapse-larrow{ top: -9px; }
+
+/*********************************************
+	Text styles
+*********************************************/
+
+/* All font sizes are based on the #container size, which in turn is derived from the body. */
+h1 { font-size: 2em;     color: #d18104; font-weight: normal; line-height: 1;   margin-bottom: 7px; }
+h2 { font-size: 1.5em;   color: #000000; font-weight: normal; line-height: 1.2; }
+h3 { font-size: 1.333em; color: #4c4c4c; font-weight: normal; line-height: 1.2; }
+h4 { font-size: 1.084em; color: #4c4c4c; font-weight: bold;   line-height: 1.1; }
+
+small { font-size: 0.8em; }
+
+/* e.g. results page author/publication text */
+.small { font-size: 0.915em; line-height: 1.365; }
+
+/* e.g. results page snippet of text */
+.snippet { font-size: 0.915em; color: #4c4c4c; line-height: 1.2; }
+.snippet p { margin-left:10px; }
+
+/* e.g. used mainly in the error_panel */
+.error_message { font-size: 1em; color: #c00000; }
+
+/* e.g docview/indexing details */
+.sup { vertical-align: super; font-size: 0.7em; }
+
+/* Some H1 are wrapped in a div with border bottom */
+.header_border_bottom { border-bottom:1px solid #cccccc; margin-bottom: 10px; overflow: hidden; }
+
+.header_navigation_left { float: left; margin-top: 3px; margin-left: 10px; }
+.header_navigation_right { float: right; margin-top: 3px; }
+
+.myResearchHeader {margin: 0 15px; line-height: 1.14em;}
+.myResearchHeaderLogo { float:left; width:95px; height:auto; }
+
+.left_spacing { margin-left: 10px; }
+.right_spacing { margin-right: 10px; }
+
+p {margin: 5px 0;}
+
+blockquote { padding:5px 60px; }
+code,kbd,pre { font-family: Courier New,Courier,monospace,sans-serif; color: #0c0c0c; line-height: 1.4em; }
+abbr,acronym { border-bottom: dotted 1px #0c0c0c; cursor: help; line-height: 1.4em; }
+
+
+/*********************************************
+	Links and link icons
+*********************************************/
+
+a { color: #00569f; text-decoration: none; }
+a:hover { color: #00569f; text-decoration: underline; }
+a.active, a.item_selected { color: #4c4c4c; text-decoration: none; }
+
+/* No underline when there's a drop-down menu, otherwise you get a double top line */
+a.subMenuHoverLink:hover {text-decoration: none;}
+
+/*********************************************
+	Forms
+*********************************************/
+
+fieldset { clear: left; border: solid 1px #c9c9c9; margin-bottom: 11px; border-radius: 5px; }
+
+/* To standardise the fieldset contents cross-browser */
+.fieldset_contents { float: left; padding: 5px 15px 15px 15px; }
+
+legend { padding: 0 7px 0 9px; font-size: 1.333em; margin-left: 9px; color: #4c4c4c; }
+
+/* In a fieldset, lists are always on separate lines */
+fieldset ul { clear: both; }
+
+/* Standard label margin */
+label { display: inline-block; margin-right: 5px; padding-top: 2px; vertical-align: top; }
+
+label.after { margin-right: 8px; margin-left: 5px; }
+
+textarea, input {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	color: #4c4c4c;
+	line-height: 1.25;
+	padding: 1px 0;
+}
+
+input[type='checkbox'] { width: 13px; height: 13px; padding: 0; margin: 0 5px 0 0; vertical-align: bottom; position: relative; top: -1px;}
+input[type='radio'] { width: 13px; height: 13px; padding: 0; margin: 0 5px 0 0; vertical-align: bottom; position: relative; top: -1px; }
+
+/* If you need a checkbox class when attribute selectors won't do it */
+.checkbox { width: 13px; height: 13px; padding: 0; margin: 0 5px 0 0; vertical-align: bottom; position: relative; top: -1px; }
+
+select { clear: both; }
+
+.form_element_container { margin: 0 15px 12px 0; }
+.form_element_container ul { margin-bottom: 5px; }
+.form_element_container .error { display: none; }
+.form_element_container .note { display: none; font-size: 0.915em; }
+.form_element_container .post_field_link { margin-left: 5px; }
+
+.radio_align { padding-top: 2px; margin-right: 10px; }
+.form_element_container .longSmall { width:335px; }
+
+
+/******************************************************************
+	Lists
+	- By default the list has NO bullet, to add this use ul.bullet
+*******************************************************************/
+
+ul { list-style-type: none; margin: 5px 0; }
+ul li { display: block; }
+
+/* This can be used to add a bullet to the list.  The zoom attribute is an IE6 fix */
+ul.bullet li, ul.horizontal li.bullet { padding-left: 11px; background: url(../images/icons/bullets_sprite.png) no-repeat -2px -1203px; margin-bottom: 4px; zoom: 1; }
+
+
+ol { padding-left: 1.5em; margin-bottom: 5px;}
+
+ol li.divider { border-bottom: solid 1px #cccccc; padding-bottom: 5px; margin-bottom: 5px; }
+
+/* Add to the <ul> tag to turn the list horizontal and with the margins as defined in the style guide. */
+ul.horizontal { list-style-type: none; margin:0 0 5px 0; }
+
+/* Properly clears this containing ul so the contents can be floated */
+ul.cleared { overflow: hidden; }
+ul.horizontal li { display: inline-block; margin: 0 10px 0 0; padding: 1px 0 1px 0; background: none; vertical-align: top; }
+ul.horizontal li.pipe { padding-left: 11px; background: url(../images/pagelayout/pipe.png) no-repeat left 4px; }
+ul.horizontal li.last-child { margin-right: 0 !important; }
+ul.horizontal li.pipe.white { background-position: left -12px; }
+
+/* By default make all nested lists within horizontal lists vertical */
+ul.horizontal li li { display: block; }
+
+/* MM : I've added an "in_toolbar" class to be used on the <ul class="horizontal..."> tag so that the list is nicely  aligned.  Otherwise the -3px margin-top of the button is out of place, as is the margin around the list */
+ul.horizontal.in_toolbar { margin: 0 2px; }
+ul.horizontal.in_toolbar label { padding-top: 0; }
+ul.horizontal.in_toolbar li { vertical-align: middle; }
+ul.horizontal.in_toolbar .btnNew { margin-top: 0; }
+
+/* Preferences pipe needs to be slightly different */
+#preferences_nav ul.horizontal li.pipe { background: url(../images/pagelayout/pipe.png) no-repeat left 2px; }
+
+
+/*********************************************
+ General elements
+*********************************************/
+
+.hr, .separator { height: 1px; border-top: solid 1px #dddddd; margin: 15px 0; }
+#ft_container_printview .separator {clear:both;} /* Printview needs a clear both */
+
+.exposedFieldRow{ clear: both; }
+.exposedFieldRow .label{ float: left; width: 30%; }
+.exposedFieldRow .input { float: left; width: 70%; }
+.exposedFieldRow .input input,.exposedFieldRow .input textarea { width: 99%; }
+
+/*********************************************
+ Page areas
+*********************************************/
+
+/*	main_nav
+	The top-left horizontal menu container (Search | Advanced | Publications | Databases).
+*/
+
+.topNavigation { clear:both; }
+
+#main_nav { float: left; padding-top: 5px; }
+
+/*	myresearch_nav
+	The top-centre my research sign in/username container (Sign in | My research (0 new)).
+*/
+#signInLinkZone { display:block !important; height:34px}
+
+#myresearch_nav { float: right; color: #ffffff; margin-right: -12px; margin-top: 5px; margin-bottom: 1px; }
+
+/*	myresearch_nav a
+	- The container has a dark blue background colour so change the font colour to white.
+	- The default a:hover will be used which is just underlining the link, the colour taken from the modified anchor.
+*/
+
+#myresearch_nav a,  #myresearch_nav a span, #thesaurusHeader a, #databaseOpenLayer, #dbCloseSpanId { color: #ffffff; text-decoration: underline; padding-bottom: 3px; cursor: pointer; }
+
+#myresearch_nav span{ display: inline-block; }
+
+#myresearch_nav li, #myresearch_nav ul.horizontal span.divider { margin-right: 4px; padding-top: 3px; }
+
+/*	preferences_nav
+	The top-right preferences/help menu.
+*/
+
+#preferences_nav { float: right; margin-left: 15px; padding-top: 6px; }
+
+/*	preferences-nav li
+	- Smaller font size for this menu, based on the #container font size, as with all other lowest level elements.
+	- Larger margin to the right of the menu list items.
+*/
+
+#preferences_nav li { font-size: 0.915em; }
+
+
+/*	header
+	- The section with the ProQuest logo on the left hand side
+	- On various pages there will be some sort of search box alongside the logo
+*/
+
+#header { clear: both; margin-top: 10px; }
+
+/*	subheader
+	- The (orange) header text such as Advanced search
+*/
+
+#subheader { clear: both; margin-top: 10px; }
+
+/*	middle
+	- A containing div to contain the content part of the page
+	- Includes the side-panel when present
+*/
+
+#middle { clear: both; width: 100%; }
+
+/*	basicsearch_content
+	- Specific content containers on a per-page basis
+	- Different pages have different margins and borders
+*/
+
+#basicsearch_content { margin-top: 60px; margin-left: 120px; }
+
+/* Used when there's a horizontal list of links next to the main <h1> title */
+
+.inline_link { float: left; margin-left: 10px; margin-top: 2px; }
+
+.inline_link ul.horizontal { margin: 0; }
+
+
+/*	advancedsearch_content
+	- Specific content containers on a per-page basis
+	- Different pages have different margins and borders
+*/
+
+#advancedsearch_content { float: left; width: 695px; border-top: solid 0px #cccccc; padding-top: 0px; }
+
+/*	Needs to be fixed width so that the checkboxes line up in columns */
+ul.columns li { width: 195px; }
+ul.small_columns li { width: 150px; }
+
+.date_range_year { padding-right: 10px; }
+
+/*	footer
+	- The cross-site footer
+	- Needs to have the branding logos included
+*/
+
+#footer { clear: both; float: left; width: 100%; border-top: solid 1px #79a5be; padding-top: 11px; margin-top: 24px; background: #fff; }
+#footer ul { float: left; }
+#footer p { margin: 5px 0 15px; }
+#footer ol { list-style-type: none; padding: 10px 0 0; }
+#footer ol li { display:block; float:left; }
+
+/*	centered_search_area
+	- This is a container used on the basic search page
+	- Needs a width so that the container can be centered using margin
+	- Top margin keeps it away from the page top menu
+*/
+
+#centered_search_area {
+	width: 800px;
+	margin: 0 auto;
+	padding-top: 24px;
+	position: relative;
+}
+a.bSearchBox {/* for placing help icon next to limiters */
+	padding: 0px 1px 4px 0px !important;
+}
+a.bSearchBox img {vertical-align: top;}
+/*********************************************
+ Panels
+*********************************************/
+
+.panel_base {
+	position: relative;
+
+}
+
+/* By default, hide all the border images.  They can be turned on and styled by the individual panel classes */
+.panel_base .tl, .panel_base .t, .panel_base .tr,
+.panel_base .l, .panel_base .r,
+.panel_base .bl, .panel_base .b, .panel_base .br {
+	display: none;
+	overflow: hidden;
+}
+
+/*	side_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .panel_content, which is sufficiently spaced to avoid the images around the edge.
+	- No need for all the side images to be uniform, just make sure the padding for the side-panel takes the width/height into consideration.
+*/
+
+#side_panel, .results-wrapper .subject #side_panel{
+	/*float: right; removed to fix ie7 branding layout*/
+	position: relative;
+	padding: 11px 18px 2px 11px;
+	margin:31px -1px 0 0;
+	width:200px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 4px 4px 5px 0px #eee;
+	background-color: #f9f9f9;
+}
+
+.productHome #side_panel, .subjectHome #side_panel {/* Product & subject level side panel HOME */
+	margin-top:0;
+}
+.results-wrapper #side_panel{ /* this will set a slightly bigger width for the results page as that page is wrapped in the div .results-wrapper */
+	width:225px !important;
+}
+
+
+/*	Adding the class "product" to the top level id="side_panel" will switch the rest of the panel to the product home page UI which is
+	the white background and blue headings */
+
+.product #side_panel, .subject #side_panel, .productHome #side_panel, .subjectHome #side_panel {
+	background-color: #fff;
+}
+
+
+/*	The side panel graphics are slightly wider for the results page so we can target these by using the class .results-wrapper */
+
+.results-wrapper #side_panel, .results-wrapper .subject #side_panel {
+	margin-right: 0; 
+	width: 223px; 
+	padding-right: 10px; 
+	padding-left: 10px; 
+	padding-top: 10px;
+}
+
+.results-wrapper .subject #side_panel, .results-wrapper .product #side_panel{
+	background-color: #fff;
+}
+
+/* Doc Views specific */
+.docView .right-column-collapse-rarrow, .docView .right-column-collapse-larrow {top:0}
+.docView #side_panel {margin-top:9px}
+
+/*	side_panel_content
+	- All content in the side panel should go inside this containing div
+*/
+
+#side_panel .side_panel_content {
+	overflow: hidden;
+}
+
+/*	side_panel dl
+	- The side panel contents is in sections with section headers.
+	- The sections are in a <dl> list, with the heading the <dt> tag.
+	- The section content is the <dd> and by adding a class of "divider", the bottom border is added with appropriate padding/margin.
+	- There is a class of "narrow" which can be added to the <dl> which will alter the <dt> to use the smaller heading background image.
+*/
+
+#side_panel dl {
+	padding-bottom: 10px;
+}
+
+#side_panel dt {
+	background-color: #e2e2e2;
+	margin-bottom: 15px;
+	width: 210px;
+	overflow: hidden;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#side_panel dt span {
+	display: block;
+	padding: 2px 10px 3px 10px;
+}
+
+.product #side_panel dt, .productHome #side_panel dt {
+	background-color: #d8eef9 !important;
+}
+
+.results-wrapper #side_panel dt{
+	width: 225px;
+}
+
+.results-wrapper .product #side_panel dt {
+	background-color: #d8eef9;
+	width: 225px;
+}
+
+
+#side_panel dd {
+	padding: 0px 0px 0px 5px;
+	margin-bottom: 14px;
+}
+
+#side_panel dd dd{ /* Added this so that nested dds will not pick up double padding values */
+	padding: 0;
+	margin: 0;
+}
+
+#side_panel dd .subtitle {
+	padding-bottom: 5px;
+}
+
+#side_panel dd.divider {
+	border-bottom: solid 1px #cccccc;
+	padding-bottom: 4px;
+	margin-bottom: 8px;
+}
+
+#side_panel dd ul.horizontal {
+	float: left;
+	clear: both;
+	margin-top: 5px;
+	width: 210px;
+}
+
+
+/*	search_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .panel_content, which is sufficiently spaced to avoid the images around the edge.
+	- No need for all the side images to be uniform, just make sure the padding for the side-panel takes the width/height into consideration.
+*/
+
+#search_panel {
+	position: relative;
+	width: 791px;
+	padding: 15px 0 14px 10px;
+	background-color: #f3f2f2;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 2px 4px 5px 1px #ddd;
+}
+
+#search_panel ul.horizontal {
+	margin: 0;
+}
+
+/*	search_panel_content
+	- All content in the side panel should go inside this containing div
+*/
+
+#search_panel .search_panel_logo {
+	float: left;
+	margin-left: 1px;	/* added to the default 10px padding of the search_panel */
+	margin-right: 11px;
+	margin-top: 28px;
+	width: 96px;
+	height: 44px;
+}
+
+#search_panel .search_panel_subcontent {
+	float: left;
+	width: 586px;
+	zoom: 1;
+}
+
+/*	search_inner_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .panel_content, which is sufficiently spaced to avoid the images around the edge.
+	- No need for all the side images to be uniform, just make sure the padding for the side-panel takes the width/height into consideration.
+*/
+
+#search_inner_panel {
+	position: relative;
+	float: left;
+	width: 565px;
+	padding: 5px 10px 5px 10px;
+	background-color: #e4e2e2;
+	border-radius: 5px;
+}
+
+/*	search_panel_content
+	- All content in the side panel should go inside this containing div
+*/
+
+#search_inner_panel .search_inner_panel_content {
+	width: 100%;
+}
+
+#search_inner_panel .search_inner_panel_content .form_element_container {
+	margin-bottom: 0;
+}
+
+/*	search_field
+	- The styling of the actual <input> element
+	- Needs to be a fixed height so that the search icon can fit on the right-hand edge
+	- The 100% will work as a width as long as it's nested inside the search_field_outer and search_field_container divs
+*/
+
+#search_inner_panel .search_field {
+	border: solid 1px #59799a;
+	width: 100%;
+	/*height: 24px;*/
+	font-size: 1.3em;
+	padding: 2px;
+	height: 20px;
+	float: left;	/* Removes the extra erroneous 1px top and bottom of the input field */
+}
+
+/*	search_field_outer
+	- One of two containers for the search field
+	- The width of 100% will extend this further than the width of the parent, because of borders/margins/padding
+	- Then when the inner container has padding, it will allow the actual <input> element to be 100% and expand as needed
+*/
+
+#search_inner_panel .search_field_outer {
+	width: 100%;
+	position: relative;
+	margin-bottom: 5px;
+}
+
+#search_inner_panel .search_field_links {
+	width: 100%;
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+/*	search_field_container
+	- One of two containers for the search field
+	- The right hand padding compensates for the border on the <input> element, allowing the <input> to be 100% and show correctly
+*/
+
+#search_inner_panel .search_field_container {
+	position: relative;
+	padding-right: 30px;
+	margin: 0 0 3px 0;
+	height: 26px;
+}
+
+/*	search_icon
+	- Positioned absolutely inside the search_field_container so seems to appear inside the <input> field
+*/
+
+#search_inner_panel .search_icon {
+	position: absolute;
+	width: 25px;
+	height: 26px;
+	background: url(../images/pagelayout/search_panel/search_icon.png) no-repeat;
+	right: 0;
+	top: 0;
+	border:0px none; /* added by Val */
+	cursor: pointer;
+}
+a.search_icon:hover {text-decoration:none;} /* buttons change in to links hence taking out the underline on hover */
+
+/*	search_panel_subtext
+	- This is the section below the inner panel
+	- The text and contents will change depending on the page the search panel is appearing on
+*/
+
+#search_panel .search_panel_subtext {
+	float: left;
+	width: 567px;
+	line-height: 15px;
+	padding-top: 5px;
+	padding-left: 10px;
+	margin-bottom: 0;
+}
+
+#search_panel .search_panel_subtext .note {
+	font-size: 0.915em;
+}
+
+/*	search_panel_searchtips
+	- This is the section to the right of the inner panel, when present
+*/
+
+#search_panel .search_panel_searchtips {
+	float: left;
+	margin: 30px 0 0 15px;
+	width: 82px;
+	word-wrap: break-word;
+}
+
+/* Search panel switches
+	- The panel uses cascading styles to switch the styling depending on the level you are on.
+	- So ... .product, .subject & .results are all switched on the container/parent element to control the search_panel.
+*/
+
+/* By default show the search tips, turn it off below by targetting .product, .subject etc. */
+#search_panel .search_panel_searchtips {
+	display: block;
+}
+
+.product #search_panel, .subject #search_panel, .productHome #search_panel, .subjectHome #search_panel { width: 685px; padding: 10px;}
+
+.product #search_panel, .productHome #search_panel { background-color: #d8eef9; }
+
+.subjectHome #search_panel { background-color: #d8eef9; }
+
+.subject #search_panel { background-color: #d8eef9; }
+
+.product #search_panel .search_panel_searchtips {
+	display: none;
+}
+
+.product #search_panel .search_panel_subtext, .subject #search_panel .search_panel_subtext, .product #search_panel .search_panel_logo, .subject #search_panel .search_panel_logo,
+.productHome #search_panel .search_panel_subtext, .subjectHome #search_panel .search_panel_subtext, .productHome #search_panel .search_panel_logo, .subjectHome #search_panel .search_panel_logo { display: none; }
+
+.product #search_panel .search_panel_searchtips,
+.subject #search_panel .search_panel_searchtips,
+.productHome #search_panel .search_panel_searchtips,
+.subjectHome #search_panel .search_panel_searchtips { display: none; }
+
+.product #search_panel .search_panel_subcontent, .subject #search_panel .search_panel_subcontent, .productHome #search_panel .search_panel_subcontent, .subjectHome #search_panel .search_panel_subcontent { width: 612px; }
+.product #search_panel #search_inner_panel, .subject #search_panel #search_inner_panel, .productHome #search_panel #search_inner_panel { width: 592px; }
+
+.subjectHome #search_panel #search_inner_panel,
+.productHome #search_panel #search_inner_panel { width: 664px; }
+
+
+.product #search_panel #search_inner_panel, .subject #search_panel #search_inner_panel, .productHome #search_panel #search_inner_panel, .subjectHome #search_panel #search_inner_panel { background-color: #c3deec; }
+
+.publicationBrowseSearch #search_panel{width:940px;padding: 10px 0 14px 10px;}
+.publicationBrowseSearch #search_panel .search_panel_subcontent {width:auto;}
+
+#search_panel.results { width: 940px; float:left; margin:-30px -9px 14px 0; padding: 10px 0 5px 10px;}
+#textMatch_panel {width: 815px; float:right; margin:-30px 20px 0 0;}
+
+.subject #search_panel, .product #search_panel{float:left;}
+
+#search_panel.results .search_panel_logo { display: none; }
+#search_panel.results .search_panel_searchtips { display: block; word-wrap: break-word; }
+#search_panel.results .search_panel_subcontent { width: 732px; }
+#search_panel.results #search_inner_panel {width:800px;padding:0;margin:0;background-color:#F3F2F2;}
+
+/* For Product search result page */
+#search_panel.prodResults { width: 930px; float:right; margin:-30px -9px 0 0; padding: 10px 19px 14px 10px;}
+#search_panel.prodResults .search_panel_logo { display: none; }
+#search_panel.prodResults .search_panel_searchtips { display: block; word-wrap: break-word; }
+#search_panel.prodResults .search_panel_subcontent { width: 846px; }
+#search_panel.prodResults #search_inner_panel { width: 827px; }
+
+/*	scroller_panel
+	- The horizontal scroller, e.g. on the basic search page
+	- The elements of the border are added at the start of the panel
+	- The actual contents of the panel should be put inside .scroller_panel_content, which is sufficiently spaced to avoid the images around the edge
+	- No need for all the side images to be uniform, just make sure the padding for the side-panel takes the width/height into consideration
+*/
+
+.scroller_panel, .login_panel {
+	width: 689px;
+	padding: 10px;
+	background-color: #f3f2f2;
+	margin-top: 36px;
+	margin-right:-10px;
+	border-radius: 5px;
+	box-shadow: 3px 4px 7px -1px #ddd;
+}
+
+.scroller_panel {
+	width:778px;
+	padding: 12px 4px 12px 15px;
+	margin-top: 46px;
+}
+
+.scroller_vertical {
+	width:685px;
+	padding:10px 19px 19px 10px;
+	margin-top: 2px;
+}
+
+.scroller_panel ul.horizontal {
+	margin: 0;
+}
+
+/*	body
+	- All content in the panel should go inside this containing div
+*/
+
+.scroller_panel .body {
+	overflow: hidden;
+}
+
+
+/*	thumbnail_nav_panel
+*/
+
+.thumbnail_nav_panel {
+	padding: 5px;
+	background-color: #fff;
+	border-top: 0;
+	border-left: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	border-bottom: solid 1px #cccccc;
+	background: url(../images/pagelayout/thumbnail_nav_panel/t.png) repeat-x center top #fff;
+}
+
+.thumbnail_nav_panel_titlebar {
+	margin-bottom: 15px;
+}
+
+
+/*	body
+	- All content in the panel should go inside this containing div
+*/
+
+.thumbnail_nav_panel .body {
+	overflow: hidden;
+}
+.thumbnail_nav_panel_titlebar p.noFilters {color:#F3F2F2; cursor:default; max-width:95%; max-height:30px; overflow:hidden; margin-top:-8px; font-size:9999em;}
+
+/*	pinkienails_panel
+	- Not an ID like the other panels because it can appear multiple times on a page
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .panel_content, which is sufficiently spaced to avoid the images around the edge.
+*/
+
+.pinkienails_panel {
+	position: relative;
+	padding: 10px;
+	background-color: #f3f2f2;
+	border: solid 1px #cccccc;
+	margin-bottom: 10px;
+	border-radius: 5px !important;
+}
+
+/*	body
+	- All content in the panel should go inside this containing div
+*/
+
+.pinkienails_panel .body {
+	overflow: hidden;
+}
+
+
+/*	pinkienails_deepindexed_panel
+	- Not an ID like the other panels because it can appear multiple times on a page
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .panel_content, which is sufficiently spaced to avoid the images around the edge.
+*/
+
+.pinkienails_deepindexed_panel {
+	position: relative;
+	padding: 5px 10px;
+	background-color: #e3f1fa;
+	border: solid 2px #93d3f7;
+	margin-bottom: 15px;
+}
+
+/*	body
+	- All content in the panel should go inside this containing div
+*/
+
+.pinkienails_deepindexed_panel .body {
+	overflow: hidden;
+}
+
+
+/*	basicsearch_textpanel
+	- This is the panel below the scroller on the basic search page
+	- There are two panels side-by-side
+	- Or a single panel
+*/
+
+.basicsearch_textpanel {
+	float: left;
+	margin-left: 15px;
+	margin-top: 28px;
+	width: 354px; 
+}
+
+.basicsearch_textpanel2{
+	margin-left: 30px;
+}
+
+.basicsearch_textpanel h3 {
+	color: #d18104;
+}
+.basicsearch_textpanel_single {
+	float: left;
+	margin-left: 15px;
+	margin-top: 21px;
+	width: 700px;
+}
+.basicsearch_textpanel_single h3 {
+	color: #d18104;
+}
+
+/*	toolbar_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .toolbar_panel_content, which is sufficiently spaced to avoid the images around the edge.
+	- No need for all the side images to be uniform, just make sure the padding for the side-panel takes the width/height into consideration.
+*/
+
+.toolbar_panel {
+	padding:5px;
+	background-color: #d8eef9;
+	border: solid 1px #cacaca;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.toolbar_panel .body {
+
+}
+
+.toolbar_panel .bookmark_icon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: url(../images/icons/icon_bookmark.png) no-repeat 0 0;
+	width: 125px;
+	height: 18px;
+}
+
+.toolbar_panel ul {
+	clear: left;
+	margin: 0;
+}
+
+.toolbar_panel .toolbar_panel_actions {
+	padding-top: 10px;
+	clear: left;
+}
+
+
+/*	info_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .info_panel .body, which is sufficiently spaced to avoid the images around the edge.
+*/
+
+.info_panel {
+	padding: 5px;
+	background-color: #eef7fb;
+	border: solid 1px #59799a;
+	margin-bottom: 15px;
+}
+
+.info_panel_white{
+	clear: left; /* Changed this to clear left as clear both will also clear the side panel */
+	border: solid 1px #ccc;
+	margin-bottom: 15px;
+	padding:10px;
+}
+
+.info_panel .body {
+
+}
+
+
+/*	smartsearch_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .smartsearch_panel .body, which is sufficiently spaced to avoid the images around the edge.
+*/
+
+.smartsearch_panel {
+	padding: 5px;
+	background-color: #ffffff;
+	border: solid 1px #59799a;
+	margin-bottom: 9px;/*reduced by 6 pixel for #8125*/
+	border-radius: 5px;
+}
+
+.smartsearch_panel .body {
+	position: relative;
+	padding-bottom: 15px;
+}
+
+.smartsearch_panel .smartsearch_legend {
+	position: absolute;
+	right: 5px;
+	bottom: 0;
+}
+.smartsearch_panel .smartSearchView {
+	position:absolute;
+	right:5px;
+	bottom:0;
+}
+.smartsearch_panel .smartSearchStyle {
+	max-height:55px;
+	overflow-y: hidden;
+	padding:0 0 3px 0;
+}
+
+/*	status_change_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .status_change_panel .body, which is sufficiently spaced to avoid the images around the edge.
+*/
+
+.status_change_panel, .status_change_error {
+	padding: 10px;
+	background-color: #ffffff;
+	border: solid 1px #f29625;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
+.status_change_panel_selected {
+	padding: 5px 10px;
+	background-color: #ffffff;
+	border: solid 1px #f29625;
+	margin-bottom: 0px;
+}
+
+.previewLinks .status_change_panel_selected.save_to_my_research_notification {
+	padding: 2px 3px;
+	margin-top: -3px;
+}
+
+/*	error_panel
+	- The elements of the border are added at the start of the panel.
+	- The actual contents of the panel should be put inside .error_panel .body, which is sufficiently spaced to avoid the images around the edge.
+*/
+
+.error_panel {
+	padding: 2px 10px;
+	background-color: #ffffff;
+	border: solid 2px #f29625;
+	margin-bottom: 10px;
+}
+
+
+/* The icons_sprite class should be added in addition to a specific icon from the ones following.
+		i.e "icons_base_sprite icon_print"
+*/
+
+.icons_base_sprite {
+	background: url(../images/icons/icons_sprite.png) no-repeat 0 0 transparent;
+	padding: 2px 0 2px 25px;
+}
+
+.icon_alert {
+	background-position: 0 0;
+	padding-left: 20px;
+}
+
+.icon_print {
+	background-position: 0 -50px; /* -20px; */
+	padding-left: 20px;
+}
+
+.icon_rss {
+	background-position: -1px -201px; /* -81px; */
+	padding-left: 18px;
+}
+
+.icon_cite {
+	background-position: -1px -101px; /* -40px; */
+	padding-left: 18px;
+}
+
+.icon_link {
+	background-position: -3px -300px; /* -120px; */
+	padding-left: 14px;
+}
+
+.icon_save {
+	background-position: -1px -150px; /* -60px; */
+	padding-left: 19px;
+}
+
+.icon_email {
+	background-position: -1px 0;
+	padding-left: 19px;
+}
+
+.icon_tags {
+	background-position: -1px -251px; /* -101px; */
+	padding-left: 19px;
+}
+
+.icon_signin {
+	background-position: 0 -501px; /* -201px; */
+	padding-left: 19px;
+	background-color: #046091;
+}
+
+.icon_info {
+	background-position: 0 -452px; /* -182px; */
+	padding-left: 18px;
+	zoom: 1;
+}
+
+.icon_external {
+	background-position: right -2352px; /* -942px; */
+	padding: 2px 18px 2px 0 !important;
+	zoom: 1;
+}
+
+.icon_help {
+	background-position: right -350px; /* -140px; */
+	padding:3px 20px 3px 0 !important;
+}
+
+
+
+.icon_internal {
+	background-position: right -400px; /* -160px; */
+	padding: 2px 18px 2px 0 !important;
+	zoom: 1;
+}
+
+.icon_findacopy {
+	background-position: 0 -550px; /* -220px; */
+	padding-left: 18px;
+}
+
+.icon_modify {
+	background-position: 0 -701px; /* -281px; */
+	padding-left: 19px;
+}
+
+.icon_addtofolder {
+	/*background: url(../images/icons/folder.png) no-repeat 0 0;*/
+	background-position: 0 -600px; /* -240px; */
+	padding-left: 20px;
+}
+
+.icon_singlefolder {
+	background: url(../images/icons/folder.png) no-repeat 0 -2px;
+	padding-left: 20px;
+}
+
+.icon_delete {
+	background-position: 0 -651px; /* -261px; */
+	padding-left: 20px;
+}
+
+.icon_delete_sm {
+	background-position: 0 -901px; /* -361px; */
+	padding-left: 17px;
+}
+
+.icon_globe {
+	background-position: 0 -951px; /* -381px; */
+	padding-left: 20px;
+}
+
+.icon_share {
+	background-position:0 -751px; /* -301px; */
+	padding-left: 18px;
+}
+
+.icon_donotshare {
+	background-position:0 -801px; /* -321px; */
+	padding-left: 18px;
+}
+
+.icon_lightbulb {
+	background-position: 0 -850px; /* -340px; */
+	padding-left: 18px;
+}
+
+.icon_nextlink {
+	background-position: 1px -1051px; /* -421px; */
+	padding-left: 20px;
+}
+
+.icon_prevlink {
+	background-position: 1px -1101px; /* -441px; */
+	padding-left: 20px;
+}
+
+.icon_interlibrary {
+	background-position: 0 -1151px; /* -461px; */
+	padding-left: 21px;
+}
+
+.icon_closelayer {
+	background-position: 0 -1200px; /* -480px; */
+	padding-left: 20px;
+}
+
+.icon_elibrary {
+	background-position: 0 -1250px; /* -500px; */
+	padding-left: 20px;
+}
+
+.icon_findfulltext {
+	background-position: 0 -1302px; /* -522px; */
+	padding-left: 19px;
+}
+
+.icon_unlocked {
+	background-position: -3px -1350px; /* -540px; */
+	padding-left: 17px;
+}
+
+.icon_locked {
+	background-position: -3px -1401px; /* -561px; */
+	padding-left: 13px;
+}
+
+.icon_shoppingCart {
+	background-position: 0 -1651px; /* -661px; */
+	padding-left: 20px;
+	/* background-color: #046091; */
+}
+
+.icon_home {
+	background-position: 0 -1501px; /* -601px; */
+	padding-left: 20px;
+}
+
+.icon_copyfolder {
+	background-position: 0 -1550px; /* -620px; */
+	padding-left: 19px;
+}
+
+.icon_movefolder {
+	background-position: 0 -1600px; /* -640px; */
+	padding-left: 23px;
+}
+
+.icon_shoppingcart {
+	background-position: 0 -1650px; /* -660px; */
+	padding-left: 20px;
+}
+
+.icon_purchasecopy,
+.icon_shoppingcart_orange {
+	background-position: 0 -1700px; /* -680px; */
+	padding-left: 20px;
+}
+
+.icon_downloadvideo {
+	background-position: 0 -1751px; /* -701px; */
+	padding-left: 18px;
+}
+
+.icon_setupalert {
+	background-position: 0 -1800px; /* -720px; */
+	padding-left: 23px;
+}
+
+.icon_viewlatest {
+	background-position: 0 -1851px; /* -741px; */
+	padding-left: 23px;
+}
+
+.icon_viewshared {
+	background-position: 0 -1901px; /* -761px; */
+	padding-left: 24px;
+}
+
+.icon_addnotes {
+	background-position: 0 -1952px; /* -782px; */
+	padding-left: 22px;
+}
+
+.icon_renamefolder {
+	background-position: 0 -2000px; /* -800px; */
+	padding-left: 21px;
+}
+
+.icon_clearfolder {
+	background-position: 0 -2050px; /* -820px; */
+	padding-left: 21px;
+}
+
+.icon_view {
+	background-position: 0 -2100px; /* -840px; */
+	padding-left: 21px;
+}
+
+.icon_alreadytrialled {
+	background-position: 0 -2151px; /* -861px; */
+	padding-left: 22px;
+}
+
+.icon_fullsize {
+	background-position: 0 -2200px; /* -880px; */
+	padding-left: 21px;
+}
+
+.icon_trialalert {
+	background-position: 0 -2250px; /* -900px; */
+	padding-left: 22px;
+}
+
+.icon_newlist {
+	background-position: 0 -2300px; /* -920px; */
+	padding-left: 22px;
+}
+
+.icon_addtodoc {
+	background-position: 0 -2402px; /* -962px; */
+	padding-left: 22px;
+}
+
+.icon_preview {
+	background-position: 0 -2452px; /* -982px; */
+	padding-left: 15px;
+}
+
+.icon_originalsearch {
+	background-position: 0 -2501px; /* -1001px; */
+	padding-left: 20px;
+}
+
+.icon_reviewed {
+	background-position: 0 -2551px; /* -1021px; */
+	padding-left: 18px;
+}
+
+.icon_transactions {
+	background-position: 0 -2602px; /* -1042px; */
+	padding-left: 17px;
+}
+
+.icon_savetomyresearch {
+	background-position: 0 -2651px !important; /* -1061px !important; */
+	padding-left: 23px;
+}
+
+/* Note that this is "saved" not "save" ...tomyresearch */
+.icon_savedtomyresearch {
+	background-position: 0 -2701px !important; /* -1081px !important; */
+	padding-left: 21px;
+}
+
+.icon_resend {
+	background-position: 0 -2750px; /* -1100px; */
+	padding-left: 20px;
+}
+.icon_helplarge {
+	background-position: right -2800px; /* -1120px; */
+	padding: 3px 21px 3px 0 !important;
+}
+
+.thes_icon_help {
+	background-position:right -2851px; /* -1141px; */
+	padding:3px 20px 3px 0 !important;
+	background-color:#046091;
+}
+
+.icon_createMRaccount {
+	background-position: 0 -2901px; /* -1161px; */
+	padding-left: 18px;
+}
+
+.icon_geturl {
+	background-position: 0 -2951px; /* -1181px; */
+	padding-left: 22px;
+}
+
+.icon_linkpdf,
+.icon_lnulink {
+	background-position: 0 -3001px; /* -1201px; */
+	padding-left: 21px;
+}
+
+.icon_browseissue {
+	background-position: 0 -3101px; /* -1241px; */
+	padding-left: 24px;
+}
+
+.icon_header_info {
+	background-position: 0 -3152px; /* -1262px; */
+	padding-left: 18px;
+	zoom: 1;
+}
+
+.icon_downloadresults {
+	background-position: 0 -3202px; /* -1282px; */
+	padding-left: 22px;
+}
+
+.icon_tick {
+	background-image: url(../images/icons/tick_sprite.gif);
+	background-position: 0 -1px;
+	padding-left: 21px;
+}
+
+.icon_hoovers {
+	background: url(../images/icons/intellidocs.png) no-repeat right top;
+	padding-right: 15px;
+}
+
+
+.icon_filter {
+	background-position: 0 -3251px; /* -1301px; */
+	padding-left: 20px;
+	zoom: 1;
+}
+
+.icon_smallnotes {
+	background-position: 0 -3302px; /* -1322px; */
+	padding-left: 21px;
+	zoom: 1;
+}
+
+.icon_contractarrow {
+	background-position: 0 -3351px; /* -1341px; */
+	zoom: 1;
+}
+
+.icon_expandarrow {
+	background-position: 0 -3401px; /* -1361px; */
+	zoom: 1;
+}
+
+.icon_magnifier {
+	background-position: 0 -3451px; /* -1381px; */
+	zoom: 1;
+	padding-left:20px;
+	padding-top:1px;
+}
+
+.icon_exportsearches {
+	background-position: 0 -3500px;
+	padding-left: 19px;
+	zoom: 1;
+}
+
+.icon_resend_grey {
+	background: url(../images/icons/resend_grey.png) no-repeat right top;
+}
+
+/* The indicators_base_sprite class should be added in addition to a specific indicator class from the ones following.
+		i.e "indicators_base_sprite indicator_menu"
+*/
+
+.indicators_base_sprite {
+	background: url(../images/icons/indicators_sprite.gif) no-repeat 0 0;
+	padding: 0 0 0 14px;
+}
+
+.indicator_menu_down {
+	background-position: right 0;
+	padding: 0 13px 0 0;
+	cursor:pointer;
+}
+
+.indicator_menu_down_left {
+	background-position: left 0;
+	padding: 0 0 0 16px;
+}
+
+.indicator_menu_down_advanced {
+	background-position: right 0;
+	padding: 0 5px 0 0;
+	cursor:pointer;
+}
+
+.indicator_menu_right {
+	background-position: right -100px;
+	padding: 0 16px 0 0;
+}
+.indicator_menu_left {
+	background-position: left -100px;
+	padding: 0  0 0 16px;
+}
+
+.indicator_expand {
+	background-position: 0 -200px;
+	min-width: 12px;
+}
+
+.indicator_collapse {
+	background-position: 0 -300px;
+}
+
+
+.disabled.indicator_expand {
+	background-position: 0 -600px;
+	min-width: 12px;
+}
+
+.disabled.indicator_collapse {
+	background-position: 0 -700px;
+}
+
+.indicator_sort_down {
+	background-position: right -800px;
+	padding: 0 13px 0 0;
+}
+
+.indicator_sort_up {
+	background-position: right -900px;
+	padding: 0 13px 0 0;
+}
+
+.indicator_menu_up {
+	background-position: right -400px;
+	padding: 0 13px 0 0;
+}
+
+.indicator_menu_up_left {
+	background-position:left -400px;
+	padding: 0 0 0 16px;
+}
+
+.indicator_dropdown {
+	background-position: left -503px;
+}
+.sort-asc a {background: url(../images/icons/indicators_sprite.gif) no-repeat 100% -900px !important; padding: 0 13px 0 0;}
+.sort-desc a {background: url(../images/icons/indicators_sprite.gif) no-repeat 100% -800px !important; padding: 0 13px 0 0;}
+
+/* The arrows_base_sprite class should be added in addition to a specific arrow class from the ones following.
+		i.e "arrows_base_sprite arrow_first"
+*/
+
+.arrows_base_sprite {
+	background: url(../images/icons/arrows_sprite.png) no-repeat 0 0;
+}
+.arrow_first {
+	background-position: -2px -16px;
+	padding: 0 0 0 10px;
+}
+.arrow_previous {
+	background-position: -2px -16px;
+	padding: 0 7px 0 10px;
+}
+.arrow_next {
+	background-position: right 0px;
+	padding: 0 12px 0 0;
+	margin-left:18px;
+}
+.arrow_last {
+	background-position: right 0px;
+	padding: 0 12px 0 0;
+}
+.arrow_first_disabled {
+	background-position: -2px -48px;
+	padding: 0 0 0 10px;
+	color: #6c6c6c;
+}
+.arrow_previous_disabled {
+	background-position: -2px -48px;
+	padding: 0 7px 0 10px;
+	color: #6c6c6c;
+}
+.arrow_next_disabled {
+	background-position: right -32px;
+	padding: 0 12px 0 0;
+	margin-left:18px;
+	color: #6c6c6c;
+}
+ul.horizontal li.pageNumbers {
+	margin-right:0px;
+}
+.pipe {
+	padding:0px 2px 0px 2px;
+}
+
+/* The formats_base_sprite class should be added in addition to a specific arrow class from the ones following.
+		i.e "formats_base_sprite format_fulltext"
+*/
+
+.formats_base_sprite {
+	background: url(../images/icons/formats_sprite.png) no-repeat 0 0;
+	padding: 2px 0 2px 16px;
+}
+
+.format_textandgraphics {
+	background-position: 0 -50px; /* -20px; */
+	padding-left: 17px;
+}
+
+.format_fulltext {
+	background-position: 0 -101px; /* -41px; */
+	padding-left: 17px;
+}
+
+.format_video {
+	background-position: 0 -200px; /* -80px; */
+	padding-left: 16px;
+}
+
+.format_record, .format_abstract {
+	background-position: 0 -250px; /* -100px; */
+	padding-left: 19px;
+}
+
+.format_pdf {
+	background-position: 0 -150px; /* -60px; */
+	padding-left: 18px;
+}
+
+.format_zip {
+	background-position: 0 -300px; /* -120px; */
+	padding-left: 19px;
+}
+
+.format_flash {
+	background-position: 0 -350px; /* -140px; */
+	padding-left: 21px;
+}
+
+.format_pagemap {
+	background-position: 0 0;
+	padding-left: 19px;
+}
+
+.format_paperclip {
+	background-position: 0 -400px; /* -160px; */
+	padding-left: 12px;
+}
+
+.format_excel {
+	background-position: 0 -450px; /* -180px; */
+	padding-left: 17px;
+}
+
+.format_rtf {
+	background-position: 0 -500px; /* -200px; */
+	padding-left: 21px;
+}
+
+.format_word {
+	background-position: 0 -550px; /* -220px; */
+	padding-left: 17px;
+}
+
+.format_audio {
+	background-position: 0 -849px; /* -339px; */
+	padding-left: 21px;
+}
+
+.format_transcript {
+	background-position: 0 -900px; /* -360px; */
+	padding-left: 24px;
+}
+
+.format_powerpoint {
+	background-position: 0 -952px; /* -382px; */
+	padding-left: 20px;
+}
+
+.format_briefcitation {
+	background-position: 0 -1001px; /* -401px; */
+	padding-left: 19px;
+}
+
+/* Hit highlighting */
+
+#toggleHits {
+	float: right;
+	background-color: #f4e99d;
+}
+
+.hit {
+	background-color: #f4e99d;
+	color: #000000;
+	padding: 0px 2px;
+	z-index:500 !important;
+}
+
+a:hover span.hit {
+	text-decoration: underline;
+}
+
+/*********************************************
+	Drop down / pop up menus
+*********************************************/
+
+#main_nav .dropdownMenu ul li {
+	float: none !important;
+	background: none;
+	padding: 2px 5px;
+	line-height: 16px;
+	display:block;
+}
+
+.dropdownMenu {
+	position: absolute;
+	z-index: 100;
+	display: none;
+	speak:normal;
+	padding-top:4px;
+	margin-top:-5px;
+	zoom: 1;
+}
+
+.dropDownInner {
+	background-color: #fff;
+	border: solid 2px #046091;
+	padding: 6px 9px 6px 9px;
+	zoom:1;
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px rgba(100, 100, 100, 0.5);
+}
+
+.dropdownMenu .nextLine {
+	height: 0;
+	width: 0;
+}
+
+.dropdownMenu ul {
+	list-style-type: none;
+	font-size: 0.95em;
+	float: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdownMenu ul li {
+	float: none !important;
+	background: none;
+	padding: 2px 5px;
+	line-height: 16px;
+	margin: 0 !important;
+	white-space:nowrap;
+}
+
+.dropdownMenu ul li:last-child,		/* selector */
+.dropdownMenu ul li.last-child {	/* class for IE */
+	border-bottom: none;
+}
+
+.tlNav .dropdownMenu ul li.last-child {	/* class for IE */
+	border-bottom: none;
+}
+
+.dropdownMenu ul li a:link, .dropdownMenu a:link span { color: #005e8f; text-decoration: none; white-space:nowrap}
+.dropdownMenu ul li a:visited, .dropdownMenu a:visited span{ color: #005e8f; text-decoration: none}
+.dropdownMenu ul li a:hover, .dropdownMenu a:hover span { color: #005e8f; text-decoration: underline !important;}
+
+#myresearch_nav .dropdownMenu ul li a {font-size: 1.2em;}
+#myresearch_nav .dropdownMenu ul li a:link, .dropdownMenu a:link span { color: #005e8f; text-decoration: none; white-space:nowrap}
+#myresearch_nav .dropdownMenu ul li a:visited, .dropdownMenu a:visited span{ color: #005e8f; text-decoration: none}
+#myresearch_nav .dropdownMenu ul li a:hover, .dropdownMenu a:hover span { color: #005e8f; text-decoration: underline !important;}
+
+ul.float_right .dropdownMenu  li {
+	margin: 0;
+}
+
+/*********************************************
+	Indicators
+*********************************************/
+
+/*	Indicators
+	- Add these indicators as classes to <a href> anchors
+	- Icons are added as backgrounds to the anchors, with appropriate padding
+
+	- closed_indicator/open_indicator add the right-pointing and down-pointing arrows for closed/open sections
+	- help_icon is for the Help link at the top of the page
+*/
+
+.closed_indicator {
+	background: url(../images/icons/blt_orange.gif) no-repeat left -18px;
+	padding-left: 16px;
+	height: 15px;
+}
+
+.open_indicator {
+	background: url(../images/icons/blt_orange.gif) no-repeat left 4px;
+	padding-left: 16px;
+	height: 15px;
+}
+
+
+/* The bullets_sprite class should be added in addition to a specific icon class from the ones following.
+		i.e "bullets_sprite chevron_single_left"
+*/
+
+.bullets_base_sprite {
+	background: url(../images/icons/bullets_sprite.png) no-repeat 0 0;
+	padding-right: 13px;	/* by default on the right */
+	zoom: 1;
+}
+
+.chevron_double_up {
+	background-position: 0 -2px;
+	padding-right: 0;
+	padding-left: 12px;
+}
+
+.chevron_double_right {
+	background-position: right -102px;
+}
+
+.chevron_double_left {
+	background-position: 0 -202px;
+	padding-right: 0;
+	padding-left: 12px;
+}
+
+.chevron_single_right {
+	background-position: right -302px;
+	padding-right: 12px;
+}
+
+.chevron_single_left {
+	background-position: 0 -402px;
+	padding-right: 0;
+	padding-left: 11px;
+}
+
+.bullet_arrow_right {
+	background-position: right -502px;
+	padding-right: 13px;
+}
+
+.bullet_arrow_left {
+	background-position: 0 -603px;
+	padding-right: 0;
+	padding-left: 12px;
+}
+
+.bullet_arrow_right_disabled {
+	background-position: right -702px;
+	padding-right: 12px;
+	color:#6c6c6c;
+}
+
+.bullet_arrow_left_disabled {
+	background-position: 0 -803px;
+	padding-right: 0;
+	padding-left: 12px;
+	color:#6c6c6c;
+}
+
+.chevron_double_left_white {
+	background-position: right -902px;
+	padding-left: 12px;
+}
+
+.chevron_double_right_white {
+	background-position: right -1002px;
+	padding-right: 12px;
+}
+
+.bullet_list_bullet {
+	background-position: -2px -1203px;
+	padding-right: 0;
+	padding-left: 11px;
+}
+
+.bullet_transactional {
+	background-position: 0 -1097px;
+	padding-right: 0;
+	padding-left: 13px;
+}
+.chevron_double_white_left {
+	background-position: 0 -897px;
+	padding-right:0;
+	padding-left: 12px;
+}
+/*********************************************
+	Controls
+*********************************************/
+
+#pagination_control {
+	display: inline-block;
+	overflow: hidden;
+	background-color: #eee;
+}
+
+#pagination_control ul {
+	float: left;
+}
+
+#pagination_control li {
+	margin-right: 5px;
+}
+
+#pagination_control li.numerals_start {
+	margin-left: 20px;
+}
+
+#pagination_control li.numerals_end {
+	margin-right: 20px;
+}
+
+#pagination_control li.jump_prev {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+#pagination_control li.jump_next {
+	margin-right: 10px;
+}
+
+#pagination_control li.jump_start,
+#pagination_control li.jump_end {
+	margin: 0;
+}
+
+#pagination_control .left_arrow {
+	background: url(../images/icons/arrows.png) no-repeat left -15px;
+	padding-left: 11px;
+}
+
+#pagination_control .right_arrow {
+	background: url(../images/icons/arrows.png) no-repeat right 0;
+	padding-right: 11px;
+}
+
+#pagination_control li.greyed .left_arrow {
+	background: url(../images/icons/arrows.png) no-repeat left -45px;
+	padding-left: 11px;
+}
+
+#pagination_control li.greyed .right_arrow {
+	background: url(../images/icons/arrows.png) no-repeat right -30px;
+	padding-right: 11px;
+}
+
+#pagination_control .items_per_page {
+	clear: both;
+	margin-top: 10px;
+	float: right;
+}
+
+
+/*********************************************
+	Logos
+*********************************************/
+
+.page_header_logo {
+	padding: 20px 0;
+}
+
+/*********************************************
+	MLAIB Icon
+*********************************************/
+.mlaib_icon{background: url(../images/icons/icon-mlaib.gif) no-repeat left 4px; padding-left:40px;}
+
+/*********************************************
+	Button
+	examples:
+	<button type="submit" class="primary"><span>Continue</span></button>
+	<a href="?update=true" class="pseudoButton"><span>Update</span></button>
+********************************************/
+button.primary,
+button.secondary,
+a.pseudoButton { display: inline-block; padding:0; margin:0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #D9B37F; color: #000; cursor:pointer; }
+button.primary span,
+a.pseudoButton span { display:inline-block; line-height:22px; padding: 0 6px;  border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border: 1px solid #f8d8ad; font-family: Verdana, Helvetica, sans-serif; font-size:12px; text-decoration: none;
+	background: #f6c586; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6c586 40%, #f08e00 60%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #f6c586 40%,#f08e00 60%); /* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(top,  #f6c586 40%,#f08e00 60%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f6c586 40%,#f08e00 60%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6c586', endColorstr='#f08e00',GradientType=0 ); /* IE6-9 */
+}
+/* hover */
+button.primary:hover span,
+a.pseudoButton:hover span { background: #f6c586; filter:none; }
+/* focus and hover */
+button.primary:focus,
+button.primary[disabled],
+button.secondary:focus,
+a.pseudoButton:focus { background:#00569F; border: 1px solid #bfcfe2; }
+button.primary:focus span,
+button.primary[disabled] span,
+a.pseudoButton:focus span { border: 1px solid #b6c8df; color:#fff;
+	background: #6f8fc2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #abc0db 40%, #738ec1 60%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #abc0db 40%,#738ec1 60%); /* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(top,  #abc0db 40%,#738ec1 60%); /* IE10+ */
+	background: linear-gradient(to bottom,  #abc0db 40%,#738ec1 60%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abc0db', endColorstr='#738ec1',GradientType=0 ); /* IE6-9 */
+}
+button.primary:focus:hover span,
+button.primary[disabled] span,
+a.pseudoButton:focus:hover span { background:#738ec1; filter:none; }
+/* non-default (secondary?) button */
+button.secondary { background-color: #8fb9df; }
+/* moz fix (up to at least v17) */
+button.primary::-moz-focus-inner,
+button.secondary::-moz-focus-inner { padding:0;border:0 none;-moz-box-sizing:content-box; }
+
+/* depreciated button
+example: <a href="Click" class="btnNew" id="resortButton" name="resortButton"><!-- Open:Submit  --><i>&nbsp;</i><span><i>&nbsp;</i><span>&nbsp;</span>Sort</span><!-- Close:Submit  --></a> */
+.btnNew, .btnDisabled { display: block; position: relative; background: #aaa; padding: 5px; float: left; color: #000; text-decoration: none; cursor: pointer; }
+.btnNew *, .btnDisabled * { background-image: url(../images/pagelayout/button/btn2.png); background-repeat: no-repeat; display: block; position: relative; }
+.btnNew i, .btnDisabled i { background-position: top left; position: absolute; margin-bottom: -5px;  top: 0; left: 0; width: 5px; height: 5px; }
+.btnNew span, .btnDisabled span { background-position: bottom left; left: -5px; padding: 0 0 5px 10px; margin-bottom: -5px; }/*line-height:15px;*/
+.btnNew span i, .btnDisabled span i { background-position: bottom right; margin-bottom: 0; position: absolute; left: 100%; width: 10px; height: 100%; top: 0; }
+.btnNew span span, .btnDisabled span span { background-position: top right; position: absolute; right: -10px; margin-left: 10px; top: -5px; height: 0; }
+.btnNew {background: #F29018; margin:-3px 0px 0px 5px}
+.btnNew[class], .btnDisabled[class] {background-image: url(../images/pagelayout/button/shade_on.png); background-position: center; }
+.btnNew:hover {text-decoration:none; background-image: url(../images/pagelayout/button/shade_over.png); color:#000;}
+.btnNewBlue {background-color: #8fb9df;}
+.btnDisabled {cursor: default; color:#6c6c6c; margin:-3px 0px 0px 5px}
+.btnDisabled { background: #eee; }
+.btnDisabled:hover {cursor: default; text-decoration:none; color:#6c6c6c;}
+
+.btnToolbarBG * {background-image: url(../images/pagelayout/button/btnToolbarBG.png)}
+.btnSearchPanelInnerBG * {background-image: url(../images/pagelayout/button/btnSearchPanelInnerBG.png)}
+.btnBlueSearchPanelInnerBG * {background-image: url(../images/pagelayout/button/btnBlueSearchPanelInnerBG.png)}
+.btnSelectedBG * {background-image: url(../images/pagelayout/button/btnSelectedBG.png)}
+
+.product #search_panel .btnSearchPanelInnerBG * {
+	background-image: url(../images/pagelayout/button/btnBlueSearchPanelInnerBG.png)
+}
+.btnNew, .btnDisabled {
+	margin: -2px 0 0 5px;
+	display: block;
+	position: relative;
+	padding: 4px 10px 5px;
+	float: left;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius:6px;
+}
+
+.btnNew {
+	background: #f08e00; /* Old browsers */
+	background-image: linear-gradient(bottom, rgb(240,142,23) 30%, rgb(245,197,137) 65%); /* W3C */
+	background-image: -o-linear-gradient(bottom, rgb(240,142,23) 30%, rgb(245,197,137) 65%); /* Opera 11.10+ */
+	background-image: -moz-linear-gradient(bottom, rgb(240,142,23) 30%, rgb(245,197,137) 65%); /* FF3.6+ */
+	background-image: -webkit-linear-gradient(bottom, rgb(240,142,23) 30%, rgb(245,197,137) 65%); /* Chrome10+,Safari5.1+ */
+	background-image: -ms-linear-gradient(bottom, rgb(240,142,23) 30%, rgb(245,197,137) 65%);  /* IE10+ */
+	border: 1px solid #cc9933;
+	box-shadow: 2px 2px 4px #d1d1d1;
+}
+
+.btnNew:hover, .btnNew:active{
+	background-image:none;
+	text-decoration:none;
+	background-color:#f5c489;
+	color:#000;
+}
+
+.btnNew:focus{
+	background: #0e5490;
+	background-image: linear-gradient(bottom, rgb(0,84,157) 30%, rgb(127,168,204) 65%); /* W3C */
+	background-image: -o-linear-gradient(bottom, rgb(0,84,157) 30%, rgb(127,168,204) 65%); /* Opera 11.10+ */
+	background-image: -moz-linear-gradient(bottom, rgb(0,84,157) 30%, rgb(127,168,204) 65%); /* FF3.6+ */
+	background-image: -webkit-linear-gradient(bottom, rgb(0,84,157) 30%, rgb(127,168,204) 65%); /* Chrome10+,Safari5.1+ */
+	background-image: -ms-linear-gradient(bottom, rgb(0,84,157) 30%, rgb(127,168,204) 65%); /* IE10+ */
+	color:#fff;
+	border:1px solid #0e5490;
+}
+
+.btnDisabled{
+	background: #dbdbdb;
+	background-image: linear-gradient(bottom, #dbdbdb 30%, #f3f3f3 65%); /* W3C */
+	background-image: -o-linear-gradient(bottom, #dbdbdb 30%, #f3f3f3 65%); /* Opera 11.10+ */
+	background-image: -moz-linear-gradient(bottom, #dbdbdb 30%, #f3f3f3 65%); /* FF3.6+ */
+	background-image: -webkit-linear-gradient(bottom, #dbdbdb 30%, #f3f3f3 65%);  /* Chrome10+,Safari5.1+ */
+	background-image: -ms-linear-gradient(bottom, #dbdbdb 30%, #f3f3f3 65%); /* IE10+ */
+	border: 1px solid #dbdbdb;
+	color: #6C6C6C;
+	cursor: default;
+}
+
+.btnDisabled:hover, .btnDisabled:active{
+	text-decoration:none;
+	color: #6C6C6C;
+	cursor: default;
+}
+/*buttons end*/
+
+/* Cancel Link - if a lightview layer has a cancel link it should be a normal link with the following span & class */
+.cancelLink {
+	line-height:20px;
+	padding-left:10px;
+}
+/*********************************************
+	Switches
+*********************************************/
+
+.clear {
+	clear: both;
+}
+
+.clear_left {
+	clear: left;
+}
+
+.clear_right {
+	clear: right;
+}
+
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+}
+
+.float_none {
+	float: none !important;
+}
+
+ul.float_right li {
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+/*********************************************
+	Accessibilty styles
+*********************************************/
+
+#skip a {
+	height:1px;
+	top:0px;
+	overflow:hidden;
+	position:absolute;
+	left:-5000px;
+	width:1px;
+}
+#skip a:active, #skip a:focus {
+	background-color:#0033CC;
+	border:1px solid #333;
+	color:#FFFFFF;
+	font-weight:bold;
+	height:auto;
+	left:5px;
+	overflow:visible;
+	padding:5px;
+	position:absolute;
+	top:5px;
+	width:auto;
+	z-index:1;
+}
+.hiddenText, .hiddenTextSearch {
+	height:1px;
+	left:-5000px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	width:1px;
+	display:block;
+}
+.hiddenTextSearch {
+	left:0px;
+}
+.shortText  i{
+	height:1px;
+	top:-9999px;
+	overflow:hidden;
+	position:absolute;
+	left:0;
+	width:1px;
+	display:block;
+}
+#hitSwitch a {
+	height:1px;
+	left:0px;
+	overflow:hidden;
+	position:absolute;
+	top:-500px;
+	width:1px;
+}
+#hitSwitch a:active, #hitSwitch a:focus {
+	background-color:#0033CC;
+	border:1px solid #333;
+	color:#FFFFFF;
+	font-weight:bold;
+	height:auto;
+	left:5px;
+	overflow:visible;
+	padding:5px;
+	position:absolute;
+	top:5px;
+	width:auto;
+	z-index:1;
+}
+.imgExternalLink .icons_base_sprite{
+	background-image:none;
+}
+
+
+/*********************************************
+	Top Level Styles - log in page etc
+*********************************************/
+.indexLogo {margin:45px 0 17px 0}
+#loginArea {margin-top:15px;width:460px;margin-right:30px;}
+#loginInfo {margin:15px 0 15px 15px;width:432px;}
+#LoginForm fieldset{padding:10px;}
+#loginArea label#username-label, #loginArea label#password-label, label#barcode-label, label#barcodeUsername-label{float:left;width:95px}
+#loginArea input#username, #loginArea input#password, #loginArea input#barcodeUsername, #loginArea input#barcode{width:270px;margin-bottom:15px;}
+#loginInfo h3 {color:#D18104; font-size:1.333em; font-weight:normal; line-height:1.2;}
+
+/*********************************************
+	Header styles - logo etc
+*********************************************/
+#logo{padding:15px 0 0 0;} /* Logo should always appear in the same place - the only exception is the basic search page */
+.logoImage{float:left;padding-right:10px}
+#logoBasic{padding:29px 0 17px 0;} /* helpLogo and Subject vertical pages needs a little more padding */
+
+#content-wrapper{clear:both;padding-top:12px;} /* Content should start immediately after this div with a <h1> or what ever */
+.results-wrapper{padding-top:26px;}
+.results-wrapper #content-wrapper{clear:none !important;} /* Results page has a different layout as the search box is next to the logo*/
+.results-wrapper .logoImage {margin-top: 16px;}
+
+/* Subject vertical/Product page header styles */
+#sitePageHeader .logoImage{border-right:1px solid #D8D8D8; height:53px;}
+.siteNameShort, .siteNameLong{color:#D18104;padding-left:10px;width:auto; display:inline;width:668px;}
+.siteNameShort {font-size:2.6em;line-height:0.80em;}
+.siteNameLong {font-size:2em;line-height:1.1em;display:block;}
+#logo #main-nav{padding:5px 0 0 12px;}
+.siteNameWrapper{padding-top:7px;}
+#logoBasic .siteNameWrapper{padding-bottom:7px;} /*DF fix for decenders in IE7/IE8comp being chopped off */
+
+.siteNameShort a, .siteNameLong a, .siteNameShort a:hover, .siteNameLong a:hover{color:#D18104;text-decoration:none !important;}/* Headers don't need link styling */
+
+/* 3rd party branding */
+.rilm, .ibss {position:absolute;right:14px;}
+.mla{position:absolute;top:71px;right:-7px}
+.avery{position:absolute;top:49px;right:15px}
+.earthquake{position:absolute;top:71px;right:15px}
+.copper{position:absolute;top:71px;right:15px}
+.polymerlibmodule{position:absolute;top:66px;right:15px}
+.psycinfo, .psycarticles, .psycbooks, .psycritiques{position:absolute;top:66px;right:15px}
+.francis{position:absolute;top:66px;right:15px}
+.philosophersindex{position:absolute;top:66px;right:15px}
+.aps, .americanperiodicals{position:absolute;top:60px;right:15px}
+/*********************************************
+	Auto-complete Layer
+*********************************************/
+.t-autocomplete-menu {
+	z-index:99999;
+}
+div.t-autocomplete-menu ul {
+	background-color:#FFF;
+	border:1px solid #59799A;
+	border-top:none;
+	overflow:auto;
+	padding:0;
+	margin:0;
+}
+div.t-autocomplete-menu li.selected {
+	font-weight:normal;
+	background-color:#F4E99D;
+	color:#4C4C4C;
+}
+div.t-autocomplete-menu li {
+	border-bottom:none;
+	color:#4C4C4C;
+	cursor:pointer;
+	list-style-type:none;
+	margin:0;
+	padding:3px 3px 3px 5px;
+	line-height:normal;
+}
+/* additional styling for close link */
+div.t-autocomplete-menu li.closeAutocomplete {
+	background-color:#EEF7FB;
+	border-top:1px solid #CCCCCC;
+	padding: 2px 0 4px 4px;
+}
+
+div.t-autocomplete-menu li.closeAutocomplete span {
+	cursor: pointer;
+	padding-left:21px;
+	padding-bottom: 4px;
+	background: url(../images/icons/close_autocomplete.png) no-repeat 0 0;
+}
+
+/***********************************
+You are searching
+************************************/
+.searchingDB {
+	color:#fff;
+	padding-top:3px;
+	float:left;
+	margin-left:-6px;
+	margin-top: 5px;
+	margin-bottom: 1px;
+}
+.searchingDB span.searching {
+	padding-right:3px;
+}
+.searchingDB ul {
+	margin-top:-1px;
+}
+.searchingDB ul li {
+	margin-right:5px;
+}
+.searchingDB li.pipe.white {
+	padding-left:6px;
+}
+.searchingDB a, .searchingDB a:hover {
+	color:#fff;
+	text-decoration: underline;
+}
+.searchingDBhome {
+	padding-top:16px;
+	margin-top:-3px;
+}
+
+/***********************************
+  Tabs
+************************************/
+.tabDiv { overflow:auto; }
+
+.tabWrapper p.small{margin:0;}
+
+.tabWrapper {
+	margin:0 0 -4px 0px;
+	padding:0;
+	list-style:none;
+	position: relative;
+	clear:left;
+}
+.tabWrapper li a span{height:28px;line-height:28px;}
+.tabItem, .tabItemActive {
+	display:inline-block;
+	margin:0;
+	padding:0;
+	float: left;
+	font-size: 0.915em;
+	margin-top:1px;
+}
+
+.tabItemSingle {
+	padding-bottom: 12px;
+}
+
+.tabItemActive{
+	border-bottom:1px solid #fff;
+	z-index:99999;
+}
+
+.tabItem a, .tabItemActive a{
+	float:left;
+	margin:0 0 0 0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+	outline: none;
+	color:#000000;
+}
+
+.tabItem span, .tabItemActive span{
+	float:left;
+	display:block;
+	padding:2px 10px 2px 6px;
+	color:#000000;
+}
+.myResearchTab{ /* My research tabs are styled differently and dont need borders or padding */
+	border-bottom:none !important;
+	padding:0 !important;
+	line-height:0em;
+	height:0px;
+	margin-bottom:10px;
+}
+
+.tabItem a {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat left -140px transparent;
+	cursor: pointer;
+}
+
+.tabItem span {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat right -94px transparent;
+	cursor: pointer;
+}
+
+/* Account info tab */
+#AccountInformation a {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat left -418px transparent;
+}
+
+#AccountInformation span {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat right -372px transparent;
+}
+
+/* Import to My Research tab */
+#ImportToMyResearch a {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat left -510px transparent;
+}
+
+#ImportToMyResearch span {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat right -464px transparent;
+}
+
+.tabItemActive a {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat left -326px transparent !important;
+	cursor: pointer;
+}
+
+.tabItemActive span {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat right -280px transparent !important;
+	cursor: pointer;
+}
+
+/* Accessibility onfocus tab classes  */
+.tabItemActive a:hover span, .tabItem a:hover span{
+	text-decoration:underline;
+}
+
+.tabItemActive a:focus, .tabItem a:focus {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat left -602px transparent !important;
+	color:#fff;
+}
+
+.tabItemActive a:focus span, .tabItem a:focus span {
+	background:url("../images/tabs/tabs-sprite.gif") no-repeat right -556px transparent !important;
+	color:#fff;
+}
+
+/* Tab Content */
+.tabContent {
+	background:url("../images/tabs/tab-content.gif") repeat-x scroll 0 0 transparent;
+	border:1px solid #CCCCCC;
+	clear:left;
+	padding:10px;
+	margin-top:-1px;
+	overflow:visible;
+}
+
+input.t-error, textarea.t-error, select.t-error {
+	color:#C00;
+	border:2px solid #59799A;
+	font-style:normal;
+	background-color:#FF9;
+	float:left;
+}
+input.t-error {height:18px;}
+
+img.t-error-icon {
+	margin-right:2px;
+	margin-left:-1px;
+}
+span.t-error {font-size: 0.915em;}
+.t-error {
+	line-height: 1.365;
+	float:left;
+}
+div.t-error {
+	margin: 0px 4px 0px 4px;
+}
+html > body div.t-error li {/* to override default.css specificity - Val */
+	margin-left:5px;
+	font-size: 0.915em;
+}
+div.t-error div {
+	font-size: 0.915em;
+}
+.dynamicPreview {background-color:#EEF7FB;} /* Lightviews need a default BG #10887 - Val */
+
+/* ****** #1794 Spinner's styles start here ----- Ali Khan ---- *** */
+
+.up_arrow {font-size: 0.6em; margin:1px 0 0 -19px; padding:2px 2px 2px 2px; float:left;	border: 1px solid #999;	text-align:center;	/* padding:0px; */}
+#spinnerValue {float:left; height:13px; width:40px; padding-bottom:2px;}
+.down_arrow {font-size: 0.6em; border: 1px solid #999; float:left; margin:15px 0 0 -19px; padding:0px 2px 2px 2px; text-align:center;}
+
+/* Spinner's styles end here */
+
+/* #NP2-1672 Updated input fields style  ------ Ali Khan ------ */
+
+#show_hitHilitght_alertZonesearchalert {float:left;}
+.margin_left {margin-left:140px;}
+
+/* #NP2-2400 Updated login page --- Vot Zardzewialy @ 5 Jan 11 */
+
+#LoginForm fieldset, .advSearch fieldset {
+	border: none !important;
+	padding: 0;
+}
+
+#LoginForm .userandPass input[type=text], #LoginForm  .userandPass input[type=password] {
+	border: 1px solid #7E9DB9; margin-bottom: 9px !important;
+}
+
+#LoginForm a#submit {
+	margin-top: -10px !important;
+}
+
+#loginInfo h4, #LoginForm h4, #loginInfo .login_para strong {
+	font-size: 14px;
+}
+
+#LoginForm .basedOnLocationDatabaseLinks a {
+	text-decoration: underline;
+}
+
+#LoginForm .login_panel_inner { background: #e4e2e2; padding: 10px;}
+
+#LoginForm .login_panel .background_color { background: none !important; padding: 0 !important;}
+
+#LoginForm .login_panel_inner .t, #LoginForm .login_panel_inner .b, #LoginForm .login_panel_inner .r, #LoginForm .login_panel_inner .l { display: none !important;}
+#LoginForm .login_panel_inner .tl { background: url(../images/pagelayout/search_panel/search_panel_sprite.png) no-repeat #e4e2e2 0px -20px; width: 5px; height: 5px;}
+#LoginForm .login_panel_inner .tr { background: url(../images/pagelayout/search_panel/search_panel_sprite.png) no-repeat #e4e2e2 -5px -20px; width: 5px; height: 5px;}
+#LoginForm .login_panel_inner .bl { background: url(../images/pagelayout/search_panel/search_panel_sprite.png) no-repeat #e4e2e2 -10px -20px; width: 5px; height: 5px;}
+#LoginForm .login_panel_inner .br { background: url(../images/pagelayout/search_panel/search_panel_sprite.png) no-repeat #e4e2e2 -15px -20px; width: 5px; height: 5px;}
+
+#LoginForm .login_panel{ width: 443px; margin-top: 3px; padding: 10px 19px 19px 10px;}
+
+#LoginForm .header_border_bottom { margin-bottom: -6px; }
+
+#loginArea label#username-label, #loginArea label#password-label, #LoginForm label#barcode-label, #LoginForm label#barcodeUsername-label { width: 140px; }
+
+#LoginForm .status_change_panel .tl, #LoginForm .status_change_panel .tr, #LoginForm .status_change_panel .bl, #LoginForm .status_change_panel .br { background: url(../images/pagelayout/status_change_panel_sprites.png) !important }
+
+#LoginForm .status_change_panel .tl {background-position: 0 -6px !important; }
+#LoginForm .status_change_panel .tr {background-position: -6px -6px !important; }
+#LoginForm .status_change_panel .bl {background-position: -12px -6px !important; }
+#LoginForm .status_change_panel .br {background-position: -18px -6px !important; }
+
+/* POSITION RELATIVE (several bugs, class missing) --- Vot Zardzewialy @ 10 Jan 11 */
+
+.position_rel { position: relative !important; }
+
+#columnArrow a.handler, #columnArrow a.handler:hover {text-decoration:none; padding-right:25px;}/* NP2-2348, collapse/expand arrow on filter panel need KeyB control - Val */
+
+
+#changeLanguageDropDown {margin-left: -86px; width: 175px; font-size: 1.1em; z-index:100;}
+#changeLanguageDropDown ul li {font-size: 1em; padding: 2px 2px;}
+
+.t-zone { background: none !important; }
+.loadingGif{background:url(../images/pagelayout/loading.gif) no-repeat 50% 50%;height:67px;width:100%;text-align:center;padding:20px 0px}
+.loadingGifWbg{background:url(../images/pagelayout/loading_wbg.gif) no-repeat 50% 50%;height:67px;width:100%;text-align:center;padding:20px 0px}
+.downloadingText{width:400px;float:left}
+.printDocHeading h1 {color:#000000;}
+.refWorksLogo { width:81px; height:42px; }
+
+/* CSS3 panel classes - to be added properly soon... */
+#side_panel, .results-wrapper .subject #side_panel { width: 200px; border: solid 1px #ccc !important }
+.product #side_panel, .subject #side_panel, .productHome #side_panel, .subjectHome #side_panel { background: none; background-color: #fff !important; border: solid 1px #ccc !important }
+
+.toolbar_panel { -moz-border-radius: 6px !important; border-radius: 6px !important; }
+
+#side_panel { border: 1px solid #ccc !important; border-radius: 5px 5px 5px 5px !important; margin-right: -1px !important; width: 200px !important; box-shadow: 4px 4px 5px 0px #eee !important; background-image: none !important; background-color: #f9f9f9 !important; }
+
+#side_panel dt { background: #e2e2e2 !important; border-top-left-radius: 5px; border-top-right-radius: 5px; margin-bottom: 15px !important; overflow: hidden !important; }
+#side_panel dd { padding: 0 !important; }
+
+.results-wrapper #side_panel,
+.results-wrapper .subject #side_panel { margin-right: 0 !important; width: 223px !important; padding-right: 10px !important; padding-left: 10px !important; padding-top: 10px !important; }
+
+#search_panel { border-radius: 5px 5px 5px 5px !important; box-shadow: 2px 4px 5px 1px #ddd !important; width: 791px; padding: 15px 0 14px 10px; }
+#search_inner_panel { border-radius: 5px !important; }
+
+.login_panel { border-radius: 5px; padding: 10px !important; box-shadow: 3px 4px 7px -1px #ddd !important; }
+.login_panel_inner { border-radius: 5px !important; }
+
+.scroller_panel { border-radius: 5px; padding-right: 5px !important; padding-bottom: 4px !important; box-shadow: 3px 4px 7px -1px #ddd !important; margin-top: 46px !important; }
+
+.basicsearch_textpanel { margin-top: 28px; }
+
+.dropDownInner { border-radius: 5px !important; box-shadow: 3px 3px 3px rgba(100, 100, 100, 0.5) !important; }
+
+#search_panel.results { padding: 10px 0 5px 10px !important; width: 940px; margin-bottom: 14px !important; }
+
+.smartsearch_panel { border-radius: 5px !important }
+
+.pinkienails_panel { border-radius: 5px !important; }
+
+#search_panel.mrSignIn { width: 470px !important }
+
+.status_change_panel { border-radius: 5px; }
+.section_content {margin-left: 30px;}

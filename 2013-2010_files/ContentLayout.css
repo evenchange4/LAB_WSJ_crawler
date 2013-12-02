@@ -1,0 +1,3085 @@
+/*=================================================================================================================
+ Morningstar OneSearch Content Layout Stylesheet
+ -------------------------------------------------------------------------------------------------------------------
+ This stylesheet should be used for the visual display of any content within the page layout.
+ Style guide:http://localhost:8080/OneSearch/maintain/styleguide OR http://localhost:8080/maintain/styleguide
+ CSS best practices guide:to be reworked
+ /*================================================================================================================*/
+/*Generic style*/
+.toolBarPanelFix .horizontal .noMargin {margin:0;}
+.subjectVerticalImageWrapper{width:101px;padding-top:5px;margin-left:2px;}
+.capitalize{text-transform:capitalize}
+.red{color:#ff0000}
+.clear_form,.widget_search_cont .logo_container,.index_alpha{padding:0 0 0 10px}
+.citationrefWorksLogo{margin:8px 20px 0 0}/* Added margin right to avoid scrollbar -- JC*/
+#PrintLayerOverlay .citationrefWorksLogo{margin:8px 0 0 0}
+.refWorksLogoPosition{margin:7px 2px 0 0}
+.refWorksLogoTopMargin{margin-top:-7px}
+.btn_wrapper,.btn_wrapper a{margin-right:0px;cursor:pointer}
+.btn_wrapper span a{margin-top:4px}
+.btn_wrapper .link_btn,.link_btn{margin:10px 0 0 10px}
+.btn_wrapper .link_btn_margin,.tbox .fieldBrowsRadioContainer,#tagsAsList,.myresearch_learn_more_indent,.fig_table_section,.fig_table_section .fig_table_resultItem .figtables,.npcBrowseOuter .view_docs,.toggler,.alertsaveform,.editWorkgroupDbList,#showMoreFieldLimitersFigTables,.showViewListDB{margin-left:10px}
+.btn_wrapper button.cancelbtn,.pub_search_moreOptions .form_element_container,#textMatch .btn_wrapper,#textMatch .btn_wrapper span a{margin-right:0}
+
+.no_border, .tbox fieldset, table.sessionDetails_table tr td, .costEstimateOverRide fieldset {border:none}
+.header_border_bottom ul.horizontal,.preferences input.refworksGroupCode,.myPubAgree input.myPubInput,.myResearchSelectedItems,.pinkieContainer,.nytContainer .resultsItem, .flashOptions{margin-top:5px}
+.results_list_copy .small_txt{margin:5px 5px 0 0}
+#lor_container{float:left;width:99.4%}
+.textPlusGraphicsContainer,#resultsLeftPanel #drp_sortResults{overflow-x:hidden}
+.preview_icon_hapi,.tbox img.export_refWorksLogoPosition,.tbox .note,#myResearchPanel div.t-error li,.lv_contentBottom_wrapper #filters{margin-left:5px}
+/*temporary fix for right side panel sort result by*/
+#resultsLeftPanel #drp_sortResults .sort_container{width:198px}
+#resultsLeftPanel #drp_sortResults .sort_container select{width:215px}
+#resultsLeftPanel #drp_sortResults .resortBtn,#myResearchPanel #drp_sortResults .resortBtn{margin:10px 5px 0 0}
+/* temporary fix ends*/
+/*Generic style ends*/
+/* Loading Layer */
+#loadtip{visibility:hidden;position:fixed;top:50%;left:35%;height:35px;font-weight:bold;font-size:1.5em;color:#4c4c4c;z-index:99999}
+#loadtip .loadtip_left_edge{float:left;width:5px;height:50px;background:url(../images/pagelayout/loadtip/loadtip_sides.png) no-repeat 0 0}
+#loadtip .loadtip_content{float:left;height:35px;padding:15px 35px 0 35px;background:#ffffff url(../images/pagelayout/loadtip/loadtip_tb.png) repeat-x 0 0}
+#loadtip .loadtip_right_edge{float:left;width:5px;height:50px;background:url(../images/pagelayout/loadtip/loadtip_sides.png) no-repeat -6px 0}
+* html #loadtip{position:absolute;z-index:99999;top:expression(420 +((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');left:expression(40%+((e=document.documentElement.scrollLeft)?e:document.body.scrollLeft)+'px')}
+body.nobluebar{font-family: Verdana, Helvetica, sans-serif;	font-size: 100%; font-weight: normal; font-style: normal; font-size: 100%; color: #4c4c4c; line-height: 1.25; /* Unitless line-height */ background:#e7e7e7 url(../images/pagelayout/) repeat-x scroll top left !important;}
+/*Loading Layer end*/
+/* 131D unconverted content */
+.contentAreaUnconverted{margin-left:44px}
+.contentAreaUnconverted .forLabel {width:40px}
+.contentAreaUnconverted .forResult {line-height:1.5em;margin-left:44px}
+.contentAreaUnconverted p{margin:5px 0}
+.contentAreaUnconverted .partial{margin-top:12px}
+/*BOF Advance Search page*/
+.queryControl{padding-bottom:4px;}
+#figTable,#textMatch,#commandline_search,#obits_content{padding-top:5px;width:705px;float:left;position:relative}
+#commandline_professional_search{padding-top:5px;width:950px;float:left;position:relative}
+#commandline_professional_search #editStrategySearchFields #sectionButton{margin:0px 0px;}
+#commandline_professional_search input#keepOnAdvSearch{margin-top:4px}
+#commandline_professional_search p.info{margin-bottom:10px;clear:both}
+#commandline_professional_search #sectionContent{position:absolute; left:0;}
+#commandline_professional_search ul li.searchFieldsDD{float:left;}
+#commandline_professional_search ul li.searchFieldsDD a#more_option{float:right}
+span.cabsOnly{padding-top:10px;}
+#commandline_professional_search .tabContent{border-left:0px;border-right:0px;border-bottom:0px;padding:0px;}
+#commandline_professional_search .previewBtn {margin-top:21px;}
+#commandline_professional_search .showHideAndSort{padding:10px 0px}
+#commandline_professional_search .ifSort{padding-right:20px;}
+#commandline_professional_search .ifSort ul{display: inline; margin-top: 0px}
+#commandline_professional_search .resultRecentSearches .item{margin-bottom:10px;}
+#DropDownMenu #textMatch{padding:0;width:auto;float:none}
+
+#advancedsearch_content {padding-top:5px;width:705px;float:left;position:relative}
+#advancedsearch_content .form_element_container{margin-right:0}
+#advancedsearch_content .form_element_container input.main_txtfield{width:377px;float:left}
+#advancedsearch_content .form_element_container select.opsDropdown{margin:0;width:60px;float:left}
+#advancedsearch_content .form_element_container .in{float:left;margin:0 3px;text-align:center;width:30px}
+#advancedsearch_content .form_element_container input.opsAND_txtField,.annual_reports_label{width:165px}
+#advancedsearch_content .form_element_container span.opsOR_txtField {margin-right:10px}
+#advancedsearch_content .form_element_container .adv_srch_date_fields select {width:auto;}
+#advancedsearch_content .form_element_container input.opsOR_txtField, .document_Prcing{width:172px;float:left}
+#advancedsearch_content .form_element_container select{width:254px}
+#advancedsearch_content .form_element_container .firstRow input.main_txtfield{width:377px;float:left}
+#advancedsearch_content .form_element_container select.opsSelect{width:65px;float:left}
+#advancedsearch_content .form_element_container .extraCheckbox input[type="checkbox"]{float:right;width:20px;margin-top:5px}
+#advancedsearch_content .form_element_container.dateRangeTypeAdv select{width:220px;float:left;margin-left:10px;}
+#advancedsearch_content .btn_wrapper,
+#advancedsearch_content .btn_wrapper span a,
+#advancedsearch_content .Fig_limit li label{margin-right:0}
+#advancedsearch_content .noWidthSelect select{width:auto}
+#advancedsearch_content .advDatabaseContainers .form_element_container input{width:13px}
+#advancedsearch_content ul.columns li{display:inline-block;float:left;margin-left:15px;width:215px}
+#advancedsearch_content .selectAndClear{margin:15px 0 10px 15px}
+#advancedsearch_content .specificDataBases,
+#advancedsearch_content .searchIndexTitle,#advsearch_databases .nowSearching{margin:15px}
+#advancedsearch_content .exposedFields .label_container {width:160px}
+#advancedsearch_content .exposedFields input[type=text] { width:380px; }
+#advancedsearch_content .exposedFields input[type=text].dateRangeYear { width:51px; }
+#advancedsearch_content .exposedFields input.inputfield{width:430px;margin-right:10px}
+#advancedsearch_content .exposedFields input.date_year{width:80px;margin-right:5px}
+#advancedsearch_content .exposedFields #multiDateRange_messages{margin-left:110px}
+#advancedsearch_content .exposedFields select#DateRangeTypeSelector{width:190px}
+#advancedsearch_content .exposed_checkboxRow{margin-bottom:15px}
+#advancedsearch_content .exposed_checkboxRow input[type="checkbox"]{top:0}
+#advancedsearch_content .exposed_checkboxRow label{padding-top:0}
+#advancedsearch_content .otherSearchOptions ul li{margin:0 0 0 10px !important}/*Added for Look Up Citation page - SKohli*/
+#advancedsearch_content ul.horizontal li{margin:2px 10px 0 0}
+#advancedsearch_content .Fig_limit,
+#advancedsearch_content .Fig_limit .inner_level{margin-left:16px}
+#advancedsearch_content .advancedsearch_limiter,
+#advancedsearch_content .Fig_limit {border:1px solid #cccccc;height:145px;overflow-y:auto;position:relative;width:317px;margin-top:4px;margin-bottom:8px}
+#advancedsearch_content .subject_db_list{width:665px;height:145px;overflow-y:auto;position:relative;padding:0 5px 5px;border:1px solid #cccccc;margin-top:4px;margin-bottom:8px}
+#advancedsearch_content .subject_db_list li{margin-bottom:5px}
+#advancedsearch_content .collapsible-section-content{position:relative}
+#advancedsearch_content .advancedsearch_limiter li label{margin:0 0 3px 5px}
+#advancedsearch_content .Fig_limit li input{margin-top:5px;vertical-align:top}
+#advancedsearch_content .hiddenLinkText:before{content:".";color:#fff;font-size:0}
+#advancedsearch_content .Fig_limit:first-child,
+#advancedsearch_content .ops_options{margin-right:15px}
+#advancedsearch_content .advMoreOptions .exposedFields input{width:146px}
+#advancedsearch_content .advMoreOptions .exposedFields input#wellesleyAuthor{width:13px!important}
+#advancedsearch_content .DateRangeTypeSelectorLabel{width:185px}
+#advancedsearch_content h4{margin-bottom:9px}
+#advancedsearch_content .exposedFields.collForm_align .label_container{width:190px}
+
+.outBound_linking_logo a img {background-color:#fff}/*NP2-7153- made image white-opaque to disallow underline on hover*/
+.pub_search_moreOptions .form_element_container input{width:255px}
+#sectionButton{margin:15px 0 15px 15px}
+#editStrategySearchFields #sectionButton{margin:10px 0}
+#commandline_search #sectionButton,.pub_search_moreOptions #sectionButton{margin:13px 0 6px 0}
+.fieldset_contents .advMoreOptions #sectionButton{margin:12px 0 10px 0}
+.uploadStrategy .label_container{padding-right:25px}
+
+.resultListContainer_list .item_deselected,#eisWrapper a img,.myresearch_welcome_panel{padding:5px}
+#mytags_list .tags_list_item,.research_shared,.pub_search_AtoZ,.workgroupDatabasePreview,.saveSearchesText{margin-bottom:15px}
+.tbox .RssOverlay .email_label{width:160px}
+.tbox .section p,.form_margin,.outBound_linking_logo img, .closeAutocomplete span.float_right, .pubHeadConditional {margin-right:10px}
+.mid_label{margin-top:2px;padding:0 10px}
+.browsable_link{display:inline-block;padding-top:3px;margin-left:5px}
+.refContentArea {margin:0 0 10px 40px;display:block}
+.recentSearchContentArea{margin:0 0 0 60px;display:block}
+.advancedsearch_recSec{margin:16px 0 -2px 0;clear:both}
+.other_search_options,.uploadStrategy_options{margin-bottom:10px;float:left;margin-top:-6px}
+.uploadStrategy{max-width:500px}/*added by Val np2-435*/
+.thanksLink{padding-right:25px}
+.recent_searches_link{margin-bottom:10px;float:right;margin-top:-6px}
+.other_search_options ul.horizontal, .recent_searches_link ul.horizontal,.tbox .RssOverlay fieldset,.toolBarMarginRemoved,.fieldsetmarginremoved,.vogue_thumb{margin-bottom:0}
+.search_links,.form_element_container .citeExample,.tbox .frequencySelect,div.ref_Export ul li,.pubContentArea .title-link,.RecentLink,.browseTermsText,#pubLogo,#breadcrumbFolderForm,ul.nytResultTopic li{margin-bottom:10px}
+.date_range label, .subject_db_list{margin:0 10px 0 15px}
+.date_range_yyyy{margin:0 20px 0 5px}
+.date_range_wrapper{margin-left:160px;padding-bottom:10px;float:left}
+.adv_srch_date_fields{margin:5px 15px 15px 0}
+.adv_srch_date_fields select,.additionalLimits,.form_element_container .citeExample span,.tbox .pageRangeDiv .inner_label,.tbox #stopAfter,#thesaurusOverlay .thesaurusPadding,ul#filters li.header ul li.filter_item .iconed{margin-right:5px}
+#thesaurusOverlay .cboxContainer .subSubTerms{width:auto}/*resetting the width of advSearch selects set above - Val*/
+.fieldset_contents .limiter,.fieldset_contents .sort_type{margin-right:15px}
+#advancesearch_content span.panel-button,#textMatch .textSearchField_label,#commandline_search .optional_searchfield_link, .recent_search{margin-bottom:5px}
+.toggleLinkOn, a.toggleLinkOn:hover{font-weight:normal;text-decoration:none !important;color:#333 !important;cursor:text}
+.fieldset_contents .sort_type select,.form_element_container select{clear:none}
+#commandline_search #sectionContent{width:100%}
+#commandLineSearchFields .form_element_container .lookUpLink{cursor:pointer;margin-left:10px}
+.obituary_label,.searchwithin_tbox,.profileLabels,#sectionContent .exposedFields_Col_Container .label_container, .indexing_noteIndex{width:150px}
+.database_preview_indexing_fieldname {width:120px}
+.database_preview_indexing_value {width:325px}
+.obituary_note{margin:-5px 0 0 155px}
+.thumbLinks{clear:left;vertical-align:middle;padding:4px 0px}
+.thumbLinks img{float:left;display:inline;margin:0.22em 0.9em 0.22em 0;border:1px solid #333333}
+.thumbLinks a span{margin-top:0.1em;*display:inline-block;cursor:pointer}
+.lookUp{float:right;margin-bottom:8px}
+#annual_reports{margin-bottom:10px;padding-bottom:10px}
+#annual_reports input{margin:0 10px}
+table.cbgroup_limiters{border:none;padding:0px;margin:0px 0px 20px 0px}
+table.cbgroup_limiters td{border:none}
+
+.advSearch .articlesWithFilters,.advSearch .advMoreOptionsWrapper ul.searchlimiter{float:left;width:519px;padding-bottom:10px}
+.advSearch .advLimitToArticlesCheck,.advSearch .advMoreOptionsWrapper ul.searchlimiter li{float:left;display:inline;width:250px;margin:0;padding:0}
+.advSearch .annual_reports_label, .advSearch .articlesWith{font-weight:bold;width:185px;margin-right:5px;padding-top:2px}
+.advSearch{width:950px}
+.advSearch .label_container,.saveSearch_container .label_container{width:180px;padding-right:9px;margin-top:3px}
+.advSearch .dySrchScroller ul li div.option,.dySrchScroller ul li.complexLimiterWrapper{padding-top:8px}
+.advSearch .dySrchLimiter{border:1px solid #c2c2c2;padding:5px}
+.advSearch .dySrchScroller{max-height:172px;width:345px;overflow-y:auto;margin-top:5px;min-height:50px}
+.advSearch h2, #commandline_search h2{color:#D18104;line-height:1.5}
+.advSearch .formElements,.advSearch .tabContent .toolbar_panel{width:710px}
+.advSearch #side_panel{margin:3px -9px 0px 10px}
+.advSearch #sectionButton, .runSearchStrategySubmit, .advSearch .resultListContainer li, .advSearchLeft .resultListContainer li,#langsModel, .resultsPageToolBar li.noMargin{margin:0}
+.advSearch .notification{float:right;margin-top:10px;}
+.advSearch .opsDropdown{float:left}
+.advSearch input.opsAND_txtField,.advSearch input.opsOR_txtField{width:221px}
+/* unavoidable SAFARI hack */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	.advSearch input.opsAND_txtField{width:220px}
+	.advSearch input.opsOR_txtField{width:220px}
+}
+.advSearch input.main_txtfield{width:549px;float:left;margin-right:12px}
+.advSearch .firstRow .in{margin:0px 3px 0px 2px;float:left;text-align:center;line-height:20px;text-align:center}
+.advSearch .in{width:35px;margin:0px 3px;float:left;text-align:center;line-height:20px}
+.advSearch .queryControl .form_element_container{margin:0}
+.advSearch select.fieldsSelect{width:338px}
+.advSearch .exposedFields input{width:260px;float:left;}
+.advSearch .browsable_link{font-size:0.915em;line-height:1.365}
+.advSearch .DateRangeTypeSelectorLabel{font-weight:bold}
+.advSearch #sectionContent #show_More,.advSearch #sectionContent #showFewer{margin:0px 0px 15px 150px}
+.advSearch .exposedFields input.checkbox#wellesleyAuthor{float:none;width:auto}
+.advSearch span.strong{font-weight:bold}
+p.tabSearchOp,p.tabLimitsApp{float:left;margin:0;padding-top:0}
+p.tabLimitsApp, .figTableItemCheck{padding-left:5px}
+.advSearch .pinkieContainer .forResults{width:75%}
+#commandline_search .pinkieContainer .forResults{width:66%}
+.advSearch .tabContent, #commandline_search .tabContent, .sessionDetails_tabs .tabContent{border-right:none;border-left:none;border-bottom:none;padding-right:0px}
+.advSearch .tabContent h2.recent_search, #commandline_search .tabContent h2.recent_search{float:left;padding-right:25px}
+.advSearch .tabContent a#showHideLink, #commandline_search .tabContent a#showHideLink{position:relative;top:8px}
+.advSearch .keepOnAdvSearch, #commandline_search #keepOnSearchSection{padding:5px 0px 9px;clear:both}
+.advSearch .keepOnAdvSearch input[type="checkbox"],#commandline_search #keepOnSearchSection input[type="checkbox"]{margin-top:3px}
+.dataReports span.strong, .advSearch form[action*="datareports.searchform"] span.strong label[for="sortType"], .advSearch form[action*="datareports.searchform"] span.strong label[for="itemsPerPage"], .advSearch form[action*="datareports.searchform"] .duplicates_heading,
+.advSearch form[action*="datareports.searchform"] span.strong label[htmlFor="sortType"], .advSearch form[action*="datareports.searchform"] span.strong label[htmlFor="itemsPerPage"]{font-weight:normal}
+.figTables #advancedsearch_content .form_element_container select{width:195px}
+.lookCite #advancedsearch_content .form_element_container select{width:auto}
+.advancedsearch_limiter ul{margin-left:20px}
+.advSearch .advSearchLimitersContainer{margin:0 220px 0px 0px}
+.advSearch .db_list_container ul li, .advSearchLeft .db_list_container ul li, .advSearch .dySrchScroller ul li div.option label {border:none;padding:0px}
+.limitersWidth {width:510px}
+/* saveSearch*/
+.saveSearchOverlay{height:160px}
+#lightview .saveSearchOverlay .form_element_container input.saveSearchTxt{width:345px !important}
+.saveSearchPage input.nameSearch, .saveSearchPage .nameSearch{width:696px}
+.chooseSets .forResults{float:left;width:auto}
+.chooseSets .query{float:left;margin-right:30px;width:73%}
+.chooseSets .query a{margin-left:30px}
+p.chooseSets{margin-top:0px}
+form#saveSearchForm .smartsearch_panel .body{padding-bottom:0px}
+.nameSearchCancel{position:relative;left:10px;top:3px}
+.setsReqd{margin:7px 0px 0px 30px;float:left}
+.setsReqdSelection{margin-top:5px;float:left}
+
+/*EOF Advance Search page*/
+/*Text match search page*/
+#textMatch .form_element_container textarea{width:701px;height:200px}
+/*END Text match search page*/
+/*BOF Preference style*/
+.preferences .label_container{width:90px;float:left}
+.preferences .fieldset_contents .form_element_container,.preferences .fieldset_contents p,#signInLoginForm h3,.tbox #emailFields,.tbox .fieldBrowse_search,.document_view_section_content,#tagDisplayZone,.tagged,.email_alerts_list .pagingBoxNoResult,.myResearch_empty_holder,ul.login_details li,.fig_table_section .fig_table_resultItem .description,#abstractSubmissionDeadline,.stopLabel,.docViewIndex .display_record_indexing_row .display_record_indexing_fieldname.topMargin{margin-top:10px}
+.cite_this{float:left;margin-left:54px;margin-top:2px;padding-bottom:1px}
+.existingRef{width:89%}
+/*EOF Preference style*/
+/*BOF LightView overlayer*/
+.lightview_info{padding:5px 0;clear:both}/*this is being used in place of P tag in lightview to avoid horizontal scroll */
+.results_list_number,.pub_language .display_record_indexing_fieldname span{font-weight:bold}
+.tbox fieldset legend,.tbox .fieldBrowseSelectedMessage,#moreProfileTags,.advSearchTitle_top #columnBar,.advSearch fieldset legend, .alertsBlock fieldset legend, .costEstimateOverRide legend {display:none}
+.tbox .saveToFolder fieldset legend,.publicationSearch #search_panel .search_panel_searchtips{display:block}
+.tbox .rssOverlay fieldset legend, #publicProfileOverlay fieldset legend,.citationChoice,div.lookup div.group,.progressiveDisplay,#addUserToWorkGroupForm fieldset legend{display:inline}
+.tbox .lv_contentBottom{overflow-x:hidden !important;overflow-y:auto !important}
+.tbox .alertOverlay legend, .messageInline {display:inline}
+.saveToFolder, .openPDFReader{float:left;width:100%}
+#saveAsFileOverlay .noSelectedItemsOverlay{width:auto}
+#PrintLayerOverlay2{width:664px}
+#saveChangeConfirmOverlay,#searchStrategySavedOverlay{width:250px}
+.resendOverlay select.multiSelect{width:440px !important}
+#indexUpdateForm.createProfileModal,.db_list_container ul li ul li,.db_list_container ul li ul li ul li{padding-right:0}
+/*Fix for the lightview layer because everything has to be fixed widths on this popup*/
+3.browseOverlay{height:400px;padding-right:20px;width:600px}
+#emailOverlay.transfer_Email{width:504px !important}
+#chooseFolderOverlay,#saveSingleSearchOverlay{width:520px}
+#deleteListConfirmationOverlay{width:580px}
+#refWorksConfirmOverlay,#refWorksRemoveOverlay,.databaseSelectionsOverlay,#pqRssOverlay, #alertPricingInfoOverlay, #pricingNotificationOverLay, #rssPricingInfoOverlay, .downloadCitationOverlay, #pricingOverlay.pricingOverlay {width:454px}
+#expiredTellMeMoreOverlay,#cite_main_container_outermost,#divEmailForm,#alertPricingInfoOverlay.pricingAlerts {width:719px}
+.citethisContainer{width:727px;height:315px}
+.double_btn{padding:15px 30px}
+#signInFormOverlay,#CloseOverlay,#listconfirmationOverlay,#confirmUnShareListOverlay,#saveListWorkingOverlay,#confirmationOverlay, #haveExistingSelectedItemsOverlay {width:484px}
+#signInLoginForm{height:240px}
+.passwordLayer{height:186px}
+.createProfileModal,exportRefWorks,.formatAvailability,.db_toolbar_pad,.searches_link,.create_account_check,#helpContent,.login_para,.addToSearch_button,.rssContentLinks,#widgetSearchDiv,#widgetProxiesDiv, table.table_cost_estimate  tr.displayTransaction td{padding-top:10px}
+.session_ended{float:left;padding:70px 0 30px 150px}
+.restrictWidth{width:95%}/*restricting the width here for a stupid layout issue where the amount of chars in the label changes and toggles from displaying on 1 line to 2 - JC */
+.tbox .signin_label,.uglist_label,.exportResult{width:100px}
+.tbox .form_element_container input.signintxtField,.tbox .form_element_container select.signintxtField,#updateDetailsForm .form_element_container input.signintxtField,.accountInformationForm .form_element_container input.signintxtField,.form_element_container textarea.oblRequest_TxtArea,.saveSearchTxt{width:320px !important}
+.tbox .form_element_container .signin_field_note{margin-left:100px}
+.displayDbList{margin-left:100px}
+#indexUpdateForm .displayDbList,.myresearch_list_wrapper .row .displayDbList, .emailFieldNote{margin-left:140px;}
+.float_right_button_account{float:right;padding-right:20px}
+.forgot_login_link, .limitsContainer .recentSearchesDatabase, .saved_search_content .recentSearchesDatabase{padding-left:100px !important;}
+.form_element_container .recentSearchesDatabase, .limitsContainer .recentSearchesDatabase{padding-left:140px !important;}
+/*--END Sign in, Forgotten pswd and Create account specific styles--*/
+#saveAsFileZoneTop,#whoTaggedOverlay{height:400px}
+.saveMRoverlay_folderLoc{min-width:355px}
+.saveMRoverlay_folderName{min-width:351px}
+#saveToDocumentsOverlay, .overTheLimitOverlay{width:420px}
+#cite_main_container_outermost{height:460px}
+.rssOverlay,.resendOverlay{padding-right:20px}
+#alertZone,#divEmailForm,#saveAsFileZoneTop,#forgottenAccountForm,#signInLoginForm,.saveSearch_container,#indexUpdateForm,#modifyAlertZonemodifyalert,.forgottenAccountForm{padding-right:20px}
+#alertZonealerts,.alertOverlay{padding-right:5px}
+.tbox .email_label,#updateDetailsForm .email_label,.accountInformationForm .email_label{width:140px}
+.tbox .browseIndexTermsPage li input.selection_checkbox{vertical-align:top;margin-top:3px}
+.tbox .browseIndexTermsPage li label{width:92%}
+.tbox .form_element_container .radioOptions label{width:400px}
+.commandLineTextArea {overflow:hidden; overflow-y: hidden; overflow-x: hidden; }
+.tbox .form_element_container .field_note,#updateDetailsForm  .form_element_container .field_note,.accountInformationForm .form_element_container .field_note,.searchAlertNote,.printItemsCheckBox,.searchTermsAlerts{margin-left:140px}
+.tbox .form_element_container input.txtField,.tbox .form_element_container select,.tbox .form_element_container textarea,.tbox .form_element_container .radiobtn_container,.tbox .form_element_container .radioOptions{width:495px}
+.tbox .form_element_container .txtfieldCol, .contentFieldWidth{width:495px}
+.tbox .form_element_container .txtFieldWithCheck{width:477px}
+.tbox .fieldBrowse_search input.txtField{width:565px}
+.tbox .radiobtn_container .note{margin-left:23px}
+.tbox .form_element_container .radioOptions label,.tbox .form_element_container .radioOptions input{margin-top:0px;margin-bottom:10px}
+.tbox .text_alignRight{text-align:right;margin:0 50px 10px 0}
+.tbox img.export_refWorksLogoPosition{vertical-align:text-bottom}
+.tbox .btn_wrapper{margin:3px 20px 0 0}
+.tbox .btn_wrapper_margin, .savedSearch_Btn {margin-right:20px}
+.float_right_button{float:right;padding-right:40px}
+.tbox #alertZonealerts fieldset{padding-bottom:10px}
+.tbox .saveToFolder fieldset,#publicProfileOverlay fieldset,.tbox .rssOverlay fieldset,.tbox .alertOverlay fieldset{border:1px #ccc solid}
+.tbox .alertOverlay .fieldset_contents{float:none}
+.tbox #alertZonealerts .fieldset_contents,#modifyAlertZonemodifyalert .section_content{padding-right:5px}
+.tbox .fieldBrowse_container_author, .sessionDetails_tabs .tabContent{padding:0}
+.tbox .fieldBrowsePrevNext{margin:4px 0 10px 0; width:185px;}
+#thesaurusOverlay .thesaurusTerms{margin-left:20px}
+#thesaurusOverlay .subSubTerms,.myresearch_recent_filters{width:430px}
+#thesaurusOverlay .thesaurusTerms .show_hide_link{margin-top:2px}
+#thesaurusBackLinkZone ul.horizontal {margin-top: 10px;}
+.thesaurusTerms.cboxContainer{margin:5px 0 5px 20px}
+.thesaurusTerms.cboxContainer .form_element_container label.after,.thesaurusSubject label.after{display:table-cell}
+/*EOF lightView Overlayer*/
+/*Database Page*/
+.db_list_container .transactionalPricingIconContainer {margin: 0 0 0 -1px;}
+.selectDBHeaderTable{margin-top:0;}
+.selectDBHeaderTable td{padding:0;border:none;}
+.dbListSearchAllWrapper{margin: 0 0 0 5px;}
+.db_list_container table{margin:0;}
+.db_list_container table tr td table {border:none;}
+.db_list_container table td{vertical-align:top;border:none;margin:4px 0;}
+.db_list_container table td.nestedTD{padding:0 0 0 32px;}
+.db_list_container table td.nestedTD, .db_list_container table tr td table tr td{border:none;}
+.tableRowSeparator div{border-top: 1px solid #CCCCCC;font-size: 0; line-height: 0; margin: 5px 0;}
+.tableRowSeparator td, .tableRowSeparatorNested td{padding:0;}
+.tableRowSeparatorNested div{font-size: 0; line-height: 0; margin: 3px 0;}
+.db_list_container, .thesaurusBrowseDbList,
+#all_database_list .db_list_container,
+.dataBaseLayerCurrentList {border:1px solid #ccc;padding:0 10px 10px;margin-bottom:10px;overflow-y:scroll;overflow-x:hidden;height:392px}
+.db_list_container ul{list-style-type:none;margin:0;padding:0}
+.db_list_container ul li{border-bottom:1px solid #ccc;padding:5px 0px;}
+.sub_list_border{border-bottom:1px solid #ccc;padding:9px 0 8px}
+.db_list_container ul li ul,.db_list_container ul li ul li ul{margin:0 0 9px 20px;zoom:1;clear:both}
+.db_list_container ul li ul li ul{margin:0 0 9px 20px;zoom:1;clear:both}
+.db_list_pos{padding-left:18px;	width:97%}
+.db_list_content,.authoredWork{padding-right:10px;margin-top:2px;}
+.db_contentWrapper{float:left;margin-left:2px;width:95%}
+.db_label,.lightviewInnerWrapper{padding-top:1px}
+.db_labelRow input{display:inline !important;width:30px}
+.db_nonEng_pad{padding-bottom:10px}
+.db_subList_pos{padding-left:38px}
+.db_subArea{float:left;clear:left;display:block}
+.dbCoverage{float:left;clear:left}
+.useSelectedDB, .reqFieldDisplay{padding-top:4px;}
+.list_checkbox,.alertRadioButton{position:static !important}
+.db_searchDB_link,.del_sel_emailAlerts{float:left;padding-left:20px;padding-top:2px}
+.db_list_container .item_selectedDB,.db_list_container .item_unselectedDB,.productBrowseHed,.browseOtherOpt{padding-top:5px}
+.db_list_container label{padding-top:0;display:inline}
+.scrollWhenConfined { overflow-y:auto; height:auto; }
+.tbox .db_list_container { height:392px; }
+/*External database page*/
+.externalDatabaseList .db_list_container ul li {border-bottom:0;padding:0 5px 0 11px;margin-top:10px}
+.externalDatabaseList .db_list_container ul li span.externalDB {padding-right:5px}
+/*EOF Database Page*/
+/*Shibboleth Login screen*/
+.shibLogin select{width:400px;margin-right:15px}
+/*Shibboleth End*/
+.contactus_input{width:470px}
+.contactus_select select{width:474px;clear:none}
+.contactus_label{width:170px;float:left}
+/*.contactus label{width:170px}*/
+.contactLabel{width:175px}
+.lib_note{padding:0 0 0 175px}
+/*END*/
+/*RESULTS, PREVIEW, FILTERS, TEXTMATCH*/
+.previewCheckbox{padding-right:5px;float:left}
+.resultListContainer{padding:0 0 10px 0}
+.resultListContainer .contentArea{margin-left:110px}
+.resultListContainer.noIcons .contentArea{margin-left:59px}
+.resultListContainer img.iconed{float:left;margin:0 10px 0 5px;width:32px;height:32px;display:block !important;}
+.resultListContainer img.ebraryIconed{float:left;border: 1px solid black;width: 65px;height: 90px;top: -2px;left: -2px;display:block !important;}
+#sourcetypenav-div ul li.included img.iconed,#sourcetypenav-div ul li.excluded img.iconed{float:left;padding-right:5px}
+.selectItemCheck{float:left;margin-left:0px;padding-top:1px;display:block}
+.indexing {float:left;width:30px;font-weight:bold;display:block}
+.resultListContainer .item{padding:3px 5px 0 0;zoom:1}
+.item_selectedDB{background-color:#eef7fb;zoom:1;padding-bottom:5px}
+.resultListContainer .item_selected{background-color:#eef7fb;zoom:1}
+.resultListContainer_list .item_selected{background-color:#eef7fb;zoom:1;padding:5px}/*NP2-2120 - Val*/
+.item_selectedDB{zoom:0}
+.item_unselectedDB{zoom:1;padding-bottom:5px}
+.resultListContainer a.resultTitle{text-decoration:underline}
+.display_record_indexing_data a.resultTitle{margin-left:15px}
+.resultLinks,.browsePubBack{padding:3px 0 0 10px;float:left}
+ul.resultsPageToolBar li ul li {margin-right:0;font-size:1.1em;padding-top:0;}
+ul.resultsPageToolBar {clear:none;}
+.toolBarPanelFix{margin:0;}
+.toolBarPanelFix td{border:none;padding:0;}
+.cellNoWrap{white-space: nowrap; vertical-align:top;}
+.toolbar_panel td.tools{width:100%}
+.addItemsWrapper .addItems{margin-left:10px;}
+.addItems,.fig_caption{margin-top:-3px}
+.addItems.lastChild,.pinkieContainerBody,.pubList,.shared_list_pubpro,.meta_link,.thesaurus_link,.searches_link .bullet li,.saveSearchError{padding-bottom:5px}
+.addItems a{display:inline-block;vertical-align:top}
+.sep{border-bottom:1px solid #CCCCCC;margin:5px 0}
+.previewIcon,.searchLimitSeperator,.filter_name_header,table.print_estimate td,.cancel_link{padding-left:5px}
+.sourcetype,.findInLink,.my_tag,.selectionBar,.sel_alerts_bar,.docViewIndex .display_record_indexing_row.subHead, .showMoreRssLink{padding-left:10px}
+.display_record_indexing_row .relPatent{margin-left:50px}
+.pageWithin,.image_paginator_align,.combine_selected,.database_list, .createPubProLink{padding-top:2px}
+.maxWidthFix{max-width:164px;float:left}
+ol.citingPatent { line-height: 150% }
+ol.citedLiterature { line-height: 150%; margin-left: 5px; }
+h4.citedLiterature { margin-bottom: 3px; }
+ul#filters{margin:-5px 0 0 -5px}
+ul#filters li.header ul{padding:0 0 5px 5px;margin-top:5px}
+ul#filters li.header a.filter_header{font-weight:normal;float:left}
+ul#filters li.header{border-bottom:1px solid #ccc;padding:5px 0px}
+ul#filters li.header.dateLast{border-bottom:0;padding-bottom:20px}
+ul#filters li.header ul a.bullets_base_sprite{background:url(../images/icons/bullets_sprite.gif) no-repeat 0 0;padding-right:13px;height:16px}
+ul#filters li.header ul a.chevron_double_right{background-position:right -16px}
+ul#filters li.filtered_item{border:0;font-weight:normal}
+ul#filters li.header ul a.remove,.nailHolder a:hover,.nailHolder.indexed a:hover,.document_view_image img,#viewer #scroller a{text-decoration:none}
+.filtered_item.included,.filtered_item.excluded{background-color:#d8eef9;padding:2px 0px;margin:2px 0px}
+.multiSelectChoose,.emailBccTextField, .saveSearches, .shareTagsOverlay, fieldset .contentDesc{width:500px}
+.visualContainer{border:1px solid #ccc;background-color:#fff;width:498px}
+.filter_more_list{width:483px;border:0px;max-height:none;margin:0 10px;overflow-y:visible;height:auto}
+.filter_more_overlay{margin-right:30px}
+.filter_more_header{border-bottom:1px solid #ccc;margin:3px 10px 0;width:476px;padding-bottom:4px}
+.filter_more_list div.filter_more_row{padding:2px 1px;border-bottom:none;margin:1px 0}
+div.filter_more_row .checkbox_holder{width:170px}
+div.filter_more_row div.group{width:294px}
+.filter_more_row.included{background-color:#f4e99d}
+.filter_more_row.excluded{background-color:#ccc}
+div.filter_more_row.included div.group,div.filter_more_row.excluded div.group{font-weight:normal;width:294px}
+.oneSearchDividers{border-bottom:1px solid #ccc;margin-right:10px}
+div.filter_more_row .checkbox{vertical-align:middle;margin-right:51px;width:14px}
+.deleteButtonsMR{float:right;width:auto;margin:15px 0 0 0}
+.filter_more_buttons .cancelLink, ul.horizontal.pubNextPrev{margin-top:8px}
+.filter_checkbox_header{text-align:left;width:82px}
+input.multiChooseCheckBox{width:58px}
+.tagsCheck{margin-left:15px;width:80px} /*NP2-6310:Fixed tags lighview layer in LOR page */
+#dateFilter-div{margin-left:-3px}
+#textMatch_panel .submitButton{float:right;margin-right:5px}
+#textMatch_panel textArea{width:99%}
+.previewLinks{border-top:1px solid #ccc;padding-top:10px;float:left;width:100%}
+.valid_date_formats, .narrowedByClearAll{font-size:0.75em}
+.dateLabels {float:left;width:100px}
+.adminEmailLink, .smallInstituteLogo{text-align:center}
+.dateFormatHolder{padding-bottom:10px;float:left}
+.dateInputs {width:120px}
+.dateToggle {margin-bottom:-5px}
+.loadingIndicator {height:16px}
+#upDateDateRangeDiv .form_element_container {margin-right:0 }
+/*Over writing corelib CSS here - JC*/
+.filters_andAlso_butNot{font-weight:normal;margin-top:0;padding-left:0}
+/*MYRESEARCH*/
+.mr_resultListContainer{padding:3px 0 0 10px}
+#myResearchPanel select{width:98%}
+ul.mrOptions,#myResearchPanel dd ul.horizontal.mrOptions{margin:0 0}
+ul.mrOptions li{padding:1px 0}
+ul#folderTree{margin:0}
+ul#folderTree li{margin:5px 0px}
+ul#folderTree li div.folder_contents{padding-left:20px}
+#folderList{margin:0;padding-top:1px}
+.loginFormInputFields label, .saveSearchBase{padding-bottom:2px}
+.loginFormInputFields input.sideBar{width:98%;margin-bottom:5px}
+.newUserPre,.textGroupFilterSpace,.exportRefLogoWrapper, .citationBrowseIssue{padding-top:5px}
+.sideBarRemCheck{margin-bottom:6px}
+.signInWrapper, .pub_Wrap, .pricePreChekboxWrap{padding-bottom:10px}
+#combineSelectedForm .combine{float:left;margin-bottom:-2px}
+#combineSelectedForm span.combineHeading{padding-right:10px;position:relative;top:2px;float:left}
+.resultsPageSpecific .minusIndex{top:-2px}
+.smartSearchOptions{max-height:350px;overflow:auto}
+.smartSearchContainer{border:1px solid #ccc;padding:5px;background-color:#fff;width:97%}
+#skipSS a{height:1px;top:0px;overflow:hidden;position:absolute;left:-5000px;width:1px}
+#skipSS a:active,#skipSS a:focus{background-color:#0033CC;border:1px solid #333;color:#FFFFFF;font-weight:bold;height:auto;left:5px;overflow:visible;padding:5px;position:absolute;top:5px;width:auto;z-index:1}
+.iconed-multi,.subSearchFields{float:left;margin-right:5px}
+.addToForm_button{padding-right:55px}
+#myResearchPanel .RefworksSync{margin-top:30px}
+#myResearchPanel .RefworksSync .RefworksLogo{text-align:center}
+#myResearchPanel .RefworksSync .RefworksLogo img{cursor:pointer}
+.refWorksInstitutionHolder{padding:8px 0 8px 0}
+h4.refWorksInstitutionName{padding:2px 0 0 20px;float:left}
+/*END*/
+/* PAGINATION*/
+.pagination{overflow:hidden;padding:0 0 5px 10px}
+.pagination li.pipe.disabled{background:none}
+.pagination li span.currentPage {font-weight:bold}
+/*END*/
+/*PINKIENAILS*/
+.pinkieContainer a{cursor:pointer}
+.pinkieInnerContainer{width:100%;overflow-x:scroll;overflow-y:hidden;white-space:nowrap;padding:0 0 5px 0}
+.pinkieInnerContainerLoader{width:100%;overflow-x:hidden;overflow-y:hidden;white-space:nowrap;padding:0 0 5px 0}
+.nailHolder,.nailHolder.indexed{display:inline-block;text-align:center;margin:0 5px 5px 0}
+.pinkieInnerContainerLoader .nailHolder,.mrWrapper .selection_checkbox{display:block;float:left}
+.nailHolder.indexed:hover{background-color:#93d3f7}
+.nailHolder:hover,a.vogue_featured_content_image:hover{background-color:#d8eef9}
+.vogue_featured_content_image img {max-width:85px}
+.nailHolder img,.nailHolder.indexed img{height:50px;margin:5px;border:1px solid #000}
+.nailHolderLoading{width:30px;height:50px;float:left;text-align:center;margin-top:20px}
+.nailHolderLoading img{float:left;padding:10px}
+.nailHolderLoading img.t-autoloader-icon{background-repeat:no-repeat}
+/*END*/
+/*PUBLIC PROFILE*/
+.pub_profile_mar{margin:8px 0}
+.pub_profile_or{padding:0 5px}
+/*END*/
+/*PRODUCT SEARCH PAGE*/
+.prodMainContentContainer{width:705px;padding-top:13px}
+.prodHP_description{width:440px;float:left}
+.prodHP_info{float:left;width:208px;padding-top:12px}
+.prodHP_info_wide, .browseTopicTitle{padding-top:12px}
+.prodHP_info_meta{float:left;width:220px;padding-top:12px}
+.prodHP_spacing{float:left;width:16px}
+.prodHP_image #imageLayout1 img,.prodHP_image #imageLayout2 img,.prodHP_image #imageLayout3 img,.prodHP_image #imageLayoutGeneric img,.prodHP_image #imageLayout4 img{float:right;margin:0 0 5px 5px;display:inline}/* Code for image layout templates - JC */
+.vogueFloatLeft{float:left !important}
+.prodHP_image{float:right;width:235px}
+#productScroll,.alertEmailText{margin-left:20px}
+.metaProductChildWrapper{margin:14px 0}
+.prodHP_indexBy{text-align:right;padding-right:16px}
+/*END*/
+/*DOCUMENT VIEW PAGE*/
+/* Docview page */
+.header_docview_page{clear:left}
+.document_view_section_copy,.display_record_section_copy,.display_record_abstract_copy{margin-top:5px; line-height:1.5em}
+.display_record_section_indexing{margin-top:15px; line-height:1.5em}
+.document_view_section_copy p,.display_record_section_copy p,.display_record_abstract_copy p {margin: 0 0 17px 0}
+.display_record_indexing_row,.display_record_indexing_row_GROUP{margin-bottom:5px;overflow:hidden;clear:left}
+.display_record_indexing_fieldname,.display_record_indexing_fieldname_GROUP{display:table-cell;width:215px;zoom:1}
+.display_record_indexing_row .display_record_indexing_fieldname{display:table-cell;width:200px;zoom:1; font-weight: bold;vertical-align:top;padding-right:10px;}
+.label_gapping{padding-left:25px}
+.databaseLinks .display_record_indexing_fieldname{min-width:65px;width:auto}
+.display_record_indexing_data,.display_record_indexing_data_GROUP{display:table-cell}
+#error-wrapper .error_message .indented_indexing_single,.indented_indexing_single_container{margin-left:20px}
+.indented_indexing .display_record_indexing_fieldname{margin-left:20px;width:210px}
+.indented_indexing .image_name{font-weight:bold;margin:2px 0;clear:left}
+.vogue_images_indexing > .display_record_indexing_fieldname {margin-left:0}
+.pubContentArea{zoom:1}
+.pubContentArea .indexing{width:40px !important}
+#publicationInfo .display_record_indexing_data,#publicationInfo .display_record_indexing_data_GROUP{width:685px}
+.pubContentArea .sep, .pricingBrowse_Area .sep{margin:10px 0}
+.subjectList{margin-left:15px}
+.subjectList .display_record_indexing_fieldname,.subjectList .display_record_indexing_fieldname_GROUP{display:table-cell;width:250px;float:left;zoom:1}
+.subjectList .display_record_indexing_data,.subjectList .display_record_indexing_data_GROUP{display:table-cell;float:left;width:435px}
+.indexingInfoPreview .display_record_indexing_data_GROUP{display:table-cell;float:left;width:322px}
+.pubContentArea .display_record_indexing_data{width:380px}/* to accomodate source type icons - Val 23/08*/
+.pubContentArea .display_record_indexing_fieldname{font-weight:bold;width:215px}
+#publicationInfo .pubContentArea .display_record_indexing_fieldname, .inclusions {width:200px; padding:0 0 5px 0;}
+ul.figtab_thumbnails li{padding:10px 20px 0 0}
+.preview_link{float:right;padding-bottom:5px;padding-left:5px}
+#side_panel .ordered_list_element{border-bottom:solid 1px #cccccc;padding-bottom:9px;margin-bottom:9px}
+#side_panel dl.plain{margin:0; padding:0;}
+#side_panel .list_title a,#side_panel .list_title a:hover{text-decoration:underline !important}
+.document_view_image{float:left;background-color:#f7f7f7;padding:5px;margin:1em 1em 1em 0;width:auto;display:block;clear:left}
+.document_view_image a:link,.document_view_image a:visited{color:#005E8F;float:left;padding:5px;text-decoration:none}
+.document_view_image a:hover{background-color:#D0E7F5}
+.document_view_caption{color:#005E8F;display:block;cursor:pointer;font-size:0.87em;max-width:280px}
+#eisWrapper a:hover img{background-color:#d0e7f5}
+.display_record_Pdf_formats{margin:5px 0 6px 0}
+h4.docViewPdf {padding-top: 2px;}
+.pagingBoxDocPdfOuter { max-width: 75%; }
+#cloudDisplay ul.horizontal li{vertical-align:baseline}
+/*The same as .small but the small class can't be added to the tag because it's used everywhere*/
+#mytags_list .titleAuthorETC{font-size:0.915em;color:#4c4c4c;line-height:1.365}
+#mytags_list .previewTitle{text-decoration:underline}
+#mytags_list .tagsReferenceLinks,#mytags_list .titleAuthorETC{margin-left:30px}
+#mytags_list .forLabel,#mytags_list .forResults,.dupeItemsCitationHolder{margin:5px 0}
+.tagLabel{width:130px;font-weight:bold}
+.tagSubLabel{width:120px;padding-left:10px}
+.tagNotes{padding-left:136px;}
+.tag_spacer{margin:0 3px}
+.display_tagg{padding:0 0 0 30px}
+.endSessionConfirm{padding-left:130px}
+.tagSection,.priceCostPreview{margin-top:15px}
+.tagSeparator{margin-bottom:10px;overflow:hidden}
+.private_tag{vertical-align:baseline !important}
+.tagged .bSearchBox{padding:0 !important}
+.tagged .icon_delete_sm{background-position:0 -903px !important}
+.tagged a.bSearchBox img{vertical-align:bottom}
+.tagPageWithin{padding-top:3px;overflow:hidden}
+.tagActions{text-align:right;float:right;margin-top:-20px;padding-top:5px}
+.tagChangeOption{float:left;position:relative;margin-left:5px}
+.tagListWrapper{margin-left:150px}
+a.tagImportance1st{font-size:2.1em}
+a.tagImportance2nd{font-size:1.9em}
+a.tagImportance3rd{font-size:1.65em}
+a.tagImportance4th{font-size:1.45em}
+a.tagImportance5th{font-size:1.25em}
+a.tagImportance6th{font-size:1.05em}
+a.tagImportance7th{font-size:0.85em}
+.tagNotes .addTagsCheckbox,.tagNotes .citationChoice, .refContentAreaPub .databaseTitle a.resultTitle{line-height:18px;}
+.outBound_linking_logo{padding:5px 10px 5px 0px}
+.docviewXmlFormatting {word-wrap:break-word}
+.tbox .form_element_container .radioOptions input.pageRangePagesInput { margin-bottom: -3px; }
+/*END*/
+/*BOF barcode login datagrid*/
+table{border-collapse:collapse;margin:10px 0}
+table.table_with_border{border:1px solid #ccc;margin:10px 0}
+table th{background-color:#ccc;padding:10px}
+table td{border:1px solid #ccc;padding:5px}
+table.print_estimate{width:570px}
+table.print_estimate th{font-weight:normal;text-align:left}
+table.print_estimate td .form_element_container{margin:5px 0 0 5px}
+table.print_estimate td .estimated_pages{margin:5px 0px 0px 5px}
+table.print_estimate th,table.print_estimate td{border:none;background-color:transparent;padding:0;margin:0}
+/*EOF barcode login datagrid*/
+.myResearchMessageBoxContent p{padding:5px 15px 5px 5px}
+#CloseExpiredMessage{position:absolute;right:5px;top:5px}
+/*END*/
+/*Alerts:search strategy cleanup*/
+.search_limited{padding-left:180px}
+.alert_limited{padding-right:18px}
+.search_strategy_label,.contentPadingDocview .showLessMore, .citationAndLink{padding-right:10px}
+/*END*/
+/*aboutTags,MD*/
+.aboutTags ol li,.aboutTags ul li{margin:0 0 0 10px;padding:0 0 5px 25px}
+/*.aboutTags ul li {list-style-type:disc}*/
+/*END aboutTags*/
+/*Saved & Recent searches in MyResearch*/
+.saved_search_list,.recent_search_list,.email_alerts_list{padding:10px 0px 10px 10px;border-bottom:1px solid #ccc}
+.saved_search_content{padding:5px 0 0 48px;}
+.saved_search_content ul{margin:0px !important}
+.search_heading{padding-left:4px;width:75%}
+.heading_checkbox{vertical-align:top !important;top:3px !important}
+.save_name{display:inline;padding-left:10px;position:relative;top:-2px}
+.noteArea{width:400px;height:100px}
+.save_note{width:400px;padding-top:2px;text-align:right}
+.num_of_results{position:absolute;right:255px}
+.combine_search_eg{padding-top:5px;padding-left:126px}/*added by VGupta*/
+.deleteItems,.combine_search_tbox,.noSelectedItemsOverlay,#deleteConfirmationOverlay,#deleteSelectedOverlay,#deleteItemOverlay,.deleteConfirmationLayer,.tbox .rssOverlay textArea{width:400px}
+.itemNoteButtonWrapper{padding:10px 0;width:400px}
+.limitedby_list{margin-right:5px;padding-top:2px}
+/*END*/
+/*My Research - RefWorks integration stories*/
+.myResearch_empty_holder ol{padding-left:12em}/*np2-2231 and 2232 - Val*/
+.myresearch_empty_left{margin:10px 20px}
+.myresearch_empty_right{float:left;margin-left:20px;width: 550px;}
+.myresearch_empty_right ol{line-height:140%;padding-left:2em}
+.myresearch_welcome_section{float:left;width:295px;margin-right:10px}
+.myresearch_welcome_signup{background:url(../images/refWorks/checkbox_illus.gif) no-repeat 0 3px;padding-left:36px}
+.myresearch_welcome_later{background:url(../images/refWorks/folder_illus.png) no-repeat 0 3px;padding-left:46px}
+.myresearch_welcome_refworks{background:url(../images/refWorks/rw_logo_small.jpg) no-repeat 0 3px;padding-left:69px}
+.myresearch_learn_more{width:600px;padding:0 5px}
+.myresearch_learn_more_title{float:left;margin-top:10px}
+.myresearch_learn_more_logo{float:left;margin-left:10px}
+.myResearch_toolbar_list ul li label{padding-top:0}
+.myresearch_list_wrapper,.myresearchExport,.alertLimiterOptions{margin-left:70px}
+.myresearch_list_wrapper .forLabel, .rssSearchDetails .forLabel{width:140px}
+/*Removes the styles when the Databases:line is not on its own line*/
+.myresearch_list_wrapper .forResult .forLabel{width:auto;font-weight:normal;padding-right:5px}
+.myresearch_list_wrapper .labelDesc .forLabel{width:auto;font-weight:bold;padding-right:5px}
+.myresearch_list_wrapper .labelDesc .forDBLabel{width:138px;float:left;font-weight:bold}
+.export_ref{margin:10px 0 10px 230px}
+.refwork_ref{padding:10px 0 10px 180px}
+.refwork_login{padding-right:75px}
+/*END*/
+/*DATABASE/SUBJECT SCROLLER/LIST VIEW STYLES*/
+#toggleView{margin:3px 0 0 10px;float:left}
+/*Scroller styles*/
+#scroller_sub{clear:both;padding-top:10px;text-align:center;margin-left:-2px}
+.thumb{margin:0 0 10px 0;width:97px;text-align:center;display:inline-block;zoom:1;vertical-align:top}
+#databaseListScrollDiv{height:108px;overflow:auto}
+.scrollSubName{width:92px;text-align:center;color:#00569F;cursor:pointer;white-space:normal;margin-top:-2px;word-wrap:break-word}
+#centerImageBlock{text-align:center;margin:0}
+/*List view styles*/
+.marginFix{padding-top:15px}
+#databaseListWrapper{padding:10px;background-color:#FFFFFF;margin:0 10px 10px 0}
+#databaseListWrapper .header_border_bottom,.previewBundle .header_border_bottom{padding-bottom:4px}
+#databaseListWrapper h4{margin-bottom:5px}
+.databaseTitle {margin-bottom:4px}
+.databaseThumb{width:101px;float:left}
+.databaseDetails{margin:-3px 0 12px 99px}
+.databaseSearchText{line-height:1.8em;margin-left:10px}
+.databaseSearchText_home, .formatVertGap{padding-bottom:3px}
+.chevron_double_right_dbBundle{background-position:right -18px}
+.previewBundle img{padding-bottom:6px}
+/*Subject Vertical Scroller*/
+#scroller_db{overflow:hidden;height:546px}
+#handle_db{width:16px;height:149px;margin:0 1px}
+#track_db{float:right;width:18px;height:546px;margin-left:10px;background:url(../images/pagelayout/button/scrollerTrackVert.gif) no-repeat 0 0}
+.dbVertWrapper{padding-bottom:15px;clear:left}
+/*END*/
+/*UG LIST STYLES*/
+.uglist_input{width:457px}
+.delete_label{padding-left:20px}
+.uglist_note{padding-left:105px}
+.uglist_list_title{width:392px}
+.uglist_panel{width:100%}
+.uglist_newlist{padding-top:15px}
+/*END*/
+/*My Public Profile*/
+.profile_holder{padding:3px 0 0 5px}
+.profile_holder_bottom{padding:2px 0 0 5px}
+.public_profile{padding-left:8px;width:85%}
+.shared_public_profile{width:85%;padding:3px 0 3px 17px}
+.shared_list_heading{padding:20px 0 10px 0}
+.thesaurus_language_link{padding-right:15px;padding-bottom:5px}
+.myResTagDateId{padding-left:32px}
+.privacy_policy_link{padding:4px 10px 0 18px}
+.privacy_policy_share{margin:20px 0 0 18px}
+/*END*/
+/*NPC Browser*/
+.browser_term_label{width:180px;float:left}
+ul.browseListIndent h2{padding:0 0 10px 3px}
+.pagedListLinks{width:203px}/*Width added due to NPC Browser pages - skohli*/
+.browseListIndent,.WorkgroupIndent{padding-bottom:15px}
+/*END*/
+/*MLAIB Record*/
+.mla_copyright{padding:15px 0 5px 0;overflow:hidden}
+/*END*/
+/*See list popup*/
+.popupDataList{margin-top:2px !important}
+.citationbutton{margin-left:4px;margin-top:3px !important}
+.popupInnerDataList{padding-left:2px}
+.popupDataList_container{max-height:200px;overflow-y:auto;overflow-x:hidden;border:1px solid #ccc;padding-left:2px;margin-top:2px;background:#fff}
+.popup_sub_list, .crossSearchBrowse{padding-left:15px}
+.popupDataList_tabs {padding:3px 0 6px}
+.db_list_title{margin-top:-4px}
+.change_db_sel{float:right;padding-top:7px;margin-bottom:-3px}
+/*END*/
+/*Search Result Filters*/
+.filter_align,.cabsOnlyMsg, .pubSearchFields{margin-right:3px}
+/*END*/
+/*New Figure and Tables*/
+.newFigureTables{width:220px;margin-bottom:10px;margin-right:7px;float:left;border-bottom:1px dotted #B5B6B5;height:320px;max-height:320px}
+.newFigureTables .showFigTables{display:block;padding-top:10px;width:210px;float:left;border:dotted 1px #ccc}
+.newFigureTables .mrBG{padding:17px 0px 15px 0px;float:left}
+.newFigureTables .figureTableImgIcon{padding-bottom:10px;clear:left;float:left;text-align:center;width:100%}
+.newFigureTables .figureTableImgIcon img{border:solid 1px #ccc;max-height:100px;max-width:100px;overflow:hidden}
+.newFigureTables .results_list_xtra_links{width:206px;border-top:dotted 1px #ccc;background-color:#F7F7F7;padding:4px 0 4px 4px;float:left;clear:left}
+.newFigureTables .description{float:left;padding:5px 0;width:200px}
+.newFigureTables .item_selected{background-color:#F7F7F7}
+.newFigureTables .imagelistitem{max-width:100px;max-height:100px;padding:4px 10px 10px 10px}
+.newFigureTables .mrResults {width:200px;float:left;display:table-cell}
+.newFigureTables .noteLabel{display:table-cell;float:left;padding:0 15px 0 0px;width:auto}
+.pinkyNailViewRecord{text-align:center;display:block;padding-bottom:4px}
+.newFigureTables .pinkyNailWrapper{width:auto;text-align:center;height:auto;max-height:100px}
+.newFigureTables .pinkyNailWrapper img{border:solid 1px #ccc;max-height:100px;max-width:100px;overflow:hidden}
+.pagingBoxResult{clear:left}
+/*RSS*/
+.forLabel{float:left;font-weight:bold;width:100px;line-height:1.5em}
+.recentSearchContentArea .forLabel,.saved_search_content .forLabel{line-height:normal;margin-right:5px}
+.recentSearchContentArea .displaySavedSearch,.recentSearchContentArea .nameFor{margin-bottom:5px}
+.recentSearchContentArea .row{margin-top:5px}
+.forResult{line-height:1.5em}
+/*NP2 - 655:Changed width 100% to 83% - Suman T*/
+.forResults{float:left;line-height:1.5em;word-wrap:break-word;width:83%}
+.forNotes{float:left;width:78%}
+.addNotes2{width:348px;height:48px;overflow:auto}
+.fig_table_resultItem .addNotes2{width:202px; margin-left:5px}
+.fig_table_resultItem #notesForm .forLabel{padding-left: 5px;}
+.labelDesc{float:left;width:482px;display:table-cell;line-height:1.5em}
+.forResults .alertLabel,.labelDesc .alertLabel{text-align:left;width:auto}
+.forResults .alertValue,.labelDesc .alertValue{padding-left:0px}
+.resultListContainer .contentArea.rss{margin-left:90px}
+.rssSelector .sel_alerts_bar{margin-top:-3px;padding-left:10px}
+/*RSS*/
+/*My Research Start*/
+.mrResults{padding-bottom:9px;margin-left:113px}
+.mrWrapper {border-bottom:1px dotted #ccc;width:100%;margin:10px 0}
+.mrResults .zoom{float:right}
+.mrWrapper .results_list_number{float:left;display:block;padding:0 10px 0 0}
+.fig_table_section .newFigureTablesMrResults .results_list_item{border:dotted 1px #ccc;display:block;padding:0 0 0 0;overflow-y:hidden}
+.fig_table_section li.fig_table_resultItem{margin:5px 12px 0 0;width:217px}
+.fig_table_section .results_list_xtra_links li{display:inline-block;float:left}
+.fig_table_section #pinkynails li{margin:0px auto;text-align:center;height:120px;display:table; width:100px;}
+.fig_table_section .results_list_xtra_links{border-top:1px dotted #ccc;padding-top:5px;padding-left:5px;float:left;width:98%;background-color:#D8EEF9}
+.fig_table_section .results_list_item .img_holder{float:none;max-width:100px;max-height:100px}
+.img_holder{float:left;padding-right:5px}
+.figTableContentArea .img_holder{max-width:100px;max-height:100px;margin-bottom:5px}
+.figTableContentArea .img_holder img,.fig_table_section .results_list_item .img_holder img{border:solid 1px #ccc; width:100px; max-height:100px}
+/*My Research End*/
+/*Pre-formatted content*/
+li.C_subsect1{background:none !important;text-indent:30px}
+li.C_subsect2{background:none !important;text-indent:60px}
+li.C_subsect3{background:none !important;text-indent:90px}
+li.C_subsect4{background:none !important;text-indent:120px}
+li.C_subsect5{background:none !important;text-indent:150px}
+li.C_subsect6{background:none !important;text-indent:180px}
+.show_all_link{padding-top:5px;}
+.CA_subsect1{text-indent:60px;margin-bottom:4px}
+/*END*/
+/*Email Alerts*/
+.pad_top_bot{padding:10px 0}
+.alertNotes{padding:10px 0 10px 0}
+.alertLabel{width:160px;text-align:right}
+.alertValue{padding-left:15px}
+.limtersWidth{width:50%}
+.limitByMargin .alertLabel{width:auto;text-align:left}
+.limitByMargin .alertValue{padding-left:0px}
+.narrowedby{width:75%}
+.narrowedby span,.pubListTitle,.logoSwitchFlash img{margin-right:10px;float:left}
+/*END*/
+/*Video Result Page*/
+.videoNailWrapper{display:inline;float:left;margin-top:-5px;margin-right:10px}
+/*END*/
+/*Publication Page - DH*/
+.pubNowSearching{float:left;margin:10px 0 10px 0}
+.publicationAlphaListArea{margin:0 0 10px 0}
+.showPubLink,.search_label{margin:0 0 10px 0}
+.pubTypeFilter{line-height:0.9em;margin-left:10px}
+.sublistMarginFix,.transactionLimitWarning{padding-left:25px}
+.sublist{margin:10px 15px !important}
+.sublist ul{margin:5px 10px 5px 15px}
+.sublist ul li a, link_spacer{margin:0 5px}
+.link_spacer:last-child{font-size:0px}
+/*END*/
+.whotagg_title{margin:0 22px 0 0}
+/*Doc unavailable - randhir*/
+.sfx_label{padding:0 0 0 5px;vertical-align:top}
+/*END*/
+/**BOF Browse section*/
+#browseIndexTermsPage li.npcBrowseResult{display:inline-block;float:left;margin-bottom:0px;width:100%}
+#browseIndexTermsPage,.pdfPagination,.sharinglist_button{margin-top:15px}
+#browseIndexTermsPage #child{margin:5px 0 0px 0px}
+#browseIndexTermsPage #child .group{margin-bottom:5px}
+#browseIndexTermsPage #child .group .child-level2{margin-left:35px}
+.npcBrowseOuter .inner_subLevel{width:99%;padding-left:18px}
+.npcBrowseOuter .horizontal li.pipe{color:#fff;padding:0}
+.npcBrowseOuter dl dt{width:2%}
+.npcBrowseOuter dl dd{width:98%}
+.npcFind .find_word{width:445px}
+.titleContainer .search_within {margin:5px 0 0 5px}
+.transactionalPricingIconContainer {display:inline-block;position:relative;margin:0 0 0 4px}
+.transactionalPricingIconContainer.abstract_Text {margin:3px 0 0 5px}
+.transactionalPricingIconSpacer {display:block;height:4px}
+div.lookup div.group label{padding-top:0}
+.fieldBrowse_list{border:solid 1px #cccccc;height:290px;margin:10px 10px 10px 0;overflow:auto;padding:0 5px;background-color:#fff;line-height:1.4em}
+.hier_browseOverlay{padding-right:20px}
+.hierarchyTerms{margin-left:15px}
+.subSubTerms{margin-left:18px}
+/*EOF Browser section*/
+/*5373 and 5374 - praveen*/
+.duplicateCitationsWrapper{padding:10px 20px 0 20px}
+.duplicateCitations{vertical-align:top}
+.duplicateCitations .display_record_indexing_fieldname{width:65px}
+.duplicationPreview{padding-left:5px;}
+/*4980 - mkouba*/
+.userGroupBarcodeBrandingLogo{position:absolute;right:17px;top:90px}
+/*Manage Folder*/
+.manage_label{padding-left:20px}
+.manage input{width:280px}
+.manage_note{padding-right:20px}
+/*Subject Vertical Customisation*/
+.NoSubVertPanel{display:block;height:273px}
+/*7135 -- Widget (Randhir)*/
+.widget_search_cont #search_inner_panel .search_field{background-color:#fff}
+.no-background{background:none !important}
+.widget_popup_wrapper,.pub_search_block,.narrowedBy{width:100%}
+.widget_popup_wrapper textArea{width:99%;height:200px}
+.widget_search_cont{padding:20px 0;font-size:10px;max-width:600px;min-width:265px}
+.widget_search_cont .search_container{font-weight:normal}
+.widget_search_cont .note{font-size:0.69em;margin-top:0px}
+.widget_search_cont #search_inner_panel{max-width:580px;min-width:245px;padding-bottom:20px}
+.widget_search_cont #search_inner_panel .search_field_container{margin:0 20px 3px 0;padding-right:10px}
+.widget_search_cont #search_inner_panel .search_field_container_left{margin:0 0 3px 24px}
+.basicSearch_researchPanel dt span{font-size:1.333em;color:#D18104;font-weight:normal;line-height:1.2}/*6088 for basic search page*/
+.search_field_container .body{color:#656565}
+.widget_search_cont #dbsLinkDiv{text-align:center;margin-bottom:10px}
+/*Custom themes - JC*/
+.widget_search_cont #search_inner_panel .search_icon{background:url("../images/widgets/search_icon_widget.png") no-repeat scroll 0 0 transparent}
+.widget_search_cont #search_inner_panel .search_icon_left{background-image:url("../images/widgets/search_icon_widget_left.png");left:0;z-index:1}
+#themesOptionDiv,#customthemesOptionDiv, #styleOptionDiv{margin:10px}
+#themesOptionDiv ul li{padding:5px;border:solid 1px #eef7fb}
+#themesOptionDiv ul li.active{border:1px solid #173660 !important}
+#themesOptionDiv ul li a{display:block;text-decoration:none;border:1px solid #7e7e7e;width:16px;height:16px;margin:3px}
+#themesOptionDiv ul{margin:0 0 10px 10px;padding:0 !important}
+#themesOptionDiv ul#logoList li{background-color:#c8d6e6;cursor:pointer}
+ul li a#themeGrey{background-color:#e4e2e2}
+ul li a#themeBlue{background-color:#8fbfdd}
+ul li a#themeGreen{background-color:#a5c07e}
+ul li a#themePurple{background-color:#7f77bc}
+ul li a#themeOrange{background-color:#f6a441}
+ul li a#themeBlack{background-color:#000000}
+ul li a#themeWhite{background-color:#ffffff}
+ul li a#themeRed{background-color:#b30000}
+ul li a#themeBrown{background-color:#993300}
+ul li a#themeCyan{background-color:#33CCCC}
+ul li a#themeDarkgrey{background-color:#888888}
+ul#themeSelection li{border:solid 1px #fff}
+#tipsWidget{margin-bottom:10px;overflow:hidden;max-height:300px}
+#headingWidget{white-space:pre;overflow:hidden;margin:0 0 10px 0}
+.margin-right-widget, .resendDate_label {margin-right:70px}
+.widgetPreview{float:left;margin:4px;border:1px solid #ffffff;padding:8px;cursor:pointer;text-decoration:none}
+.widgetPreviewActive{border:1px solid #173660 !important}
+.widgetExampleWrapper{border:1px solid #d1d1d1;width:246px;padding:10px}
+.widgetExampleInner{padding:7px 10px;margin-bottom:5px;border:1px solid #d0d0d0;color:#4C4C4C}
+.widgetExampleWrapper .posLogo{color:#4C4C4C}
+.widget_search_cont pre{font-family:Verdana, Arial, Helvetica, sans-serif}
+.widgetPreviewPanel img{margin:10px 0 0 0}
+.widget_expand_link{margin-bottom:5px}
+#selectProquestLogoLinkPadding{float:left;padding:5px}
+input.colorpicker{border:solid 1px #a5acb2;width:16px;height:16px;padding:1px;cursor:pointer}
+.posLogo{float:right;height:40px}
+.posLogo span{font-size:10px;padding-left:0}/*Fixed size because it's really part of the logo so shouldn't increase in size */
+#widgetDatabasesZoneLogo .posLogo{float:right;width:100px;right:3px;bottom:3px;height:64px}
+#widgetDatabasesZoneLogo .posLogo span{font-size:12px;padding-left:12px}
+/*Get Widget layer - moving styles from inline - Vot*/
+#getWidgetPopup .btn_wrapper .btnNew.hover,#getWidgetPopup .btn_wrapper .btnNew.active{background-image:url(../images/pagelayout/button/shade_over.png)}
+#getWidgetPopup textarea{resize:none}
+/*Font picker styles*/
+#ARIAL{font-family:Arial}
+#COMIC_SANS{font-family:"Comic Sans MS"}
+#COURIER_NEW{font-family:"Courier New"}
+#LUCIDA_SANS{font-family:"Lucida Sans"}
+#SANS_SERIF{font-family:sans-serif}
+#TAHOMA{font-family:Tahoma}
+#TIMES_NEW_ROMAN{font-family:"Times New Roman"}
+#TREBUCHET{font-family:"Trebuchet MS"}
+#VERDANA{font-family:Verdana}
+/*Font styling icons (Bold/Italic/Underline/Increase font/decrease font/Left align/Center/Right align)*/
+li.leftAlignFont,li.centerAlignFont,li.rightAlignFont{margin:0!important}
+.boldWrapper a,.italicWrapper a,.underlineWrapper a,.increaseFont a,.decreaseFont a,.leftAlignFont a,.centerAlignFont a,.rightAlignFont a{display:block;width:22px;height:22px;text-decoration:none;float:left;background:url(../images/icons/widget-font-sprite.jpg) no-repeat}
+.italicWrapper a,.centerAlignFont a{width:21px}
+/*Bold*/
+.boldWrapper a{background-position:0 0}
+.boldWrapper a:hover{background-position:0px -21px}
+.boldWrapper a:active,.boldWrapper .active,.boldWrapper a.active:hover{background-position:0px -42px}
+/*Italics*/
+.italicWrapper a{background-position:0 -66px}
+.italicWrapper a:hover{background-position:0px -87px}
+.italicWrapper a:active,.italicWrapper .active,.italicWrapper a.active:hover{background-position:0px -108px}
+/*Underline*/
+.underlineWrapper a{background-position:0 -132px;margin-right:10px}
+.underlineWrapper a:hover{background-position:0px -153px}
+.underlineWrapper a:active,.underlineWrapper .active,.underlineWrapper a.active:hover{background-position:0px -174px}
+/*Increase font size*/
+.increaseFont a{background-position:0 -198px}
+.increaseFont a:hover{background-position:0px -219px}
+/*Decrease font size*/
+.decreaseFont a{background-position:0 -243px;margin-right:10px}
+.decreaseFont a:hover{background-position:0px -264px}
+/*Left align font*/
+.leftAlignFont a{background-position:0 -288px}
+.leftAlignFont a:hover{background-position:0px -309px}
+.leftAlignFont a:active,.leftAlignFont .active,.leftAlignFont a.active:hover{background-position:0px -330px}
+/*Center font*/
+.centerAlignFont a{background-position:0 -354px}
+.centerAlignFont a:hover{background-position:0px -375px}
+.centerAlignFont a:active,.centerAlignFont .active,.centerAlignFont a.active:hover{background-position:0px -396px}
+/*Right align font*/
+.rightAlignFont a{background-position:0 -420px}
+.rightAlignFont a:hover{background-position:0px -441px}
+.rightAlignFont a:active,.rightAlignFont .active,.rightAlignFont a.active:hover{background-position:0px -462px}
+/*Slider*/
+#sliderBackGround{background:url(../images/widgets/widthSlider.gif) no-repeat 1px 3px;margin-left:140px;width:268px;height:40px}
+/*Widget Setup (Peter)*/
+.widget_setup_label{width:140px}
+.alert_label, .alertsBlock .forLabel, .rssSearchDetails .forLabel, .migrationLabel{width:140px; font-weight:normal;}
+.widget_setup_options{margin-left:140px}
+.alert_options{width:480px;}
+.alert_text{float:left;width:630px;}
+#widgetSearchDiv .form_element_container input.txtField,#widgetProxiesDiv .form_element_container input.txtField{width:495px}
+/*Widget logos(Mark)*/
+.widgets_logo_sprite{width:64px;height:25px;background:url(../images/icons/widget_logos_sprite.png) no-repeat 0 0}
+.widgets_database_list_logo_sprite{width:100px;height:44px;background:url(../images/widgets/pqlogo.png) no-repeat 0 0}
+.widget_logo_default{background-position:0 0}
+.widget_logo_black{background-position:0 -25px}
+.widget_logo_white{background-position:0 -50px}
+.widget_logo_grey{background-position:0 75px}
+.widget_logo_label{margin-top:20px;text-align:center}
+/*Fig and Table Hover Overlay - Praveen*/
+.illustrataIcon{float:left;width:100px;padding:5px 10px 0 0;text-align:center}
+.illustrataIcon img{max-width:100px;max-height:100px;border:solid 1px #ccc}
+#illustrataCol2,.RSS_Datbaselist{float:left;width:400px}
+.downArrowAdvanced a{text-decoration:none !important}
+.need_help{font-style:normal}
+.contact_info{padding-left:15px}
+.externalDB a{background:none;padding:0 !important}
+/*Auto Complete(Advance Search):Randhir*/
+.advSearchFieldWrapper,.advSearchOptFieldWrapper{float:left}
+.advSearch_spacerWcopy{float:left;padding:0 4px 0}/*PL*/
+.advSearch_spacerWcopy label{margin:0px !important;padding:0px !important}/*PL*/
+
+.thesaurusTextarea textarea {width:476px;line-height:17px;padding:0 2px;resize:none;overflow:hidden}
+.thesaurusTextarea {width:495px;display:inline;float:left;margin:0 2px 4px 13px}
+.firstRow .thesaurusTextarea textarea {width:547px}
+.firstRow .thesaurusTextarea{width:565px;margin-left:0}
+.thesaurusInput {float:left}
+.firstRow .thesaurusInput {margin-right:2px}
+
+#searchForm .thesaurusTextarea textarea {padding-right: 0;margin-top: 0;width:489px;}
+#searchForm .firstRow .thesaurusTextarea textarea {width: 558px;}
+
+#searchForm .queryControl .form_element_container {margin-bottom:5px}
+
+#thesaurusListDiv{width:597px}
+.shibboleth{margin:20px 0}
+.figTableContentArea{margin-left:60px}
+.productContentArea{margin-left:30px}
+.ScholarHeading a{text-decoration:underline}
+.scholarForm{padding:5px 0}
+.scholarForm .scholar_label{width:100px;margin-right:5px;float:left}
+.scholarForm input{width:211px !important;margin-right:10px;height:16px;float:left}
+.scholarForm select{width:217px !important;clear:none}
+.scholarForm input.small{width:40px;margin-right:10px}
+.scholarForm input.large{width:548px;margin-right:10px}
+.blankBox{width:14px;height:16px}
+.cbCont{display:block;float:left;margin:0 1px 0 0;height:13px;width:13px}
+.cbMenuItem{margin-left:35px;display:block}
+.panelMenuItemContainer{padding:2px 0 2px 15px !important}
+.panelMenuItem{margin-left:36px;display:block}
+.cos_view_profile{background:url(../images/icons/cos_icon.gif) no-repeat 0 0;padding-left:20px;width:16px;height:16px}
+.scholar_index .scholar_index_row,.scholarPreview .scholar_index_row,.scholar_docViewIndex .scholar_index_row{margin-bottom:5px;overflow:hidden;clear:left}
+.scholar_index .scholar_index_row .scholar_index_fieldname,.scholarPreview .scholar_index_fieldname{display:table-cell;width:165px;float:left;zoom:1;font-weight:bold}
+.scholar_index .scholar_index_row .scholar_index_data,.scholarPreview .scholar_index_data{display:table-cell;float:left;width:390px}
+.scholar_docViewIndex .scholar_index_row .scholar_index_fieldname{display:table-cell;width:250px;float:left;zoom:1;font-weight:bold}
+.scholar_docViewIndex .scholar_index_row .scholar_index_data{display:table-cell;float:left;width:445px}
+.scholar_docViewIndex.scholarProfile .scholar_index_row .scholar_index_data{width:690px}
+
+#loginArea .background_color{background-color:#eee;padding:5px}
+#loginArea .basedOnLocation{padding:10px}
+#loginArea .basedOnLocationWrapper{margin-top:10px;margin-bottom:10px;height:80px;overflow-y:scroll;border:solid 1px #ccc;padding:5px 10px 3px 5px;background-color:#fff}
+#loginArea .basedOnLocationDatabaseLinks{padding:5px 0 4px 10px;border-bottom:solid 1px #ccc}
+
+.basedOnLocationScroll{height:200px;max-height:200px;overflow-y:scroll}
+/*ID added due to different look and feel on Login and Gelocation page - SKohli*/
+#geolocation .background_color{border:none !important;margin:0 !important}
+#geolocation .basedOnLocation .basedOnLocationWrapper{padding-bottom:10px}
+#geolocation .basedOnLocationDatabaseLinks{background:url("../images/icons/bullets_sprite.gif") no-repeat scroll 0 -143px transparent;margin-bottom:4px;padding-left:13px}
+/*8097:Trial Products. ID added due to different look and feel on Index and other page - DPavlov*/
+#indexBottomLeftBox .trialDatabaseListHeading{font-size:1.333em;font-weight:normal;color:#D18104}
+/*7486:Thesaurus:add links from subject browse index -  Praveen*/
+.thesaurusLinksWrapper{border:solid 1px #ccc;background-color:#fff;padding:5px; overflow-x:hidden;}
+.lookUpTermsWrapper{height:180px; overflow-y:scroll;}
+.combinedWithText{float:left;padding:0 10px 0 0}
+.browseIndexTermsPage ul li{padding:5px 0}
+/*4726:Outbound Linking:Needed 2 icons for link to full text*/
+.alternativeLink{float:left;height:14px;cursor:pointer}
+.ssrnChild{padding:0 0 0 15px}
+.ssrnChild .child-level2{padding-left:13px;background:url(../images/icons/bullets_sprite.gif) no-repeat 0 -143px}
+.child-level1{padding-left:13px}
+.Alpha_Nav,.abstract_Text{padding:5px 0}
+/*Topic Paths:NAHS Study Path Search*/
+.topic_foundin,.topic_foundin{padding:10px 30px 0}
+.browseBy_border{border-bottom:1px solid #CCCCCC;padding:10px 0 5px 0}
+.topic_search_tip{padding:0 50px 0}
+.topic_label{padding:4px 10px 0 0}
+.emailCite{width:675px}
+/*Publication Search*/
+.publicationBrowseSearch .newLogoImage{padding-bottom:10px;}
+.publicationBrowseSearch #search_panel #search_inner_panel,.pricePreviewOverlay,.resendOverlay{width:650px}
+.publicationBrowseSearch .resetLink{margin-top:3px !important}
+.publication_input{margin-right:10px;display:inline}
+.publication_input input{width:490px}
+.pub_search_lookup{padding:5px 8px 0 0}
+.publicationBrowseSearch .search_panel_searchtips{display:block !important}
+/*MLA DoP Records*/
+.textGroupFilterHeader{position:relative;left:-200px;top:15px;padding-bottom:20px;overflow:hidden;width:700px}
+.textGroupFilterLabel{display:table-cell;float:left;width:200px}
+.textGroupFilterValue{display:table-cell;float:left;width:480px}
+/*Library Branding DH*/
+#libraryBranding a,.libraryBranding_ul{margin:0}
+.libraryBrandingSubjVert{width:220px;margin:10px 0}
+#libraryBranding_footer{float:right;margin-top:4px}
+#libraryBranding_footer ul.horizontal{float:right;margin-right:-10px}
+#libraryBranding_footer .logo1{margin:0 0 5px 0;float:right}
+#libraryBranding_footer .logo2{margin:0 0 5px 10px;float:right}
+.libraryBranding_link{margin-bottom:10px !important}
+.libraryBrandingIndex{width:120px;margin-top:-20px}
+.customImagesAndLinks{width:120px;padding:20px 0}
+.narrowByWrapper{padding:0 0 5px 0}
+/*jpeg viewer*/
+#pageImageZone #area{overflow:auto;overflow-x:hidden;overflow-y:hidden;position:relative;min-height:210px}
+.viewerPager,.npcFindBrowse{margin-bottom:3px}
+.viewerPager img.pages{float:left;padding-right:5px}
+.viewerPager .pagerForm{float:left;padding-right:5px}
+form.pagerForm .pagerError{float:left;margin-bottom:-15px;padding-right:5px}
+.pagerForm .field_label { margin-left: 5px }
+.pagerForm .field_submit { margin-right: 5px }
+.viewerPager .totalPageNum{margin:2px 0px 0px 2px;float:left}
+#viewer{display:block;position:absolute;width:100%}
+#viewer #scroller{margin:10px 5px 3px 5px;max-height:150px;overflow:auto}
+#viewer #scroller .thisPage,#viewer #scroller .normal,#viewer #scroller .vHit{float:left;white-space:nowrap;text-align:center;padding-bottom:5px}
+#viewer #scroller .normal img,#viewer #scroller .thisPage img,#viewer #scroller .vHit img{padding:5px;margin-bottom:5px}
+#viewer #scroller .thisPage img{background-color:#56A1F5}
+#viewer #scroller .vHit img{background-color:#F4E99D}
+#viewer #scroller .thisPage a:hover img,#viewer #scroller .normal a:hover img,#viewer #scroller .vHit a:hover img{background-color:#D0E7F5}
+#viewer img.move{float:left}
+#viewer img.close{float:right}
+#viewer form.choice{float:left;padding-left:10px}
+#viewer form.choice select{position:relative;top:2px}
+#viewer .goButton{position:relative;top:3px;float:left}
+.toggler img{position:relative}
+
+.dataReportsType{float:left;padding:0 0 0 15px}
+.dataReportsType ul li{padding:3px 0}
+.dataReportsType ul li ul{padding:0 0 0 14px}
+.describeYourself input,.describeYourself textArea{width:400px}
+.indexingInfoPreview .display_record_indexing_row .display_record_indexing_fieldname{display:table-cell;float:left;width:140px;word-wrap: break-word;margin-right:10px;}
+.display_record_indexing_row.found_In .display_record_indexing_fieldname{max-width:110px; width:auto; padding:0 10px 0 0;}
+.indexingInfoPreview .display_record_indexing_row .display_record_indexing_data{display:table-cell;float:left;width:415px}
+.limitToExtensionStyle {margin-top:10px;width:450px}
+.fieldset_contents #minAmt,.fieldset_contents #maxAmt{width:65px}
+.extraCheckbox{float:left;margin-left:10px}
+.extraCheckbox label{float:right}
+.DateRangeTypeSelectorLabel{width:130px;text-align:left}
+#adv_search_daterange .form_element_container select, .videoInfoWrapper {width:220px;float:left;margin-left:10px;}
+#adv_search_daterange .date_range_wrapper{clear:both;padding:15px 0 0 6px;margin:0}
+.advSearch .date_range_wrapper{clear:left;padding:15px 0 0 0px;margin:0}
+#adv_search_daterange select{width:155px !important}
+#adv_search_daterange select.noWidthPlease{width:auto !important}
+.searchBox_Alert_Margin{padding:5px 0 0 10px}
+.overlay_header{float:left;max-width:400px;margin:3px 0 0 -1px}
+.overlay_header_DeleteLink{margin-top:-1px;margin-right:15px}
+.pdfContainer{border:1px solid;height:1200px;border-top:none;width:100%}
+.naxos_logo{background:url("../images/icons/naxos_logo.png") right no-repeat;padding:0 62px 0 0}
+
+/* Error page */
+.genericErrorPage{margin-top:25px}
+.genericErrorPage img,.priceCostEstimate{float:left;margin-right:20px}
+.genericErrorPage span.error{float:left;width:630px;margin-left:25px}
+.genericErrorPage div.t-exception-report li{margin-left:0px}
+.genericErrorPage div.t-exception-report{width:950px}
+td.t-location-content{border-right:1px solid black;border-top:1px solid silver;white-space:normal !important}/*added to over ride imported default.css*/
+div.t-exception-message{border:thin dotted silver;font-size:12px;font-style:normal;margin:5px 0;padding:3px}/*added to over ride imported default.css*/
+div.t-env-data dd,div.t-exception-report dd{margin-bottom:10px;margin-left:25px;word-wrap:break-word}/*added to over ride imported default.css*/
+.genericErrorPage li{margin-bottom:20px !important}
+div.t-exception-report li{margin-left:0px !important}/*added to over ride imported default.css*/
+.genericErrorPage_technicalDetails{margin-top:15px;margin-left:25px}
+.sessionEndMsg{position:relative;display:table-cell;float:left}
+.sessionEndBut{position:relative;display:table-cell}
+#errorReasonToken { display:block; }
+
+.exposedFields_Col_Container{width:685px}
+.issue_num_spacing{padding:0 4px 0 4px}
+.page_range_padding,.pubFormatPadding{padding-left:50px}
+.padding_note{padding-left:62px}
+.textBox_searchFlag{width:511px}
+.textMatchBox_Alert{width:412px;margin-left:113px}
+.pannel_TextMatch #search_inner_panel{width:715px!important}
+.findSimilar_searchButton{padding:20px 0 0 10px;float:left;white-space:nowrap}
+label.breadCrumbLabel{display:table-cell;padding-right:10px;white-space:nowrap}
+.breadCrumbInput{display:table-cell;width:100%}
+.breadCrumbInput select{width:100%}
+.referencesLinks, .smartSearchStyle #smartSearchProgressiveZone {padding:3px 0 0 0;}
+.referencesCitedinText{font-size:1.5em;float:left;max-width:300px}
+.referencesCitedLink{padding-left:5px;width:740px;max-width:640px}
+.referencesCitedLink .previewTitle{font-size:1.5em}
+.sortContainerRef{float:right;padding-top:1px}
+.sortContainerRef .sort_container,.pubSortContainerRef .sort_container{float:left}
+.pubSortContainerRef .sort_container select{width:145px;margin-bottom:5px}
+.sortContainerRef .resortBtn{float:left}
+.refAddtoMr{padding:1px 20px 0 0;float:left}
+.tab_leftSection{background:url("../images/tabs/tab-active-tl.gif") no-repeat scroll left top transparent;cursor:pointer}
+.tabItemActive.tab_leftSection span{padding-right:12px}
+.psycArticlesImage{max-width:600px}
+/*Page PDF layout style - Val*/
+.header_border_bottom_showLess{overflow:hidden;clear:left;margin:-16px 0 5px 0}
+#content-wrapper.productLess{position:relative;top:-34px}
+#sitePageHeader .logoImage_noBorder{float:left;padding-right:10px;border:none}
+.ellipsis {max-width:65%; overflow:hidden; height:18px; text-overflow:ellipsis; white-space: nowrap;-o-text-overflow: ellipsis; -moz-binding: url('../images/ellipsis.xml#ellipsis');}
+/*Added to move the logo and product name down - MM*/
+#logoBasic #sitePageHeader{margin-top:65px}
+.pdfDocviewIndexing{min-width:700px}
+/*8836 - fields displaying under video Praveen */
+.videoEmbed{margin-right:4px;width:470px}
+.videoAbstractWrapper{padding:5px 0 0 0}
+/*8836 - fields displaying under video*/
+/*Topic Path border margin fix (#8944)Muhammad*/
+.searches_link .browseBy_border{margin:-10px 0 15px 0 !important}
+.noTabContent .searches_link{margin-top:-6px}
+/*Topic Path End here (#8944)*/
+/*Clear the margin of UL (Refworks)*/
+ul.bullet.clearMargins{margin:0 !important}
+/*word wrap for Basic search page error message story (#9679)Muhammad*/
+.pagingBoxNoResultContent p{word-wrap:break-word}
+/*NPCbrowseCategories Pipe margin fixed for story 9496 (A/c 37)*/
+.nbcBrowse_pipe{margin-right:7px !important}
+/*shared List in right panel*/
+.ordered_list_element ol li {display:list-item}
+/* Flash Viewer show more\less - Val */
+.logoSwitchFlash{margin:-27px 0 5px 0}
+.logoSwitchFlash  ul{margin-top:5px;float:left}
+.showDocParts{margin-top:3px !important;float:left}
+/*Additional limits*/
+.additional_limits{display:inline-block;padding-top:2px}
+#thesaurusTermsDiv input[type="radio"],#thesaurusTermsDiv input[type="checkbox"],#publicProfileOverlay input[type="checkbox"]{margin:0}
+.thesaurusTerms.cboxContainer .form_element_container input[type="checkbox"],.thesaurusSubject input[type="checkbox"]{display:table-cell;float:left;margin:4px 5px 0 0 !important}
+/* adding sourceType icons to pub results - Val*/
+.refContentAreaPub{margin:0 0 10px 90px;display:block}
+/* Search term  displyed in italics if 0 result found #9959 Muhammad*/
+.searchterms{font-style:italic}
+.indented_indexing_single_container .browser_term_label{width:190px}
+/* Indent vogue labels - JC */
+.indented_indexing_single_container.browser_term_label {width:170px}
+.indentVogueLabel label{text-indent:10px}
+.tbox .errorPanelWidth{width:90%}/* Lightview layer error panel needs this width */
+/*Social networking widget over ride - JC*/
+#at16psf input{padding-top:0 !important}
+/*Date Range year - RK*/
+.dateRangeYear{width:51px}
+.dateSiderLayer{margin-left:-10px;text-align:center;font-size:0.915em}
+/*Email overlay Button section fixed #8737 Muhammad*/
+.email_btn_wrapper{margin-right:26px}
+/*login form fixed #10654 Muhammad*/
+.login_RememMe{margin-top:-2px}
+#rememberMeWarning {width:210px;margin-bottom:-10px}
+/*login form fixed #10888 Vikas*/
+.database_info_icon{padding:0 0 2px 15px}
+/*fixed #10460 praveen*/
+.includeLabel label{display:inline !important}
+/*Thesaurus overlay Label width defined #192 MA*/
+.thesaurusLayer_searchLabel{width:555px}
+.suggestedSub{padding:3px 10px 0 0}
+.fieldset_contents_Rss{padding:5px 7px 15px 15px}
+.rss_Form{width:99%}
+.fnt_Type_list li{margin-bottom:5px}
+.email_Tfeild{width:398px}
+.transfer_EmailForm{margin-top:15px}
+#t2_arts .scrollSubName,#t2_business .scrollSubName{word-wrap:break-word !important}
+/*Request Item overlay container fixed #9812-MA*/
+p.requestDate{margin-bottom:-5px}
+.reqItem_container{background-color:#fff;max-height:200px;max-width:467px;overflow-y:scroll;padding:10px 5px 10px 10px;border:1px solid #7f9db9}
+/*Additional Limiter fixed-MA*/
+.addtional_Limiter_Label{max-width:685px}
+.addItem_container{background-color:#fff;max-height:400px;overflow-y:scroll;padding:10px 5px 10px 10px;border:1px solid #7f9db9}
+.Figtable_thirdlevel label{max-width:260px}
+/*Pub Search Periodic:Display previous titles on the publication home page*/
+.alternate_title{padding:0 0 0 215px}
+/*basic search text pannel fixed for singal column #10766 MA*/
+.basicsearch_textpanel.full_View{width:100% !important;margin-bottom:-18px}
+/*10885:Visual Design:addition of copyright statement*/
+.getty_copyright{padding:0 0 10px}
+/*New Folder Select width fixed*/
+.selectWidth.nfSelect {width:499px !important}
+/*11222:Fix for text n table in full text in pharmaprojects -Mohit*/
+.datastar table{margin-left:1px}
+.sharedListText{padding:5px 0}
+.sharedListOverlayDislay p, .prevNextForRelatedItems{padding-bottom:10px}
+.sharedListOverlayDislay ul.restrictedList{margin-left:10px;padding-bottom:15px}
+/*Thesaurus*/
+.thesaurusWrapper .form_element_container .selectItemCheck{float:left;display:block; padding:0 5px 0 0;}
+.thesaurusWrapper .form_element_container{zoom:1;margin-bottom:5px}
+.icon_width{min-width:16px;height:10px}
+.pubFullText{margin:0 0 0 225px}
+.pubFullTextResult{margin:0 0 0 210px}
+.ListOfThesauri {overflow-x:hidden;overflow-y:auto !important;height:580px}
+#thesaurusTermsDiv .dropdownMenu{width:100px;right:0px}
+/* #NP2-1918:Fix for IE8 and Google chrome the results page looks inconsistent - Suman T */
+.wrapLinkUrl{word-wrap:break-word;width:60%;min-width:538px;float:left}
+/* Vogue classes */
+.vogue_featured_content{width:105px;float:left}
+.vogue_featured_content ul,.vogue_featured_content p{margin-top:0}
+a.vogue_featured_content_image{padding:4px;display:block}
+#authorResolveLinks li{border-top:1px solid #cecfce;padding:8px 0}
+#authorResolveLinks li:first-child{border-top:none !important}
+/* #NP2-948:Scholar Universe Page - Suman T */
+.authorResolveLinkPos,.preferencesContentSelect{margin-left:30px}
+.authoredSortby .sort_container{float:left}
+.authoredSortby .resortBtn{float:left !important}
+.selectiveCoverage{float:left;padding:2px 0 0 10px}
+.selectiveCoverage span{padding:0 10px 0 0}
+.display_record_indexing_row .selectiveCoverage{padding:2px 0 0 0px}
+ul.selectedItemsCount, .iterative_searchWrapper{padding:0 0 5px 0}
+#mainContentLeft .display_record_section_copy #fulltext_field #fullTextZone pre{white-space:normal}
+.commandLineTextArea, h2.vogueHed{width:700px}
+.commandLineProfessionalTextArea{width:950px;overflow:hidden;}
+.notSelectedPrompt{width:300px;min-height:100px}/* marked List not selected error layer - Val */
+/*New York Times Index - Topic Browse - Suman T*/
+.resultListContainer .subCategory,.editWorkgroup{padding:6px 0 0 20px}
+.nyTopicResults{padding:15px 0 15px 0}
+.resultListContainer .nyTopicResult{margin-left:30px}
+.resultListContainer .subCategory ul{padding:0 0 0 0}
+li.nytiBullets .browseRelatedList {margin-top: 5px;margin-left: 20px;margin-bottom: 10px}
+li.nytiBullets{background:url(../images/icons/bullet_single.png) no-repeat -2px -2px;margin-bottom:8px;padding:0 0 0 15px}
+.resultListContainer .subCategory{padding:0 0 0 20px}
+.resultListContainer li{margin:0 0 8px 0}
+.resultListContainer_list li{margin:0;padding:0}/* NP2-2120 - Val*/
+.resultListContainer_list .docViewIndex .display_record_indexing_row .display_record_indexing_data{width:395px !important}/* NP2-2120 - Val*/
+.nyTopicResults{padding:15px 0 15px 0}
+ul.documentHideReference li{margin:0 0 15px 6px}
+.resultListContainer .scholarDocItems{margin-left:30px}
+.ScholarHeading .horizontal{padding:5px 0 8px 0px}
+.docViewIndex .display_record_indexing_row.subHead .display_record_indexing_fieldname{width:190px !important}
+/* Widget database list page */
+#widgetDatabasesZoneWrapper{width:830px;float:left}
+#widgetDatabasesZoneWrapper #widgetDatabasesZone{float:left}
+#widgetDatabasesZoneWrapper .db_contentWrapper{margin-left:0}
+#widgetDatabasesZoneLogo{float:right;padding-top:392px;margin-right:5px}
+#widgetDatabasesHeader{margin-bottom:20px;font-size:2em;font-weight:normal;color:#000000;line-height:1;text-align:left}
+.addNotesBtnWrapper{padding:33px 0 0 10px;float:left}
+.sharedListOverlayText{padding:0 0 12px 0}
+.nytJumpTo{float:right}
+.nytJumpTo input{width:135px;float:left}
+.nytJumpTo .icon_help{background-position:left -350px;padding:3px 10px 3px 0 !important}
+#pqAlertsOverlay{width:480px;padding-right:15px}
+.targetNote .addNotesBtnWrapper{padding:10px 0 0 20px}
+.fig_table_resultItem .addNotesBtnWrapper{padding:10px;float:right}
+.previewText{font-size:0.815em;line-height:1.365;padding:2px 0 0 1px}
+.nytTopic{height:400px;overflow:auto;width:400px}
+.editWorkGroup_fieldset{float:left;padding:5px 25px}
+.editWorkgroup_dbConatiner{border:1px solid #ccc;margin-left:10px;background-color:#FFFFFF;padding:5px;overflow-y:scroll;height:350px}
+.userAdminRightOption{float:right;padding:10px 0 0 10px}
+.resultsPageSpecific .smartsearch_legend{bottom:-4px !important}
+.NytiSearchPanel_button{height:20px;padding-top:2px;padding-bottom:2px}
+.alert_radiobutton{margin-right:8px}
+#pageMapZone #highlightBox{margin-top:8px !important}
+.BPcheck{margin-left:10px !important}
+#duplicatesRadioGroupList li{margin-bottom:6px;}
+#coverageStatement .printIcon{position:absolute;right:40px;top:3px}
+#side_panel a.Nytifilter{color:#000000;text-decoration:none}
+#side_panel .database_info_icon{padding-bottom:0px}
+#side_panel .externalDB{padding-right:5px}
+.DateRangeLookUpCite{margin-left:161px}
+.sortingWrapper{height:40px;float:left;width:20px;padding:0 0 0 10px}
+.sortingWrapper .input{height:20px;width:20px}
+.sortingUp,.sortingDown{border:1px solid #999;font-size:0.6em}
+/*Tabular data Grid*/
+table.t-data-grid{font-family:Verdana,Helvetica,sans-serif;border:1px solid #cccccc;width:950px !important;table-layout:fixed;word-wrap:break-word !important}
+table.table_cost_estimate{width:683px !important;border:none !important}
+table.t-data-grid.table_cost_estimate tbody tr td{border:none !important}
+table.t-data-grid.table_cost_estimate thead tr th{border-top:1px solid #cccccc !important;border-bottom:none}
+tr td table.trasactional_DB {margin-left:-7px}
+table.t-data-grid thead tr th{background-color:#f4f2f3;color:#4C4C4C;font-weight:normal;white-space:normal;padding:5px 10px}
+table.t-data-grid thead tr th.centerText{text-align:center !important}
+table.t-data-grid thead tr th a{color:#00569f;font-weight:normal;float:left}
+table.t-data-grid tbody tr td{padding:5px 10px}
+table.t-data-grid thead tr th.check,table.t-data-grid tbody tr td.check{width:13px;padding:5px 10px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.username,table.t-data-grid tbody tr td.username{width:170px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.firstName,table.t-data-grid tbody tr td.firstName{width:135px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.lastName,table.t-data-grid tbody tr td.lastName{width:135px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.emailAddress,table.t-data-grid tbody tr td.emailAddress{width:135px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.workgroupURI,table.t-data-grid tbody tr td.workgroupURI{width:135px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.workgroupname,table.t-data-grid tbody tr td.workgroupname{width:135px;word-wrap:break-word !important}
+table.t-data-grid thead tr th.action,table.t-data-grid tbody tr td.action{width:80px !important;word-wrap:break-word !important}
+table.t-data-grid tbody tr td{border:none;word-wrap:break-word;border-bottom:1px solid #cccccc !important}
+table.t-data-grid tbody tr td.action, .searchTermTruncationTrigger {white-space:nowrap}
+.ascBtn{padding:0 0 0 10px;background:url(../images/icons/sort-asc.png) no-repeat;width:16px;height:16px}
+.descBtn{padding:0 0 0 10px;background:url(../images/icons/sort-desc.png) no-repeat;width:16px;height:16px}
+
+ul.availableInList li:nth-child(2){background:none!important;}
+
+#search_results_list .saved_search_list label.after{margin:0 5px 0 2px}
+.savedSearchesLabels{width:95%;}
+.savedSearchesSet .name{padding-top:0px;padding-right:10px;display:inline}
+.savedSearchesItemCheck{margin-left:0}
+.saved_search_content .row{padding-bottom:5px}
+.saved_search_content .displaySavedSearch{margin:auto}
+.search_heading{width:90%}
+.savedSearchesSet .savedSearchName{font-weight:bold}
+.display_record_abstract_copy h3{margin: 20px 0 5px;}
+/* NP2-1761:New York Times Index:Selected Topic page narrow/related topic lightview layers - Suman T */
+.nytContainer{border:1px solid #ccc;background-color:#fff;width:498px;padding:5px 10px 10px 10px;height:330px;overflow:auto}
+.nytFilterButton{float:right;margin:15px 0px 0px 0px}
+.profile_checkbox,.resultListContainer .selected_external_link{padding-top:4px}
+.exportref,.searchAlertLimit, .showHideSmartSearchLink{padding-top:3px}
+.manageFolderName{margin-right:370px;zoom:1;word-wrap:break-word}
+#addUserToWorkGroupForm fieldset{border:1px solid #C9C9C9}
+.workgroupSelect{width:360px}
+.workgroupwrapper{margin-left:30px}
+.selected_topic{margin-left:25px}
+.resultListContainer_list .selectItemCheck{margin-left:0px}
+.jumpLabel{padding:1px 5px}
+.selectIndex{margin-top:3px}
+.nextLinks{padding-top:1px}
+.jumpItem_Container{margin-left:5px}
+.jumpItem_Container .horizontal.searches_link li{display:block;margin-bottom:8px}
+.formatOptions{margin-left:23px}
+.displayFormatsWrapper { width:500px; }
+.displayFormatsWrapper label { display:block; }
+.pubinf_link{margin:3px 0 0 20px;display:inline-block}
+.search_field_container textarea{width:640px}
+.search_field_container .findSimilarTextArea{width:726px;height:60px;}
+#changeDisplayFormatOverlay .deleteButtonsMR, #selecteditemslink_displayOverlay .deleteButtonsMR{margin-right:85px}
+.saveAsFileOverlayWidth{width:705px}
+.deleteSharelistOverlay {width:450px}
+.export_overlay_label{width:97px}
+.export_overlay_dropdown {width:373px}
+.export_overlay_dropdown_info{margin:0 5px 0 102px;height:25px}
+.export_overlay_dropdown_info_large{height:60px}
+.exportRefWorksOverlay .legend {margin-top:15px}
+.alertDatabaseList, .resendHistory{width:400px}
+.alertDatabaseListItems{margin-left:0px}
+.rssSearchDetails .alertDatabaseList{width:365px}
+.icon_help_left{background-position:left -140px !important;padding:3px 20px 3px 0 !important}
+/*Cost Estimate(Transaction Time Container)#NP2-4614*/
+.noBorder_Lchild{border:none !important}
+.dbTotal,.recentSearchLink{text-align:right;vertical-align:top}
+.displaySelectedItems{margin:0 10px 0 107px !important}
+.scholar_lookup{padding:5px !important}
+.scholar_lookupcontainer{border:1px solid #ccc;background-color:#FFFFFF;padding:5px;overflow-y:scroll;height:380px}
+.scholar_checkbox{display:block;float:left;padding-top:0;width:21px}
+.lookup_margin{padding-bottom:30px}
+.pricingFormats{padding:3px 0 0 12px}
+.pricingContent{padding:5px 0 0 10px}
+.pricingBrowse_Area .pricingContent {padding:10px 0 0 10px}
+.montlyPrice,.scheduleAlertTime {margin-top:10px}
+.pricingFormats .label{width:200px;max-width:200px;word-wrap:break-word;float:left;display:block}
+.display_pricing .display_record_indexing_data{padding:0 5px 0 0;width:auto}
+.createMRaccopuntExp select{width:100px !important;margin:0 18px 0 0}
+/*Spacing between the lines of icons/links on the rss, searches and alerts tab in My Research */
+.resultListContainer ul.horizontal li{margin-bottom:3px}
+/*Make sure these are below the two default ones, otherwise you'll need some !importants!*/
+#imageZone label.image_viewer_label{display:inline-block}
+#imageZone input.t-error{height:14px;display:inline-block;float:none}
+#imageZone img {max-width:100%}
+.disabledLink{color:#a5a5a5;text-decoration:underline}
+.radiobtn_container .form_element_container, .pubNotesField {margin-bottom:5px}
+.disabledText{color:#a5a5a5;}
+.alertReview{width:400px}
+.priceHeading {margin-bottom:10px}
+.item_selectedDB .db_hideShow_link {background-color:#EEF7FB !important}
+.db_hideShow_link,.saveFileBtn,.beginSearch{margin-right:10px;}
+#refWorksAuthErrorBlock{width:470px}
+#refWorksAuthErrorBlock .myresearch_empty_right{width:345px}
+.projectEntryCode {min-height:100px;margin:20px 0}
+.noTransaction {padding:17px}
+.scheduleAlertTime span {margin-top:0.25em}
+.scheduleAlertDaily select,.savedSearchName{width:auto !important}
+.scheduleAlertMonthly {display:inline-block;float:left;margin-right:1em}
+.scheduleAlertWeekly {display:inline-block;float:left;margin-right:1em}
+#andOrCombine #combineTextForm ul{margin:5px 0}
+.rssRecordsIndexing{width:400px;padding:4px 0 4px 0}
+
+.prototip .previewTitle {z-index:5005;position:relative;margin-right:20px;margin-top:-17px}
+.prototip .toolbar .close {z-index:5006 }
+.forgot_MRlink{margin-left:100px}
+.abstractSummary img{ max-width: 500px !important; }
+.abstractSummary p{line-height:1.5em;margin:10px 0 0 0;  clear:left; }
+.abstractSummary h4{padding:7px 0 10px 0}
+.npcBrowseBy{margin:0 0 8px 0}
+
+.db_list_container ul.searches_link {margin-left:0}
+.db_list_container ul.searches_link li {border:none !important}
+.browseBySub{width:183px}
+.alertTimeWidth{width:530px}
+
+/*MIME types - Supplemental icons - Val*/
+.icons_mime_sprite{background:url(../images/icons/icons_sprite_mime_types.png) no-repeat -5px -7px;padding:2px 0 2px 21px}
+.mime_generic{background-position:-8px -6px;padding-left:17px}
+.mime_word{background-position:-8px -30px;padding-left:17px}
+.mime_pdf{background-position:-8px -52px;padding-left:18px}
+.mime_print{background-position:-8px -76px}
+.mime_rtf{background-position:-8px -100px}
+.mime_excel{background-position:-8px -124px;padding-left:17px}
+.mime_outlook{background-position:-8px -148px}
+.mime_powerpoint{background-position:-8px -172px}
+.mime_microsoft{background-position:-8px -193px;padding-left:19px}
+.mime_openxml{background-position:-8px -212px;padding-left:23px}
+.mime_compress{background-position:-8px -233px}
+.mime_director{background-position:-8px -257px}
+.mime_iphone{background-position:-8px -281px;padding-left:16px}
+.mime_flash{background-position:-8px -305px}
+.mime_audio{background-position:-8px -327px}
+.mime_image{background-position:-8px -350px;padding-left:19px}
+.mime_gif{background-position:-8px -374px}
+.mime_jpg{background-position:-8px -398px;padding-left:25px}
+.mime_png{background-position:-8px -422px;padding-left:22px}
+.mime_tiff{background-position:-8px -446px}
+.mime_text{background-position:-8px -470px;padding-left:17px}
+.mime_message{background-position:-8px -494px}
+.mime_video{background-position:-8px -518px;padding-left:16px}
+.mime_quicktime{background-position:-8px -541px}
+.mime_supplement_wrapper{width:310px;float:left}
+/*MIME types - Supplemental icons ends - Val*/
+.altHeaderBorderBottom .header_border_bottom{border:none !important;margin-bottom:0px !important}
+.altHeaderBorderBottom {border-bottom:1px solid #CCCCCC;margin-bottom:10px}
+.sharedDraftDate{padding-top:9px}
+.priceInfoLayerContent {background:#EEF7FB !important}
+
+/*Project code help nav fixed*/
+.projectCode_helpNav {position:absolute;right:5px;top:29px}
+.displayDB {width:379px}
+.tag_margin .titleAuthorETC {margin-left:0px !important}
+
+/*Search info*/
+.searchInfoText {margin:-12px 0px 2px 110px;padding-right:5px}
+.icons_base_sprite.icon_info.soul_info {margin-left:5px;background-position:0 -450px}
+.results-wrapper .searchInfoText {margin:-7px 0px 2px 3px}
+.secProd .searchInfoText {margin:-7px 0px 2px 3px}
+.commandLineSearchInfoText {float:right;margin-top:9px}
+.commandLineSearchInfoText .icons_base_sprite.icon_info.soul_info{padding-left:7px}
+.productHome #search_panel .icons_base_sprite.icon_info.soul_info, .subjectHome #search_panel .icons_base_sprite.icon_info.soul_info {background-color:#D8EEF9;background-image:url("../images/icons/icons_sprite_toolbar.png")}
+.figurecheck{margin-left:14px}
+/*Pricing Information page*/
+.monthlyPricing,.citationActionLink{margin-left:10px}
+.pricingLabel {width:162px}
+
+.alertSummary{margin:0 0 12px 0}
+
+/* pdf display - Val*/
+.subNavMarginCross, .subNavMargin{margin-top:-42px}
+.pdfPage #sitePageHeader .logoImage {height:34px;}
+.logoMargin{margin-top:-9px}
+.pdfPage .siteNameShort{line-height:0.6em;width:auto}
+.pdfPage .siteNameLong{line-height:1em;margin-top:-4px;width:auto}
+.pdfPage #logo.cross{padding-top:0px}
+.pdfPage #logo.nonCross{padding-top:3px;clear:left}
+.pdfPage #main_nav{padding-top:5px}
+.pdfPage #content-wrapper{padding-top:4px}
+.pdfPage #sitePageHeader .logoImage{margin-top:-3px}
+.pdfPage .siteNameWrapper{padding:0px 10px 0px 0px;display:table-cell;float:none;margin-top:-4px}
+.pdfPage .display_record_Pdf_formats .clear {clear:none;}
+.pdfPage .header_border_bottom_showLess {margin-bottom:13px}
+.pdfPage .topNavigation ul.horizontal{margin-bottom:13px}
+.pdfPage #topSection ul.horizontal {margin-bottom:0px}
+.pdfPage #topSection .toolbar_panel{top:8px;}
+.pdfPage #content-wrapper .display_record_Pdf_formats ul{margin-bottom:14px;}
+.pdfPage .header_border_bottom {margin-bottom:5px;}
+.pdfPage #logo #main-nav{padding-top:1px}
+.pdfPage .pdfEmbed{border:1px solid #6b6b6b;border-top:0px none}
+.pdfPage .embedSep{height:2px}
+.pdfPage #brandImage{display:table-cell;position:static;padding-right:15px}
+.pdfPage #siteNameWrapper span.siteNameShort{font-size:2em;line-height:1em}
+.pdfPage .subNavMargin.subNavMarginMoreAdjust {margin-top:-55px;}
+.pdfPage .headerForDocviewPage {margin-bottom:-5px; padding-top:6px;}
+.pdfPage .header_border_bottom h1 {margin:-2px 0 9px 0;}
+.pdfPage .showLess, .pdfPage .showMore {margin-bottom:12px;}
+.pdfPage .pdfReader_link {margin:4px 0 0 5px;}
+.pdfPage .pdfReader_link a{font-weight:normal;}
+.pdfPage .authorLink {margin-top:4px;}
+.otherFormatPDF dd.float_left_Ie7{float:left;}
+.externalWidgetDiv {margin-top:5px}
+.pdfPage ul.pdfGap {margin-top:4px;}
+.pdfPage .pdf_LibraryBranding {margin-top:7px;}
+#containerNoBackground {width: 950px;	/* + padding = 980px */	background:#ffffff url(../images/pagelayout/) repeat-x 0 0;	margin: 0 auto;	padding: 0 15px;font-size: 0.75em;	/* Everything will be contained within the #container so reduce to 12px */min-height: 600px;position:relative;}
+#containerNoBackground.fullscreen{width:auto;margin:0;}
+#containerNoBackground.pdfPage{width:auto;margin:0;min-width:980px;min-height:400px;}
+.resendOption_Header, .resendOption.multiSelect, .chkBox_container {border:1px solid #7f9db9;background:#ffffff}
+.resendOption_Header {border-bottom:none}
+.resendOption.multiSelect {height:85px}
+.chkBox_container {padding:5px;width:428px;height:50px;overflow:auto}
+.sendEmail_txtField {width:436px}
+.resndContainer {padding:10px 0}
+.pubSearch{margin:0 0 0 5px !important}
+.search_Tips_panel{float:left;margin:10px 0 0 5px;word-wrap:break-word}
+.createPublicProfileWrapper {height:290px}
+.modifyPublicProfileWrapper {height:430px;}
+h4.simulateOverlayTitle {color:#4C4C4C;font:bold 17px Arial}
+/*Alert pricing overlay*/
+#alertPricingInfoOverlay table th, #alertPricingInfoOverlay table tr td {background:none;text-align:left}
+#alertPricingInfoOverlay table tr td {border:none;padding:5px 24px 0 13px}
+table.totalPrice {margin:-10px 0 7px 0;font-weight:bold}
+#alertPricingInfoOverlay.alertsBlock {width:auto}
+#alertPricingInfoOverlay table.totalPrice tr td {padding:5px 19px 5px 21px}
+.estimateCost {width:106px}
+.stdPriceLink{display:none}
+.dotted_sep {border-top:1px dotted;width:375px;margin:0 15px}
+.blue_sep {border-bottom:2px solid #D1E4F1;margin:10px 10px 5px 10px}
+.alertsBlock {background:#FFFFFF;border:1px solid #C6C6C6}
+/*always stays at the end - a:focus for accessibilty - Val*/
+a:focus,
+.dropdownMenu ul li a:focus,
+.dropdownMenu a:focus span,
+	/*#search_panel a:focus.icons_base_sprite,*/
+ul#filters li.header a.filter_header:focus,
+ul#filters li.header ul a:focus,
+#side_panel a:focus,
+.toolbar_panel a:focus,
+.results_list_xtra_links a:focus,.item_selectedDB a:focus,
+.item_selected a:focus,
+.tbox a:focus,
+.prototip a:focus,
+.info_panel a:focus,
+.item_selected .results_list_xtra_links a:focus,
+.externalDB a:focus,
+.product #search_panel a:focus.icons_base_sprite { background-color:#00569f;color:#fff;/*outline:#00569f solid thin;*/ }
+.searchingDB a:focus,
+#myresearch_nav a:focus,
+#myresearch_nav a:focus span,
+#searchingDB a:focus{background-color:#fff;color:#046091;/*outline:#fff solid thin;*/}
+a:focus.btnNew,
+a:focus.btnDisabled,
+#side_panel a:focus.btnNew {outline:none}
+.tabItem a:focus,
+.tabItemActive a:focus{color:#000;background-color:none;outline:none}
+#columnArrow a.handler:focus{background:none}
+.duplicate_indicator {padding-left:5px;font-style:italic}
+.transparent {background-color:transparent !important;}
+.transparent:focus{outline:#00569f solid thin}
+
+/* Tiny Box overrides.  Makes it look like Lightview, hopefully... */
+#pq_layer {border:none;background-image:none;overflow-y:auto;overflow-x:hidden}
+.tclose {right:27px;top:24px;width:16px;height:17px;background:url(../images/icons/close.png) no-repeat scroll left top rgb(238, 247, 251)}
+.tclose:hover {background-position:0 0}
+.tinner {border:0;padding:0}
+.tspacer {background:none repeat scroll 0 0 #EEF7FB;border:3px solid #046091;-moz-border-radius:5px;border-radius:5px;padding:10px 10px 20px}
+.ttitle {padding-bottom:8px;margin-right:60px}
+.overlayTitle {color:#4C4C4C;font-family:Arial,Helvetica,sans-serif;font-size:1.45em;font-weight:bold;line-height:1.1}
+
+#searchtips_export_block,#endsessionhelp,.overlay_header_HelpLink
+{position:absolute;top:22px;right:52px;font-size:0.9em}
+
+.loading_spinner {text-align:center;padding:35px 0 0 22px}
+
+.additionalSearchMsgWrapper{margin-top:-4px}
+.alertExtended{width:450px;float:left}
+.header_border_bottom h1{max-width:700px;word-wrap:break-word}
+.modifyTagsForm{height:80px}
+
+/* FieldBrowseIndex checkbox list */
+.checkboxList_head { overflow:hidden; clear:both; padding:5px; border:solid 1px #ccc; border-bottom:none; background-color:#fff; }
+.checkboxList_head h3 { font-size:13px; font-weight:bold; }
+.checkboxList_head-terms { display:block; float:left; width:40%; padding-left:23px; }
+.checkboxList_head-count { display:block; float:right; width:40%; padding-right:20px; text-align:right;margin-top:-4px}
+.checkboxList_head-count sup {margin-right:-7px}
+.checkboxList_body label { overflow:hidden; display:block; padding:6px 0; }
+.checkboxList_body input { float:left; top:2px; }
+.checkboxList-term { display:block; float:left; width:540px; padding-left:4px; }
+.checkboxList-count { display:block; float:right; }
+
+
+/*** SearchEmailAlertCreateDialog and SearchEmailAlertModifyDialog Styles ***/
+
+/* Create Alert steps: deliveryDetails, preferences, custom, pricing, saved */
+.createAlertSteps { overflow:hidden; height:31px; }
+.createAlertSteps ul { display:table; width:100%; margin:0; }
+.createAlertSteps li { display:table-cell; padding:0 0 0 3px; background-color:#d0e3f1; }
+.createAlertSteps li div.stepBullet { float:left; width:18px; margin-top:3px; padding:4px 2px 6px 8px; background:url(../images/tabs/AlertIcon.png) top left no-repeat; color:#FFFFFF; font-weight:bold; }
+.createAlertSteps li div.prgtxt { padding-top:8px; white-space:nowrap; }
+.createAlertSteps li .delimiter { float:right; height:30px; width:20px; padding-bottom:1px; background:url(../images/tabs/menu_Sprite1.jpg) no-repeat scroll left 0 transparent; }
+
+/* delimiter display */
+.alertsBlock.deliveryDetailsStep .createAlertSteps li.deliveryDetails { background-color:transparent; }
+.alertsBlock.deliveryDetailsStep .createAlertSteps li.deliveryDetails .delimiter { width:10px; background-position:-10px 0; }
+.alertsBlock.preferencesStep .createAlertSteps .deliveryDetails .delimiter { width:10px; }
+.alertsBlock.preferencesStep .createAlertSteps li.preferences { background-color:transparent; }
+.alertsBlock.preferencesStep .createAlertSteps li.preferences .delimiter { width:10px; background-position:-10px 0; }
+.alertsBlock.customStep .createAlertSteps li.preferences .delimiter { width:10px; }
+.alertsBlock.customStep .createAlertSteps li.custom { background-color:transparent; }
+.alertsBlock.customStep .createAlertSteps li.custom .delimiter { width:10px; background-position:-10px 0; }
+.alertsBlock.pricingStep .createAlertSteps li.preferences .delimiter { width:10px; }
+.alertsBlock.pricingStep.custom .createAlertSteps li.preferences .delimiter { width:20px; }
+.alertsBlock.pricingStep.custom .createAlertSteps li.custom .delimiter { width:10px; }
+.alertsBlock.pricingStep .createAlertSteps li.pricing { background-color:transparent; }
+.alertsBlock.pricingStep .createAlertSteps li.pricing .delimiter { width:10px; background-position:-10px 0; }
+
+/* set the display of custom and pricing tabs. If both custom and pricing exist, then pricing becomes step 4 */
+.alertsBlock .createAlertSteps li.custom { display:none; }
+.alertsBlock.custom .createAlertSteps li.custom { display:table-cell; }
+.alertsBlock .createAlertSteps li.pricing { display:none; }
+.alertsBlock .createAlertSteps li.pricing div.stepBullet:after { content:"3"; } /* fails in IE7 */
+.alertsBlock.pricing .createAlertSteps li.pricing { display:table-cell; }
+.alertsBlock.custom .createAlertSteps li.pricing div.stepBullet:after { content:"4" } /* fails in IE7 */
+
+/* set the previous step's delimiter style. */
+.alertsBlock.savedStep .createAlertSteps .preferences .delimiter { width:10px; }
+.alertsBlock.savedStep.custom .createAlertSteps .preferences .delimiter { width:20px; }
+.alertsBlock.savedStep.pricing .createAlertSteps .preferences .delimiter { width:20px; }
+.alertsBlock.savedStep.custom .createAlertSteps .custom .delimiter { width:10px; }
+.alertsBlock.savedStep.pricing .createAlertSteps .custom .delimiter { width:20px; }
+.alertsBlock.savedStep.pricing .createAlertSteps .pricing .delimiter { width:10px; }
+.alertsBlock.savedStep .createAlertSteps li.saved { background-color:transparent; }
+
+#alertOverlay #deliveryDetailsStep fieldset { border-top:2px solid #D1E4F1; }
+#alertOverlay #deliveryDetailsStep fieldset.summary { border-top-width:0; margin-top:0; }
+#alertOverlay #deliveryDetailsStep fieldset,
+#alertOverlay #preferencesStep fieldset { margin:10px; padding:15px 5px 5px; }
+
+/* Patent alerts when specific field is updated */
+.preferencesStep .advSearch { width:auto; overflow:hidden; }
+.preferencesStep .dySrchLimiter label { color:#ccc; }
+.preferencesStep .dySrchLimiter.fieldLevelAlerts label { color:#4c4c4c; }
+
+/* Footer styles and submit button switching */
+.alertsBlock footer button.custom { display:none; }
+.alertsBlock.custom footer button { display:none; }
+.alertsBlock.custom footer button.custom { display:inline-block; }
+.alertsBlock footer { display:block; clear:both; text-align:right; }
+.alertsBlock footer .back { float:left; }
+
+/* switch buttons when pricing step is available. */
+.alertsBlock.customStep footer button { display:inline-block; }
+.alertsBlock.customStep footer button.pricing { display:none; }
+.alertsBlock.customStep.pricing footer button { display:none; }
+.alertsBlock.customStep.pricing footer button.pricing { display:inline-block; }
+
+/* There is no custom button in details and pricing, so all are visible */
+.alertsBlock.deliveryDetailsStep footer button { display:inline-block; }
+.alertsBlock.pricingStep footer button { display:inline-block; }
+
+.alertsBlock #displayFormatNote .custom  { display:none; }
+.alertsBlock.custom #displayFormatNote * { display:none; }
+.alertsBlock.custom #displayFormatNote .custom { display:inline; }
+
+/* Custom/Choose Fields step */
+#saveCustomFieldsOverlay { width:800px; }
+#createCustomFieldsOverlay a.removeAll,
+#saveCustomFieldsOverlay a.removeAll { float:right; }
+#createCustomFieldsOverlay form,
+#saveCustomFieldsOverlay form { padding:10px; }
+#createCustomFieldsOverlay fieldset,
+#saveCustomFieldsOverlay fieldset { clear:none; float:left; width:370px; }
+#createCustomFieldsOverlay fieldset.availableCustomFields,
+#saveCustomFieldsOverlay fieldset.availableCustomFields { padding-right:20px; margin-right:0; border-right:1px solid #ccc; }
+#createCustomFieldsOverlay fieldset.chosenCustomFields,
+#saveCustomFieldsOverlay fieldset.chosenCustomFields{ float:right; width:362px; }
+#createCustomFieldsOverlay fieldset legend,
+#saveCustomFieldsOverlay fieldset legend,
+#alertOverlay #createCustomFieldsOverlay fieldset legend,
+#alertOverlay #saveCustomFieldsOverlay fieldset legend { display:block; float:left; margin:0; padding:0 0 10px 0; font-size:12px; }
+#createCustomFieldsOverlay .availableFieldsList,
+#saveCustomFieldsOverlay .availableFieldsList,
+#createCustomFieldsOverlay .chosenFieldsList,
+#saveCustomFieldsOverlay .chosenFieldsList { width:auto; clear:both; }
+#createCustomFieldsOverlay .availableFieldsList label,
+#saveCustomFieldsOverlay .availableFieldsList label { display:block; }
+#createCustomFieldsOverlay .allAvailableCount,
+#saveCustomFieldsOverlay .allAvailableCount,
+#createCustomFieldsOverlay .chosenFieldCount,
+#saveCustomFieldsOverlay .chosenFieldCount { padding-left:.5em; }
+
+/* Save/Export */
+.alertsBlock.savedStep.custom footer button { display:inline-block; }
+.saveExportCustomFields footer { display:block; clear:both; text-align:right; }
+#createCustomFieldsOverlay fieldset#saveCustomFields,
+#saveCustomFieldsOverlay fieldset#saveCustomFields { width:100%; }
+#createCustomFieldsOverlay fieldset#saveCustomFields p,
+#saveCustomFieldsOverlay fieldset#saveCustomFields p { margin:15px 0; }
+#saveAsFileCitationTypeSelect #savedTemplateMenuWrapper,
+#createCustomFieldsOverlay fieldset#saveCustomFields .details,
+#saveCustomFieldsOverlay fieldset#saveCustomFields .details { overflow:hidden; padding-left:22px;
+	max-height:0;
+	-webkit-transition: max-height .5s ease;
+	-moz-transition: max-height .5s ease;
+	-ms-transition: max-height .5s ease;
+	transition: max-height .5s ease;
+}
+#saveAsFileCitationTypeSelect.useSavedTemplate #savedTemplateMenuWrapper,
+#createCustomFieldsOverlay fieldset#saveCustomFields.active .details,
+#saveCustomFieldsOverlay fieldset#saveCustomFields.active .details {
+	max-height:2000px;
+	-webkit-transition: max-height .5s ease;
+	-moz-transition: max-height .5s ease;
+	-ms-transition: max-height .5s ease;
+	transition: max-height .5s ease;
+}
+#saveAsFileCitationTypeSelect.useSavedTemplate #savedTemplateMenuWrapper { max-height:100px; }
+
+#createCustomFieldsOverlay fieldset#saveCustomFields .details label .labelText,
+#saveCustomFieldsOverlay fieldset#saveCustomFields .details label .labelText { display:inline-block; padding-bottom:4px; }
+#createCustomFieldsOverlay input[name=customFieldsTemplateName],
+#saveCustomFieldsOverlay input[name=customFieldsTemplateName] { margin-left:5px; width:500px; }
+/* error panel */
+#saveCustomFieldsOverlay .status_change_panel { display:none; width:90%; border-radius:6px; }
+#saveCustomFieldsOverlay .error_message li { display:none; padding-left:20px; background:transparent url(../images/icons/field-error-marker.gif) left 50% no-repeat; }
+/* any error will open the error list, but only active errors will appear */
+#saveCustomFieldsOverlay.error_nameInUse  .status_change_panel,
+#saveCustomFieldsOverlay.error_noneSelected .status_change_panel,
+#saveCustomFieldsOverlay.error_noTemplateName .status_change_panel { display:block; }
+#saveCustomFieldsOverlay.error_nameInUse .status_change_panel li.error_nameInUse,
+#saveCustomFieldsOverlay.error_noneSelected .status_change_panel li.error_noneSelected,
+#saveCustomFieldsOverlay.error_noTemplateName .status_change_panel li.error_noTemplateName { display:block; }
+#saveCustomFieldsNotSignedIn { clear:both; }
+/* Loading, please wait... */
+#saveCustomFieldsOverlayLoading { display:none; }
+#saveCustomFieldsOverlay footer.isLoading #saveCustomFieldsOverlayLoading { display:inline-block; }
+#saveCustomFieldsOverlay footer.isLoading button { display:none; }
+
+#saveAsFileCitationTypeSelect #savedTemplateMenuWrapper { clear:both; margin:0; padding:0; }
+#savedTemplateMenuWrapper p { margin-left:140px; font-size:10px; }
+#savedTemplateMenuWrapper select { width:520px; margin-left:140px; }
+
+/* CheckboxListManager.js */
+.checkboxList .chosenCustomFields li { display:none; }
+.checkboxList .chosenCustomFields li a { padding-right:.5em; }
+.checkboxList.checkboxListManagerInitialized .chosenCustomFields li { display:block; }
+
+/* PATENTS Create/Modify Alerts Overlay */
+.alertsBlock .dySrchScroller { overflow:hidden; }
+.alertsBlock .dySrchLimiter.fieldLevelAlerts .dySrchScroller { overflow-y:auto; }
+
+
+.priceInstruction {margin:0 15px}
+.savedSearchesSet {margin-left:28px; margin-top:1px;}
+.displaySavedSearch{margin:3px 0px 20px 0px}
+#all_searchset_list_displayalertsavedsearchset ul li{padding:0;margin:0}
+.searchStrategyContent{padding:10px 34px 0 40px}
+.editStrategy .label{width:80px}
+.editStrategy br.clear{line-height:20px}
+.editStrategy textarea{width:99.5%;height:250px}
+.editStrategy textarea.searchStrategyTerm {width: 100%;height:auto;resize:none;overflow:hidden}
+.runStrategyRadio, .editStrategy p.instructional{padding-bottom:7px}
+
+/*NP2-8590 - Please reuse commonness when tidying up */
+.mrSignInBox{float:left;padding-right:15px;margin-top:15px}
+.mrSignInInfo{float:left;width:440px;padding-left:15px;margin-top:15px}
+.mrSignInBox h4{margin:0px 0px 10px 5px}
+#search_panel.mrSignIn{width:470px}
+#search_panel.mrSignIn #search_inner_panel{width:433px}
+.mrSignInBox #search_inner_panel .search_inner_panel_content{padding:10px 0px}
+.mrSignInInfo h4,.mrSignInInfo p{margin:15px 0px 20px 5px}
+.mrSignInOptions ul li {margin-bottom:40px}
+.mrSignInOptions ul li p{margin:-3px 0px 5px 0px;font-size:1.3em;color:#D18104}
+.mrSignInOptions, .fotgotPassDialog{padding-top:15px}
+.mrSignInOptions p{margin:0px 0px 25px 0px}
+.mrSignInOptions ul.mrTools {width:428px;margin:0 10px 0 10px}
+.mrToolsIcon {background:url('../images/icons/myresearch_icons.gif') no-repeat;width:50px;height:50px;float:left;margin:-7px 9px 0 0}
+.mrToolsIcon.mrToolSavedDocuments {background-position:0 0}
+.mrToolsIcon.mrToolSavedSearches {background-position:0 -50px;margin-top:-9px }
+.mrToolsIcon.mrToolAlertsRSS {background-position:0 -100px;margin-top:-4px}
+.mrToolsIcon.mrToolSharedLists {background-position:0 -150px}
+.mrToolsIcon.mrToolPreferences {background-position:0 -200px;margin-top:-4px}
+.mrToolsIcon.mrToolRefWorks {background-position:0 -250px;margin-top:-8px}
+.mrSignInBox .loginFormInputFields input.sideBar{width:67%}
+.mrSignInBox .loginFormInputFields label{width:130px}
+.mrSignInBox .signInWrapper{margin-left:135px;float:left}
+/*NP2-8590 ends*/
+
+.advancedsearch_limiter input {vertical-align:top;top:1px}
+.advancedsearch_limiter .limiterOption {display:inline-block }
+.advancedsearch_limiter .limiterOption.complexLimiterOption {width:275px}
+.advancedsearch_limiter .limiterOption.dbLimiterOption {width:430px}
+.dySrchScroller.advSearchDbLimiter {width:480px}
+.dySrchLimiter .advSearchDbLimiter li {padding-top:6px }
+.alertLimiters {margin-top:15px}
+/*NP2-6629:Command line:representing fdb searches in alert & RSS layers - Psharma */
+.myresearch_list_wrapper .recentSearchesDatabase{padding:0 0 0 140px;}
+.myresearch_list_wrapper .row p.recentSearchesDatabase,.myresearch_list_wrapper ul.recentSearchesDatabase, .recentSearchContentArea p.recentSearchesDatabase, .saved_search_content p.recentSearchesDatabase{padding:0}
+.itemsPerPage .form_element_container{margin:0}
+.limit_col {margin-bottom:11px}
+
+.docViewTags{margin:0 0 0 10px}
+.docViewAddToTags{margin:0 5px 0 5px}
+.COSDocview{margin-left:40px;line-height:1.5}
+/*Lookup Author light view on lookup Citation page*/
+.authorBrowseWrapper{width:550px}
+.fieldBrowse_search input{width:435px}
+.projectEntryCode input.t-error,.thesaurusOverRide .thesaurusSearchForm {margin-top:-2px}
+
+/*---- NP2-10046:Iterative searching ----*/
+.iterative_searchWrapper ul{background-color:#F3F2F2;padding:0 0 8px 0;border-bottom:1px solid #CCCCCC}
+.savedSearchesSet .nameValue{float:left;max-width:410px;word-wrap:break-word}
+/*---- NP2-10211:NextStar Post Processing:Unselect Items----*/
+#exportOverlay .printItemsCheckBox{margin-left:102px}
+
+input.generatedSearchLink {border:1px solid #58799A;width:387px;height:21px;margin:5px 0 6px}
+.error_panel.linkCopied {margin-bottom:0;margin-top:4px}
+.mrSignInBox .t-error{float:none}
+/*NextStar Post Processing - Checkbox on Export, Print*/
+.printItemsCheckBox{padding:5px 0 15px 0}
+
+
+div.selectDate {margin:10px 0 0 30px}
+div.selectDate a.selectDateLink {display:block;margin-bottom:10px}
+div.selectDate div.selectSpecificDate {margin-left:10px}
+div.selectDate div.selectSpecificDate select {width:170px;margin-right:5px}
+
+table.sessionDetails_table {margin-top:-5px;}
+.costEstimateOverRide .sessionDetails_border {position: absolute; width: 680px; height: 1px; margin: 0 0 0 -5px;}
+
+.externalWidgetDiv {overflow:hidden}
+.snippetHighlight{background-color: #f4e99d;color: #000000;	padding: 0px 2px;z-index:500 !important;}
+
+.advSearch .horizontal.searches_link  li {margin: 0 10px 0 0}
+
+#citeThisOverlay{padding:0 15px 0 15px; width:800px;}
+#printCiteThisOverlay{width: auto;}
+.cite_Refworks{margin:5px 0;}
+.cite_Deselect{padding-bottom:20px;padding-left:140px}
+.citeRefworkImg{margin:0px 45px 0px 0px}
+.downloadOverlay{width:680px}
+.citeFileFormat{margin:10px 0;}
+#content-area_block .searchExpand a,.getCursor{cursor:pointer;}
+.exportDeselect{margin-left:102px; padding:5px 0 15px 0;}
+.resultRecentSearches{padding: 3px 0 10px;}
+
+.citeThis_content { line-height: 2em !important; margin-left: 10px; }
+
+/* End session styles */
+
+.endSession { margin: 20px 0 0 0; }
+.endSession .button_container { clear: both; float: left; margin: 24px 0 24px 0; }
+.endSession .link_container { float: left; margin: 24px 0 0 20px; padding-top: 2px; }
+.endSession .btnNew { margin-left: 0; }
+#endOrPauseID { display: none !important; zoom: 1; }
+#endOrPauseDropDown {margin-left: -73px; top: 18px}
+.tcontent .endSession { margin-top: 0 }
+
+/* Download results styles */
+
+#downloadAllSaveAsLayerOverlay { padding-left: 5px; }
+
+.sortByRss select{width:200px !important;}
+.searchStrategyT .lastChild {border-right:1px solid #CCC}
+.searchStrategyT td, .searchStrategyT th {text-align:center;vertical-align:top}
+.searchStrategyT td.searchTerm, .searchStrategyT th.searchTerm {text-align:left}
+.searchStrategyT th {padding: 3px 5px; background: #F4F2F3; border-left: 1px solid #ccc;border-top: 1px solid #ccc;}
+
+#editStrategySearchFields #sectionButton {float: none !important; margin: 0 !important; display: inline;}
+#editStrategySearchFields #searchFieldsForm .info_icon { display: inline-block; padding-top: 3px; }
+.alertsBlock .displayDbList{margin-left:150px;}
+
+.sharedListLinks{white-space: nowrap;}
+/*-------- NP2-11514: Alerts: Add 'status tracker' table --------*/
+.altHeaderBorderBottom ul.statusTracker{margin:0; padding:7px 0 0 0;}
+#tableViewDiv th.alertStatus, .vogueGotoWrapper input{width:50px;}
+#tableViewDiv th.lastModifiedDate, #tableViewDiv th.lastSentDate{width:125px;}
+#tableViewDiv th.emailRecipients{width:190px;}
+#tableViewDiv th.lastFoundDocs{width:70px;}
+#tableViewDiv th.action{width:100px !important; padding:0 0 0 31px; background: url(../images/icons/resend_grey.png) no-repeat 9px 2px #F4F2F3;}
+.newLogoImage{padding:5px 20px 0 0;}
+#findSimilarLogoWrapper .newLogoImage{padding-top:14px;}
+.header_border_bottom H2{color: #d18104;}
+.secSubVerRes #search_panel.results #search_inner_panel,#content-wrapper.product .secRes #search_panel.results #search_inner_panel {background-color:#C3DEEC;}
+.secSubVerRes #search_panel.results,#content-wrapper.product .secRes #search_panel.results{background-color:#C3DEEC;}
+.chosenFieldsDiv {width: 650px}
+.availableCustomFields, .chosenCustomFields {width: 310px;float:left }
+.availableCustomFields { border-right: 1px solid grey; padding-right: 10px; margin-right: 10px; }
+.availableCustomFields #customFieldsSelectList,
+.availableCustomFields .availableFieldsList,
+.chosenCustomFields .chosenFieldsList { width:300px; height: 300px; margin-top:10px; overflow-y:auto; padding:5px; border:1px solid grey; background:white; }
+.addItems .selectItems{padding:0 13px 0 0;}
+.addItems .briefDetailedView, .selectedItemsLink{float:left; padding:1px 0 0 0;}
+.resultListContainer ul.resultItems{margin:0;}
+
+/*Replace duplicate documents - Val*/
+#resultsLeftPanel .repDupDocInfo{float:right; margin-top:-20px}
+.dupDocInfo, .autErrorContent{padding-bottom:15px;}
+.dupDocInfo a,ul#databasePrefList li a.icon_transactions:hover{cursor:pointer}
+.dupDocForm select{min-width:100px;clear:none;}
+/*Results set ordering*/
+form.applyDBPrefForm span.errorHandler{margin:0 5px; color:#c00;}
+form.applyDBPrefForm .eachRow{border-bottom: 1px solid #CCC;margin-bottom: 10px;overflow: hidden;padding-bottom: 5px;}
+form.applyDBPrefForm .eachRowSorted{border-bottom: 1px solid #046091; margin-top:0;}
+form.applyDBPrefForm .eachRowRemoved{border:none}
+form.applyDBPrefForm ul#databasePrefList{margin-top:16px;}
+form.applyDBPrefForm .applyButton{float:right;margin-bottom:15px;}
+form.applyDBPrefForm .topDivider{height:1px;width:100%;background-color:#ccc;position:relative;top:6px}
+.DbPreference .useOrder { overflow:hidden; margin-bottom:10px; padding-top:5px; }
+form.applyDBPrefForm .resetAllLink{margin-left:200px;}
+form.applyDBPrefForm .childDB{margin:5px 0 0 70px}
+form.applyDBPrefForm .grandchildDB{margin:5px 0 0 40px}
+form.applyDBPrefForm a.showHides, span.cancelLink a{cursor:pointer}
+#resultsLeftPanel .DbPreference{ margin-right:5px; }
+#resultsLeftPanel .DbPreference p { padding:0 5px 5px; }
+#resultsLeftPanel .DbPreference p.changePreference{ margin-bottom: 10px; }
+#resultsLeftPanel .DbPreference p.prefDbApplied{background-color:#ffc; display:block;font-weight:bold;padding:5px;margin:0px}
+#resultsLeftPanel .DbPreference p .btnNew { display:inline-block; float:none; margin:0; }
+ul#databasePrefList li{cursor:move;}
+ul#databasePrefList li .eachRow span, ul#databasePrefList li .eachRowRemoved span{padding:0px 5px;display:inline}
+ul#databasePrefList li .eachRow a.info, ul#databasePrefList li .eachRowRemoved a.info{display:inline}
+ul#databasePrefList li .eachRow input, ul#databasePrefList li .eachRowRemoved input{width:30px;display:inline}
+.dbPrefLine {position:absolute; right:0; bottom:-11px; padding:3px 3px; border:1px solid #046091;background-color:#EEF7FB;}
+.recipientList{max-height:102px;margin-bottom:10px}
+.emailRecipients a{text-decoration:underline}
+
+#smartSearchContent .smartsearch_panel .body{padding-bottom: 0;}
+.smartSearchStyle .smartSearchPoweredBy{font-size:.80em;}
+.smartSearchStyle .smartSearchList{padding-top:3px; max-width:865px;}
+.csvDownload_Link {margin-top:7px;}
+
+.briefView .resultListContainer .contentArea{margin-left:54px}
+.briefView .resultListContainer .iconed {display:none;}
+.briefView .resultListContainer .item {padding:3px 5px 4px 0;}
+.briefView .resultListContainer .display_record_indexing_row.found_In {margin: 0 0 3px 0;}
+.briefView .resultListContainer .titleAuthorETC {padding: 0 0 0 3px;}
+.titleAuthorETC{word-wrap:break-word;}
+.briefView .resultListContainer .indexingInfoPreview {margin-top:3px;}
+.briefView .resultListContainer .selectItemCheck, .resultsPageSpecific .addItemsWrapper .addItems { margin-left: 0 }
+.briefView .resultListContainer li.resultItem {margin-top: 1px;}
+.briefView .filter_item img {display:none}
+.resultListContainer .display_record_indexing_row.found_In .display_record_indexing_data, .display_record_indexing_row.found_In .display_record_indexing_fieldname { width: auto; max-width: none; float: none; font-weight:normal; float: none; padding: 0; font-size:0.915em; line-height:1.7em;}
+.resultListContainer .display_record_indexing_row.found_In .display_record_indexing_fieldname {padding-right: 3px}
+
+.alertOverlay .alertsBlock fieldset{border:none;}
+.alertOverlay .alertsBlock legend{display:none;}
+
+.biosGroupLine {display:table-cell}
+.biosGroupLine .display_record_indexing_fieldname {font-weight:normal; width:108px; padding-top:0;}
+.display_record_indexing_row .biosGroupLine .display_record_indexing_data {width:324px;}
+.fieldAvaibleDetailsWrapper{padding-top:10px;overflow-y:scroll;height:370px}
+.biosisSequence {margin-left:145px}
+
+.lookUpCite{width:140px; padding-left:10px;}
+
+.recentSearchesTab .tabContent{padding:0}
+.recentSearchesTable{margin:0;margin-bottom:10px;border:1px solid #CCCCCC;border-top:none}
+.recentSearchesTable th{border:none;background:none;border-bottom:1px solid #CCCCCC;border-right:1px solid #CCCCCC}
+.recentSearchesTable td{border:none; border-bottom:1px solid #CCCCCC;text-align:left}
+.recentSearchesTable td .pinkieContainer{margin-top:0}
+.recentSearchesTable .displayDbList{margin-left:140px}
+
+.results_list_copy .snippet p{margin:6px 0 -9px 0;}
+.resultItems .indexingInfoPreview .display_record_indexing_row {margin-bottom:3px;}
+
+#abstractTrigger, #fulltextTrigger, #indexingTrigger, #taggingTrigger, .indexingTrigger {font-weight:bold; cursor: pointer}
+#abstractHeader .inline_link span.altText, #fullTextHeader .inline_link span.altText, #abstractHeader.collapsed .inline_link span.link, #fullTextHeader.collapsed .inline_link span.link {display:none}
+#abstractHeader.collapsed .inline_link span.altText, #fullTextHeader.collapsed .inline_link span.altText, #fullTextHeader.collapsed #fulltext_firsthit a {color:#999; display:inline}
+#abstractHeader { margin-top:15px; padding-top:15px; border-top: solid 1px #ddd; }
+#abstractHeader h3 { display:inline-block; }
+#abstractHeader .inline_link { display:inline-block; float:none; }
+#abstractHeader .translate-subHeading { display:inline-block; padding-left:10px; }
+.contentPadingDocview .cite_this {margin-left:14px}
+.DocViewShowAll p {display: none}
+#toggleHits.toggleActive {margin-top:-5px}
+.abstract_Text .small {font-size:1.2em;}
+/*.contentPadingDocview h3 {font-weight:bold}*/
+.abstractSubheader {margin-top: 10px; margin-bottom: 5px; clear: left;}
+.abstractSection{margin-top: 10px;}
+.hidden-template {display:none;}
+.collapsed .inline_link a, .collapsed .altText {cursor:default;text-decoration:none }.display_record_formats .horizontal li, .display_record_formats #duplicateCitationZone, .outBoundLinks a { display:block; margin-bottom: 4px}
+.display_record_formats .horizontal a, .display_record_formats #duplicateCitationZone {padding-left:20px}
+.display_record_formats .horizontal a.icon_downloadvideo {background-position: -3px -1751px}
+.display_record_formats .horizontal a.icon_findacopy {background-position: -3px -550px}
+.display_record_formats .horizontal .noPadding a {padding: 0}
+.resultsPageSpecific #element_saveasexportformatselection.dropdownMenu, .saveExportLink  #element_saveasexportformatselection.dropdownMenu{right:0; z-index: 1000;}
+div#element_saveasexportformatselection.dropdownMenu {z-index: 1000;}
+
+.browseIssues span.selectItemCheck, .briefView .addItemsWrapper .selectItemCheck{margin-left:0px}
+ul.horizontal li.browseIssueSelection{margin-top:-2px;}
+.displaySelected{margin-top:2px;}
+h2.pubResultHeading{margin-bottom:17px;}
+.browseIssues .display_record_indexing_row{margin:3px 0px -4px 0px}
+.browseIssues li.resultItem .item{margin-bottom:-3px;}
+.browseIssues ul li.resultItem,.pubResultItem{margin-bottom:10px;}
+.browseIssues .contentArea{margin-left:63px;}
+.browseIssues .sep{margin-bottom:1px;}
+.broBySubject {border-top:1px solid #CCCCCC; padding-top:15px;}
+.Topicnews .resultListContainer ul.horizontal li{margin-bottom:0;}
+.results-wrapper #side_panel, .results-wrapper .subject #side_panel{margin-top:10px;}
+.mrDocuments #side_panel, .mrFigTables #side_panel{margin-top:14px;}
+.results-wrapper .right-column-collapse-rarrow, .results-wrapper .subject .right-column-collapse-rarrow,
+.results-wrapper .right-column-collapse-larrow, .results-wrapper .subject .right-column-collapse-larrow{top:0px}
+.selectedItemsPage #side_panel{margin-top:15px}
+.selectedItemsPage .right-column-collapse-rarrow, .selectedItemsPage .right-column-collapse-larrow, .mrDocuments .right-column-collapse-larrow, .mrDocuments .right-column-collapse-rarrow, .mrFigTables .right-column-collapse-larrow, .mrFigTables .right-column-collapse-rarrow{top:5px}
+
+.results-wrapper .browseResults #side_panel{margin-top:31px}
+.results-wrapper .browseResults .right-column-collapse-rarrow, .results-wrapper .browseResults .right-column-collapse-larrow {top:22px}
+
+.recentSearchItem .recentSearchDetailsToggle a {width: 15px; height: 20px; display: block; padding:0}
+/*.recentSearchItem .recentSearchDetails, .saveSearchSetSelected .recentSearchDetails{margin-left: 15px}*/
+.recentSearchesTable .recentSearchDetails{margin-left: 15px}
+.recentSearchItem .row p.recentSearchesDatabase {padding:4px 0 0 0}
+.recentSearchItem .database_list {margin: 0 0 0 100px}
+.recentSearchesTable .icon_tick {margin: -2px 0 0 8px;background-position:0 -5px}
+.recentSearchesTable .icon_info {padding-bottom:0; text-decoration:none}
+.advSearch .tabContent .toolbar_panel.recentSearchesToolbar {width: 100%; margin: 15px 0}
+table.recentSearchesTable.t-data-grid thead tr th,
+table.recentSearchesTable.t-data-grid tbody tr td {padding: 5px 8px; vertical-align: top}
+table.recentSearchesTable .forResults {width: 75%}
+.forResults .name, .backToPubLink {padding-right:10px}
+.browseIssue #side_panel{margin-top:36px}
+.browseIssue .right-column-collapse-rarrow,.browseIssue .right-column-collapse-larrow{top:26px}
+.pdfPage .display_record_Pdf_formats dt {float:left; margin-right:5px;}
+.recentSearchesToolbar .body > .float_left {width:30%;text-align:left}
+.recentSearchesToolbar .body > .float_left ul.horizontal {margin-left:8px; font-size: 1em; line-height:1.25em}
+.recentSearchesToolbar .body > .float_right {width:30%;text-align:right}
+.recentSearchesToolbar #detailsBlockZone {text-align:center}
+.results-wrapper.topicBrowseResults{padding-top:0px}
+.results-wrapper.topicBrowseResults .resultsPageSpecific .minusIndex{top:0}
+
+.resultItems .contentArea .float_left_Ie7 ul.horizontal{margin-bottom:0;}
+.nobluebar .thesaurusOverRide{min-height:480px!important;}
+.pricearea{padding:5px; width:95%;}
+
+.productRecordFormats dt{float:left; padding:0 10px 0 0;}
+
+.toplevelHome .pagingBoxNoResultMain, .toplevelHome #smartSearchContent {margin-right: 150px;}
+#centered_search_area .pagingBoxNoResultMain, #centered_search_area #smartSearchContent {margin-right: 0;}
+
+.product .secRes .newLogoImage, .product .publicationBrowseSearch .newLogoImage, .subject .publicationBrowseSearch .newLogoImage{display:none;}
+.product .secRes .search_panel_subcontent #search_inner_panel{width:930px !important;}
+.publicationBrowseSearch .search_panel_subcontent{padding:5px 0 5px 0;}
+
+.results_list_copy.rtl_font_size_link {word-wrap:break-word;}
+.stopAfterWrapper #stopAfter{margin-right:0;}
+.saveSearchError .t-error{margin:0}
+
+#LoginForm .btnSearchPanelInnerBG {margin-right:6px}
+.mrSignInBox .btnSearchPanelInnerBG {margin-right:4px}
+
+.database_list .searchSetNumber{display:block; font-weight:bold}
+.database_list .searchSetData{width:95%; padding:0 0 0 25px;}
+
+.database_list.browsable_link {width:225px}
+
+#SaveToFileForm .form_element_container {min-width:635px}
+.saveSearchProCode .form_element_container .alert_label{width:100%; margin-bottom:2px}
+
+/*expandy searchbox - starts */
+.secRes .searchTextarea, .secSubVerRes .searchTextarea{margin-left:0px; width:790px;position:relative}
+.secRes .searchTextarea textarea, .secCon .searchTextarea textarea, .secSubVerRes .searchTextarea textarea{width:770px;line-height:1.25em;font-size:1.3em;padding:2px 2px 2px;margin-bottom:-0.04em;border:1px solid #59799A;margin-top:0px;overflow:hidden;resize:none;}
+.secCon .searchTextarea {margin-left:0px;width:555px;position:relative}
+.secCon .searchTextarea textarea {width:535px;padding-bottom:3px;}
+.secSubVerRes .searchTextarea, .product .secRes .searchTextarea {width:919px;}
+.secSubVerRes .searchTextarea textarea{width:899px;}
+.product .secRes .searchTextarea textarea{width:900px; padding:2px 2px 3px;}
+.secSubVerRes #search_panel.results #search_inner_panel{width:929px;}
+.secProd .searchTextarea textarea{width:634px;line-height:1.25em;font-size:1.3em;padding:2px 2px 2px;margin-bottom:-0.04em;border:1px solid #59799A;margin-top:0px;overflow:hidden;resize:none;padding-bottom:3px;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.secCon .searchTextarea textarea{padding-bottom:3px; width:535px; margin-bottom:-0.2em;}
+	.secRes .searchTextarea textarea, .secSubVerRes .searchTextarea textarea, .product .secRes .searchTextarea textarea{padding-bottom:3px; margin-bottom:-0.2em;}
+	.secRes .searchTextarea textarea{width:770px;}
+	.secProd .searchTextarea textarea{padding-bottom:3px;}
+}
+#dragIcon{position:absolute;right:0px;bottom:0px;display:none;cursor:n-resize;}
+/*expandy searchbox - ends */
+
+#mainContentLeft.statusTrackerTable {margin-right: 0}
+
+/* NP2-13073: Display asterisk
+.searchStrategyT thead .icons_base_sprite {background-color: #F2F3F3; background-image: url("../images/icons/icons_sprite_searchouter.png")}*/
+.searchStrategyT thead a.icons_base_sprite {cursor:pointer;text-decoration:none;}
+.editSearchQuery{width:310px;float:left}
+
+/* database layer styles */
+.databaseLayerToolBar{margin-top:-15px;}
+.databaseLayerToolBar .toolbar_panel ul{clear:none;}
+.databaseLayerToolBar  .toolbar_panel {width:96%;}
+.dataBaseLayerCurrentList{max-height:400px;background:#fff}
+#all_database_list .db_list_container {background-color:#ffffff;max-height:400px;padding-top:8px;}
+#popupDatabaseLayerFooter {padding:6px 14px}
+.databaseLayerToolBar  .toolbar_panel {width:96%;}
+#databasePreviewZone .tabContent {background-color:#ffffff}
+
+#searchTerm.commandLineTextArea, #textMatch textarea#textarea{resize:vertical;overflow:auto}
+#searchTerm.commandLineProfessionalTextArea{resize:none}
+
+/*Pricing Information Pop up*/
+.PricingHeader{width:auto!important;min-height:450px!important;}
+.pricingHeaderHelp{height:45px;}
+.pricingHeaderHelp a{top:2px; padding-top:2px!important;color:#FFFFFF;cursor:pointer;text-decoration:underline;right:15px;}
+.showMoreRssLink {padding-right:10px}
+.showMoreRssLink a {white-space:nowrap}
+
+/* Sprite references overwrite (for white background on lightviews, etc.) */
+#databasePreviewZone .dataBaseLayerCurrentList .icons_base_sprite, #databasePreviewZone #activeDatabaseZone .item_unselectedDB .icons_base_sprite, .alertsBlock .icons_base_sprite {background-image: url(../images/icons/icons_sprite.png)}
+#saveAsFileOverlayCiteThis{height:280px}
+.barcodeUsername label, .barcodePassword label, .userandPass barcode{word-wrap:break-word; max-width:140px;}
+
+.alertsBlock .row .forLabel {line-height: 1em}
+
+.outBound_linking_logo {word-wrap: break-word}
+.addShortcutWrapper{margin:15px 0 15px -5px}
+.addShortcutoverlay .db_list_container{background:#FFF;height:260px;}
+.addShortcutText{margin-top:-9px;}
+
+.COS_secRes #search_panel{width:930px;}
+.COS_secRes #search_inner_panel{width:785px !important;}
+
+
+#widgetSetupDiv p{margin-bottom:12px;}
+
+input.generatedSearchLink, input.generatedDBShortcut {border: 1px solid #58799A; width:393px; height:21px; margin:5px 0 6px; padding: 0 2px}
+input.generatedDBShortcut {width:510px}
+.error_panel.linkCopied {margin-bottom: 0; margin-top:4px;}
+.mrSignInBox .t-error{float:none}
+
+.exposedFieldRadio input.radio {width:auto;float:none}
+.exposedFieldRadio {width: 220px}
+
+.display_record_indexing_data .multilineFieldIndent {text-indent:-25px; padding-left:25px; display:block}
+
+.limiterWidth{width:490px;} /* Fixing width of limiters on advanced search page so they don't wrap */
+.recentSearchDetails .limitsContainer p.recentSearchesDatabase{padding:0;}
+.targetNote .forNotes{width:44%;}
+#drugsAdminDisplay, #drugsAdminDisplay li {list-style:none;margin:0;padding:0;background:none;}
+#drugsAdminDisplay {margin-left:1px}
+
+.saveSearchSetSelected{background-color:#EEF7FB;}
+.saveSearchToolbar{width:717px;}
+table.recentSearchesTable tr td.gridView a {float:right}
+table.setSelected{border:none;margin-bottom:0px;}
+table.recentSearchesTable.t-data-grid.setSelected tbody tr td{border:none !important;}
+.info_panel .recentSearchesTable.t-data-grid.setSelected .icons_base_sprite.icon_tick{background-image:url("../images/icons/tick_sprite.gif");background-position: 0 -5px;}
+div.panel_base.info_panel table.recentSearchesTable.t-data-grid{width:100.5% !important}
+table.recentSearchesTable tr td:last-child .dropdownMenu{text-align:left}
+table.recentSearchesTable div.limitsContainer p.recentSearchesDatabase{padding-left:0px !important;margin-top:0px;line-height:1.5em;}
+table.recentSearchesTable div.limitsContainer a.loadList{line-height:1.5em;}
+div.limitsContainer .lessFour ul{margin-top:2px;}
+
+#content-area table.selectDBHeaderTable tbody tr td.selectAll{width:240px}
+.prototip table.selectDBHeaderTable tbody tr td.selectAll{width:600px}
+
+.transactionAlert {height:18px; float:left;}
+/* -- Dialog Account Migration Tool -- */
+.accountMigrationTablepage{font-size:0.75em; background:#ffffff url(../images/pagelayout/top_bar_bg.gif) repeat-x 0 0; padding: 0 15px 20px 15px; min-height:600px; margin:0 auto;}
+.dialogAccountMigration .migrationEditAlert, .vogueGotoWrapper #currentPage{padding:0 0 15px 0;}
+.dialogAccountMigration ul.horizontal{padding:15px 0 0 15px;}
+.dialogAccountMigration .logoImage {padding:50px 0 0 0;}
+.dialogAccountMigration .contentArea{text-align:center; }
+.dialogAccountMigration .contentArea .searchArea{width: 500px; margin: 0pt auto; padding: 150px 0pt 0pt; text-align: left;}
+.dialogAccountMigration #endConfirmLink{color: #FFFFFF; float: right; margin: 6px 10px 0 0;}
+.dialogAccountMigration table, .contentPadingDocview .displayDuplicateResults{width:100%;}
+.dialogMigrationTable{border-bottom:1px solid #CCCCCC;}
+.dialogAccountMigration table tbody tr{border-bottom:1px solid #CCCCCC;}
+.dialogAccountMigration table tbody tr td{border:none; border-top:1px solid #CCCCCC;}
+.dialogAccountMigration table tbody tr td.checkBox{border-left:1px solid #CCCCCC;}
+.dialogAccountMigration table tbody tr td.borderRight{border-right:1px solid #CCCCCC !important;}
+.dialogAccountMigration table thead tr th{background-color:#F4F2F3; color:#4C4C4C; text-align:left; padding:5px; font-weight:lighter;}
+.dialogAccountMigration table thead tr th.borderLeft{border-left:1px solid #CCCCCC;}
+.dialogAccountMigration table thead tr th.borderRight{border-right:1px solid #CCCCCC;}
+.dialogAccountMigration table thead tr th.csNotes{min-width:100px;}
+.dialogAccountMigration table thead tr.firstRow th{border-top:1px solid #CCC; border-right:1px solid #CCCCCC;}
+.dialogAccountMigration table tr .csStatus{width:115px; white-space:nowrap;}
+.dialogAccountMigration table tr .alertName{width:140px; white-space:nowrap;}
+.dialogAccountMigration table tr th.savedSearchName{width:140px; padding:5px; white-space:nowrap;}
+.dialogAccountMigration table tr .alertChanged, .dialogAccountMigration table tr .transUpdatedBy,.dialogAccountMigration table tr .migrationAttempt{width:85px;}
+.dialogAccountMigration table tr .csUpdatedBy, .dialogAccountMigration table tr .mrAccount{width:70px;}
+.dialogAccountMigration .migrateAlerts{padding:10px 0;}
+.dialogAccountMigration .migrateAlerts .migrateAlertsContent{padding:10px 0; border-top:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;}
+.dialogAccountMigration .migrateAlerts .migrateAlertsSelection{padding:10px 0; border-top:1px solid #CCCCCC;}
+.dialogAccountMigration .migrateAlerts .migrateAlertsSelection .float-left{font-weight:bold;float:left;padding-right:10px;}
+.dialogAccountMigration .contentArea .section{padding-top:40px;}
+.dialogAccountMigration .contentArea .section .radioButtons{margin-left: 100px;}
+.migrationStatusArea{background:#F4F2F3; border:1px solid #CCCCCC; padding:15px 10px 15px 10px;}
+.migrationStatusArea .csNotes{padding-left:250px;}
+.migrationStatusArea .form_element_container textarea{width:400px !important; min-height:75px;}
+.migrationStatusArea .form_element_container select{clear:none; width:150px;}
+.migrationStatusArea .updateBtn, .radioFieldPadding{padding-right:15px;}
+
+.dialogAccountMigration table.editImportedAlert {margin: 0}
+.dialogAccountMigration table.editImportedAlert td {border: 1px solid #ccc !important;vertical-align:top; border-top:none !important;}
+.dialogAccountMigration table.editImportedAlert td.imported {background: #F4F2F3}
+.dialogAccountMigration table.editImportedAlert textarea {resize:none; width:459px; background:#FFFFFF; border:1px solid #CCCCCC;}
+.dialogAccountMigration .pagination{width:95%; text-align:center;}
+.pdfPage #signInLinkZone{height:auto;}
+.alertEmailAlsoSend{float: left;  max-width: 500px; word-wrap: break-word; margin:0 0 0 20px}
+.saved_search_content .alert_label{width:103px;}
+.selectFieldsWrapper { display:none; }
+.selectFieldsWrapper.opened { display:block; }
+.selectFieldsWrapper .advSearch .label_container  {width:auto; margin-left:10px; clear:both;}
+.selectFieldsWrapper .opsDropdown {width:365px; clear:both; margin-left:18px;}
+.editImportedAlert .disabledArea{color:#928e8e;}
+.saved_search_content p.recentSearchesDatabase{margin:0px;padding:0px !important}
+.recentSearchesTable .multipleDBSelections {margin-left:110px;}
+.multipleDBSelections, .rssFeedTextarea{margin-left:140px;}
+
+.subMenuInfo{width:230px; padding:10px 5px 0px 5px;white-space:normal;}
+
+.csTransformedQuery{width:300px;}
+.filter_more_buttons .filterOptionContainer{height:30px; padding:6px 0 0 0;}
+.navigatorFilter{height:90px; padding:5px;}
+.filtersContainer{height:195px; overflow-y:scroll; overflow-x:hidden;}
+.filterOptionContainer label.after{margin:0 12px 0 0;}
+
+/* Adding these styles to make longs strings wrap in the full citation details - JC */
+.indexNoWrap .display_record_indexing_fieldname {float:left;}
+.indexNoWrap .display_record_indexing_data{float:left;width:494px;white-space:normal;word-wrap:break-word;}
+
+#pageLayoutBasicTopNav{position:absolute;top:39px;width:100%;}
+.backToTable{margin-right:15px;float:left;}
+.localeAndHelp{margin-right:20px;float:right;}
+.comparingAlerts .form_element_container{margin-right:0;}
+.comparingAlerts .form_element_container input.textField{width:310px;}
+.saveAsWrapper .txtfieldCol select{width:520px;}
+.noteWidth, .emailFieldNote {width:495px;}
+
+#addDatabaseShortcutOverlay .tabContent, #modifyDatabaseShortcutOverlay .tabContent, #infoBubbleZone #databasePreviewZone .tabContent {background-color:white}
+#addDatabaseShortcutOverlay .tabItem a, #modifyDatabaseShortcutOverlay .tabItem a, #infoBubbleZone #databasePreviewZone .tabItem a {background-position: left -694px}
+#addDatabaseShortcutOverlay .tabItem span, #modifyDatabaseShortcutOverlay .tabItem span,  #infoBubbleZone #databasePreviewZone .tabItem span{background-position: right -648px}
+
+.showBibliographySave {width:610px; margin-top: 15px}
+.showBibliographySave .refWorksLogoPosition {margin: -10px 0 -5px 0}
+.showBibliographySave .refWorksLogoPosition img {height:30px}
+
+#exportRefWorksOverlay,.exportResultOverlay,.exportRefWorksOverlay,#saveAsFileOverlay,.exportSaveOverlay {width:630px}
+
+.dialogAccountMigration table tbody tr.comparingAlerts {border-bottom:none !important;}
+.dialogAccountMigration table tbody tr.comparingAlerts td{border-bottom:none !important; border-top:none;}
+#obits_content .fieldset_contents .lookUpPub{vertical-align:bottom; line-height:20px;}
+
+.profSearchTips{margin-bottom:-20px;padding-left:28px;padding-top:10px;width:775px;}
+.profHints{float:left;width:100%;padding-bottom:15px;}
+
+#indexSearchTerms{padding:0 0 0 16px;}
+#indexSearchTerms label{display:inline-block;}
+#indexSearchTerms ul li {margin-bottom: 5px;}
+#indexSearchTerms ul li input[type="checkbox"] {float: left; margin: 3px 0 0; padding: 0}
+#indexSearchTerms label {float: left; margin: 0 0 0 5px; padding: 0; width: 160px;}
+#indexSearchTerms .btn_wrapper {margin: 10px}
+#indexSearchTerms .indexFieldSubHeader {margin-top: 10px}
+#idxTermSearchOverlay #indexSearchTerms label {width: 350px}
+#indexSearchTerms #indexSearchTermslist {min-height: 300px; overflow-y: auto; overflow-x: hidden}
+DIV.t-checklist-row input{vertical-align:top; top:3px;}
+DIV.t-checklist-row LABEL {max-width:160px; text-align:left;}
+.resultsPageSpecific .findSimilarWrapper .info_panel{margin-bottom:5px; width:680px;}
+.pdfImagePager #updatePdfForm, .pdfImagePager ul.horizontal li{float:left;}
+.pdfImagePager #updatePdfForm, .pdfImagePager ul.horizontal li li{display:inline;}
+
+ul.pubSummaryTitle{margin-top:3px;padding-left:20px}
+.pubFullTxtOnly{margin-top:3px}
+.display_record_Pdf_formats .otherFormatsLinks{float:left;}
+.contentPadingDocview ul.horizontal li label, .contentPadingDocview ul.horizontal li a.arrow_next, .updateBlockPagination .arrow_next_disabled{margin:0;}
+.otherFormatLinksPDF dt, .otherFormatLinksPDF dd{float:left; padding:0 5px 0 0;}
+.updateBlockPaginationWrapper{width:500px;}
+.updateBlockPaginationWrapper .errorBlock{width:418px; padding:10px 0 0 0; float:right;}
+.updateBlockPagination ul.horizontal input.pageIndex{margin-right:5px; height:12px;}
+.vogueGotoWrapper{clear:right; margin:0 0 0 40px;}
+.vogueGotoWrapper label{line-height:20px; padding:0 5px 0 0;}
+.ericLimiters ul.searchlimiter{width:500px !important;}
+.importUserError input.t-error{height:auto;}
+.importUserError label{width:100px;}
+/*div#flashObject{width:1002px;}*/
+#flashCitation .icons_base_sprite.icon_cite{background-position:-1px -100px}
+.disabledText a, .disabledText a:hover{color:#a5a5a5; text-decoration:none !important;}
+.pubRetResults{padding:3px 5px 0px 10px;}
+.pdfPageView{width:350px; float:right; padding-top:5px;}
+ul.lookUpBrowseList .indentCheckBox{padding:3px 0 3px 0; clear:both; float:left;}
+ul.lookUpBrowseList .indentCheckBox input.selection_checkbox{float:left; margin-top:3px;}
+ul.lookUpBrowseList .indentCheckBox label{float:left; display:inline; max-width:550px;}
+.smallInstituteLogo a{background-color:#fff !important;}
+.pdfPage #columnArrow{top:5px;}
+.pdfPage #side_panel{margin-top:15px}
+ul.horizontal.viewPubContents{margin:4px 5px 0px 10px;}
+.printPreviewTable .indexNoWrap .display_record_indexing_data, .printPreviewTable .indexNoWrap .display_record_indexing_data{white-space:nowrap;}
+.printPreDisplay .display_record_indexing_row{clear:both; float:left; width:100%;}
+.printPreDisplay{font-size:0.75em;} /* changed font-size for the print preview formally 0.85*/
+.docView .abstract_Text{padding-right:10px;}
+.resultItem .contentArea .display_record_indexing_row .display_record_indexing_fieldname{width:75px;}
+#pq_layer .emailOverlay, #pq_layer .exportSaveOverlay{width:670px}
+/* Browse pagination - Vogue */
+ul.extendedPageRange li, ul.extendedPageRange li.browsePager span{padding-top:2px;}
+ul.extendedPageRange li.browsePager{padding-top:0px;}
+ul.extendedPageRange li.browsePager label, ul.extendedPageRange li.browsePager input[type='text'], ul.extendedPageRange li.browsePager span.totalPages{float:left;}
+ul.extendedPageRange li a.arrow_next, ul.extendedPageRange li span.arrow_next_disabled{margin-left:0px;}
+ul.extendedPageRange li.browsePager input[type='text']{width:40px;}
+ul.extendedPageRange li.browsePager a.btnNew{margin-top:-5px;}
+form#updateImageForm{width:700px;}
+#restrictedPrint img{width: 50%}
+a.toggleActive:focus{color:#00569F !important;}
+#signInLinkZone.hide{display:none !important;height:0px;}
+#logo.flashViewerShowLess{padding:0 0 0 0;width:790px;}/* this class is required for flash view showMoreLess JS */
+.pubFormatAvail{height:199px;max-height:200px;overflow-y:auto;}
+fieldset.showPageRange .form_element_container{margin-bottom:0px;}
+
+.study_path #search_panel #search_inner_panel .search_field_outer {float:left;width: 79%;}
+.study_path #search_inner_panel .search_inner_panel_content .topic_label {width: 140px;}
+.study_path #search_inner_panel .search_inner_panel_content {width: 100%;}
+.study_path #search_panel #search_inner_panel {width:100%;}
+.study_path #search_panel {width: 98%;}
+.study_path #search_panel .search_panel_subcontent {width:80%;}
+.study_path .search_Tips_panel{margin-left:30px;}
+.study_path #search_panel .search_panel_searchtips{margin:10px 0 0 30px;width:auto;font-size: 0.915em;line-height: 1.365;}
+#describeYourselfDiv .form_element_container input,#describeYourselfDiv .form_element_container textarea{width:492px;}
+
+/* PROFESSIONAL-ONLY STYLES */
+#PQ_10444_temp_exception { display:none; }
+.mainContentLeft.professional { display:none; }
+#mainContentLeft.professional { margin-right:0 !important /* sshepard - overrides !important margin. refactoring req. */ }
+.contextMenuContainer { position:relative; }
+.contextMenuContainer a.contextMenuLink { padding: 0 0 0 14px; background: url(../images/icons/indicators_sprite.gif) no-repeat 0 0; }
+.contextMenu { position:absolute; display:none; }
+
+/* Email Alerts */
+#emailAlerts div.actions {
+	padding:5px 5px 5px 9px; border: 1px solid #CACACA; background-color: #D8EEF9;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+#emailAlerts .showHideAllDetails a { padding-left:13px; background-image: url(../images/icons/indicators_sprite.png); background-repeat: no-repeat; background-position: left -200px; }
+#emailAlerts .showHideAllDetails a.close { display:none; background-position:left -300px; }
+#emailAlerts .showHideAllDetails.opened a.open { display:none; }
+#emailAlerts .showHideAllDetails.opened a.close { display:inline-block; }
+
+#emailAlerts > table { width:100%; border:1px solid #cccccc; word-wrap:break-word; }
+#emailAlerts th { padding:5px 10px; border:1px solid #CCC; background-color:#f4f2f3; color:#4C4C4C; font-weight:normal; white-space:nowrap; text-align:left; vertical-align: top; }
+#emailAlerts td { padding:5px 10px; vertical-align: top; }
+#emailAlerts .alertName { width:50%; white-space:normal; }
+/* ascending sort indicator */
+#emailAlerts > table.alert_name_asc th.alertName a,
+#emailAlerts > table.frequency_asc th.alertFrequency a,
+#emailAlerts > table.update_date_asc th.alertLastModifiedDate a { display:inline-block; padding-right:13px; background-image: url(../images/icons/indicators_sprite.png); background-position: 99% -900px; background-repeat: no-repeat; }
+/* descending sort indicator */
+#emailAlerts > table.alert_name_desc th.alertName a,
+#emailAlerts > table.frequency_desc th.alertFrequency a,
+#emailAlerts > table.update_date_desc th.alertLastModifiedDate a  { display:inline-block; padding-right:13px; background-image: url(../images/icons/indicators_sprite.png); background-position: 99% -800px; background-repeat: no-repeat; }
+/* ascending sort indicator with focus */
+#emailAlerts > table.alert_name_asc th.alertName a:focus,
+#emailAlerts > table.frequency_asc th.alertFrequency a:focus,
+#emailAlerts > table.update_date_asc th.alertLastModifiedDate a:focus { background-position: 99% -995px; }
+/* descending sort indicator with focus */
+#emailAlerts > table.alert_name_desc th.alertName a:focus,
+#emailAlerts > table.frequency_desc th.alertFrequency a:focus,
+#emailAlerts > table.update_date_desc th.alertLastModifiedDate a:focus { background-position: 99% -1090px; }
+
+#emailAlerts td.alertName { padding-left:9px; }
+#emailAlerts td.alertName a { padding-left:13px; background-image: url(../images/icons/indicators_sprite.png); background-repeat: no-repeat; background-position: left -200px; }
+#emailAlerts td.alertName a.open { display:inline-block; }
+#emailAlerts td.alertName a.close { display:none; background-position:left -300px; }
+#emailAlerts td.alertName a:visited { color:#00569F; /* IE9 was making label turn white after expanding */ }
+#emailAlerts td.alertName a:focus { background-color:#00569f; color:#fff; }
+#emailAlerts td.alertName a.open:focus { background-position:left -600px; }
+#emailAlerts td.alertName a.close:focus { background-position:left -700px; }
+#emailAlerts tr.brief.opened .alertName a.open { display:none; }
+#emailAlerts tr.brief.opened .alertName a.close { display:inline-block; }
+#emailAlerts .actions { white-space:nowrap; }
+#emailAlerts tr.brief { cursor:pointer; }
+#emailAlerts tr.brief:hover,
+#emailAlerts tr.brief.opened { background-color:#D8EEF9; }
+#emailAlerts tr.detail { display:none; background-color: #EEF7FB; }
+#emailAlerts tr.detail td { padding:0; }
+#emailAlerts tr.detail td td,
+#emailAlerts tr.detail td th { padding:0 10px; line-height:18px; }
+#emailAlerts tr.detail.opened { display:table-row; }
+#emailAlerts tr.detail .expando { display:block; height:auto; overflow-x:hidden; padding-left:13px; }
+#emailAlerts > table table { width:100%; }
+#emailAlerts > table table th { width:1%; white-space: nowrap; background: transparent; }
+#emailAlerts > table table th,
+#emailAlerts > table table td { border-width: 0; }
+#emailAlerts td.alertFrequency,
+#emailAlerts td.alertLastSentDate,
+#emailAlerts td.alertLastModifiedDate { white-space:nowrap; }
+#emailAlerts .icon_resend { background-position:-2px -2751px; }
+#emailAlerts .icon_resend:focus { background-color:#00569F; }
+#emailAlerts td.databases .forLabel { display: none; }
+#emailAlerts td.databases .lessFour ul { margin:0; }
+#emailAlerts td.databases .database_list ul { margin:0; }
+#emailAlerts ul.actions { height:16px; margin:0; padding:0 0 15px 10px; }
+#emailAlerts ul.actions li { display:inline; margin-right:20px; }
+#emailAlerts ul.actions #alertLinkZone { display:inline; }
+#emailAlerts .multipleDBSelections { margin-left:0; }
+
+/* Resend Alerts Overlay */
+#emailDeliveryRecipients { padding: 5px 0 0 22px; }
+#emailDeliveryWrapper .chkBox_container { height:90px; }
+#emailDeliveryWrapper label { display:block; }
+
+/* We'll probably turn these back on in later stories. sshepard 2012/12/21  */
+#mainContentLeft.professional #deleteSelectedLayerTop.toolbar_panel,
+#mainContentLeft.professional #deleteSelectedLayerBottom.toolbar_panel { display:none; }
+
+/* PROFESSIONAL-ONLY STYLES END */
+
+.printPreDisplay .vogue_images_indexing .indented_indexing_single_container{clear:both;}
+
+#donorBrandingOverlay {padding-top:10px;}
+#donorBrandingOverlay ul {text-align:center;margin:20px 0px; padding:0px;}
+#donorBrandingOverlay ul li{display:inline;}
+#donorBrandingOverlay ul li:first-child{margin-right:10px;}
+
+#commandline_search.advSearchLeft select#fieldsSelect {width:280px}
+#commandline_search.advSearchLeft div.show_all_link {position:absolute}
+
+/* deduplication messages */
+#duplicationRemovalMessages { clear:both; margin-bottom:1em; }
+#duplicationRemovalMessages > p { display:none; }
+#duplicationRemovalMessages.dupeRemovalAboveLimit .dupeRemovalAboveLimit { display:block; }
+#duplicationRemovalMessages.dupeRemovalBelowLimit .dupeRemovalBelowLimit { display:block; }
+#duplicationRemovalMessages.dupeRemovalBelowLimitDegree .dupeRemovalBelowLimitDegree { display:block; }
+#duplicationRemovalMessages.dupeRemovalApproximate .dupeRemovalApproximate { display:block; }
+
+.tabLoadingIndicator {vertical-align:middle;margin-top:-2px;padding: 0 3px}
+
+
+.results-wrapper .exclReviewsLOR {margin-right:95px}
+
+/*Styles for fluid widths for tablet use -----------------DHedges*/
+@media screen and (max-width: 970px) {
+
+	#container, #search_inner_panel {
+		width: 95%;
+	}
+	#search_inner_panel, #search_panel.results #search_inner_panel {
+		width: 95%;
+	}
+	#search_panel.results,
+	.secRes .searchTextarea, .secSubVerRes .searchTextarea,
+	.publicationBrowseSearch #search_panel,
+	.advSearch,
+	.product #search_panel .search_panel_subcontent, .subject #search_panel .search_panel_subcontent, .productHome #search_panel .search_panel_subcontent, .subjectHome #search_panel .search_panel_subcontent {
+	width:99%;
+	}
+	.libraryBrandingIndex {
+		width:10%;
+	}
+	.customImagesAndLinks, .secCon .searchTextarea {
+		width:100%;
+	}
+	#search_panel {
+		width:85%;
+	}
+	#search_panel .search_panel_subcontent {
+	width:74%;
+	}
+	.secRes .searchTextarea textarea, .secCon .searchTextarea textarea, .secSubVerRes .searchTextarea textarea,
+	.subjectHome #search_panel #search_inner_panel, .productHome #search_panel #search_inner_panel,
+	.product #search_panel, .subject #search_panel, .productHome #search_panel, .subjectHome #search_panel,
+	.secProd .searchTextarea textarea,
+	.subjectHome .panel_base.scroller_panel  {
+	width:98%;
+	}
+	#search_panel .search_panel_searchtips {
+	width:11%;
+	float:right;
+	margin-right:20px;
+	}
+	.panel_base.scroller_panel {
+	width:84%;
+	}
+	.basicsearch_textpanel {
+	width:47%;
+	}
+	#search_panel.results .search_panel_subcontent {
+	width:82%;
+	}
+	h2#pqResultsCount {
+	width:100%;
+	}
+	.header_border_bottom .label_gapping {
+	padding-left: 0px;	
+	}
+	.header_border_bottom ul.horizontal {
+	margin-top:0px;
+	}
+	.smartSearchStyle .smartSearchList {
+	width:88%;
+	}
+	#loginInfo {
+	margin: 15px 0 15px 0px;
+	} 
+	.pagination {
+	width: 565px;
+	}
+	#search_within {
+	width:600px;
+	}
+	table.t-data-grid {
+	width: 100% !important;
+	}
+	.advSearch input.main_txtfield{
+	width:429px;
+	}
+	.advSearch select.fieldsSelect {
+	width: 210px;
+	}
+	.advSearch input.opsAND_txtField,
+	.advSearch input.opsOR_txtField {
+	width: 160px;
+	}
+	.advSearch .formElements, .advSearch .tabContent .toolbar_panel {
+	width: 460px;
+	}	
+}
+/* end of media queries-------------*/
+
+.duplicatesMsg {
+	float:left;
+	margin-right:5px;
+}
+a#duplicatedactionPreviewLink {
+	cursor:pointer;
+	margin-left: 3px;
+	padding-top: 1px;
+}
+a#duplicatedactionPreviewLink:hover {
+	text-decoration:none;
+}
+.duplicateInfoPreviewLink {
+	float:left;
+}
+.duplicateMsgCont {
+	float:left;
+	width:510px;
+}
+#libraryBranding_footer{
+	width:120px;
+}
+.libraryBranding_link img, #libraryBranding_footer img{
+	width:100%;
+	height:auto;
+	}
+a.bSearchBox {
+	padding: 4px 1px 0px 0px !important;
+	float: right;
+}
+/*testing browser defined scroll section on subj vert page. DH*/
+#scroller_db {
+overflow-y: scroll;
+height: 500px;
+width: 100%;
+}
+#track_db {
+display: none;
+}
+#databaseListWrapper {
+	padding: 10px;
+	background-color: #FFFFFF;
+	margin: 0 5px 10px 0;
+	padding: 15px 0 15px 15px;
+}
+.dbVertWrapper {
+	padding-right: 10px;
+}
+ul.horizontal li.pipe {
+	padding-left: 11px;
+	background-image: url(../images/pagelayout/pipe.png);
+	background-position:0px 4px;
+	background-repeat: no-repeat;
+}
+#customBranding{
+	width:120px;
+}
+.recentSearchesTable .dropdownMenu {
+	right:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************************************************************************************
+*********																				********
+*********							THESAURUS:											********
+*********																				********
+*********		Clean-up and improving specificity for addressing iPad 					********
+*********																				********
+*********																				********
+***********************************************************************************************/
+
+
+
+
+/*** original ***/
+
+
+/*Thesaurus (please use this block for new thesaurus stories.)*/
+.thesaurusOverRide{width:auto!important;min-height:0}
+.thesaurusOverRide .overlay_header_HelpLink{right:15px;top:3px}
+#thesaurusHeader{height:46px}
+.thesaurusOverRide .header_border_bottom{margin-bottom:20px}
+.thesaurusInroPara {margin:-4px 0 18px;}
+.thesaurusBackground {background:none !important}
+.thesaurusOverRide #thesaurusListDiv {width:auto}
+.thesaurusBrowseDbList{height:345px}
+
+.thesaurusOverRide .thesaurusLinksWrapper.thesaurusLightview {border:none;margin-top:-19px;padding:0}
+.thesaurusOverRide .thesaurusLinksWrapper.thesaurusLightview ul:first-child {margin-top:0}
+.thesaurusOverRide .lookup.thesaurusWrapper .indicator_collapse, .thesaurusOverRide .lookup.thesaurusWrapper .indicator_expand {min-width:5px;margin-top:1px;margin-right:-3px;}
+.thesaurusOverRide .lookup.thesaurusWrapper .indicator_collapse:hover, .thesaurusOverRide .lookup.thesaurusWrapper .indicator_expand:hover {text-decoration:none}
+.thesaurusOverRide .thesaurusWrapper .form_element_container .contentWrapper {margin-bottom:3px;}
+.thesaurusOverRide .selectItem_Block {margin:-1px 0 0 20px;width:550px}
+.thesaurusOverRide .thesaurusLinksWrapper .lookup.thesaurusWrapper .group .thesaurusTerms, .thesaurusOverRide .ThesaurusSelectTerm_popup .subSubTerms {margin-left:50px}
+.thesaurusOverRide .thesaurusLinksWrapper .lookup.thesaurusWrapper .group .thesaurusTerms.thesaurusLevel_2 {margin-left:50px}
+.thesaurusOverRide .thesaurusLinksWrapper .lookup.thesaurusWrapper .group .thesaurusTerms.thesaurusLevel_3 {margin-left:21px}
+.thesaurusOverRide .thesaurusTermsChkBox {margin:11px 0 6px 0}
+.thesaurusOverRide .searchTerm_label {width:105px;margin-left:0}
+.thesaurusOverRide .searchTerm_radio {margin-left:111px;margin-right:7px}
+.thesaurusOverRide #thesaurusHeader .thes_icon_help {padding:2px 20px 3px 0 !important}
+.thesaurusOverRide .narrowerChkbox	{margin-top:21px}
+.thesaurusOverRide .selectTerm {margin-top:40px;margin-bottom:18px}
+.thesaurusOverRide .thesaurusSearchTips li {margin-bottom:27px}
+.thesaurusOverRide .thesaurusSearchInput {width:64%}
+.thesaurusOverRide .ThesaurusSelectTerm_popup{bottom:79px; border: 1px solid #CACACA; background-color:#FFFFFF; z-index:9999;position:fixed; min-height:215px; padding:10px;left:15px;}
+.thesaurusOverRide .majorchkbox {margin:1px 0 2px 0}
+.thesaurusOverRide .majorchkbox label{margin-left:0}
+.thesaurusOverRide .ThesaurusSelectTerm_popup .form_element_container {margin-bottom:8px; margin-top:-2px;}
+.thesaurusOverRide .ThesaurusSelectTerm_popup .tclose {margin:-5px -5px 0 0;cursor:pointer}
+.thesaurusOverRide .selectShadeBox {margin-top:-52px;cursor:pointer;min-width:210px}
+.thesaurusOverRide .selectShadeBox .smartsearch_panel .body, .thesaurusOverRide .selectShadeBox .toolbar_panel .body {padding:3px 25px 5px 25px;cursor:pointer;float:left}
+.thesaurusOverRide .termInformation {margin-left:-16px}
+.thesaurusOverRide #thesaurusTermsDiv input[type="checkbox"]{margin-right:5px}
+.thesaurusOverRide #thesaurusTermsDiv input[type="radio"] {margin-right:8px}
+.thesaurusOverRide .majorchkbox input[type="checkbox"]{margin-right:10px}
+.thesaurusOverRide label {margin-left:-5px}
+.thesaurusOverRide .ThesaurusSelectTerm_popup .popupInnerContainer {max-height:255px; min-height:235px; overflow-x:hidden; overflow-y:auto; margin-top:25px;}
+.thesaurusOverRide #thesaurusUpdateFormDiv {height:100%}
+.thesaurusOverRide .thesaurusOverlayBottom {position:fixed;bottom:20px;height:100px;width:94%;border-top:1px solid #CCCCCC;left:16px;;z-index:1; background:white;    bottom:0;padding-bottom:20px}
+.thesaurusOverRide #thesaurusHeader {position:fixed;top:0px;height:45px;width:100%;min-width:600px;background:url("../images/pagelayout/top_bar_bg.gif") repeat-x scroll left top white !important;left:0;padding:0 10px}
+.thesaurusOverRide .fieldBrowse_container {padding:0px;top:210px;bottom:120px;position:fixed;width:94%}
+.thesaurusOverRide #thesaurusList {position:fixed;top:100px}
+.thesaurusOverRide .thesaurusPagination {position:fixed;bottom:97px;left:16px;z-index:3;min-width:180px}
+.thesaurusOverRide .header_border_bottom {margin-right:25px}
+.thesaurusOverRide #thesaurusHeader .thes_icon_help {padding:2px 20px 3px 0 !important;margin-right:10px}
+.thesaurusOverRide .searchTermFacets {margin: 0 16px 0 165px; line-height: 1.6em}
+.thesaurusOverRide .searchTermFacets span {/*margin:0 2px 0 1px;*/padding:0 2px;border:1px solid #90a3b1}
+.thesaurusOverRide .searchTermFacets span.active {background:#5b7896;color:white}
+.thesaurusOverRide .searchTermFacets span.inactive {border-color:#dbdbdb}
+.thesaurusOverRide .thesaurusTermsQualifiers {margin-top:10px}
+.thesaurusOverRide .thesauruslistHeading {position:fixed;top:175px;left:16px; color: #4C4C4C;min-width:550px}
+.thesaurusOverRide .thesauruslistHeading.disabledText, .thesaurusOverRide .disabledText h4, .thesaurusOverRide .disabledText a  {color:#a5a5a5;}
+
+.thesaurusOverRide .thesaurusOverlayBottom input[type="radio"] {margin-left:2px;margin-right:10px}
+.thesaurusOverRide .thesaurusResultBlock {overflow-y:auto;position:fixed;top:250px;bottom:120px;left:20px;right:20px;overflow-x:hidden;}
+.thesaurusOverRide #thesaurusTermsDiv {position:fixed;top:35px;left:16px;width:100%}
+.thesaurusOverRide .header_border_bottom h1 {max-width:none;}
+.thesaurusOverRide .combinedWithText {padding-right:6px; float:none;}
+.browseTitlesAtoZ {border-bottom:1px solid #CCCCCC;border-top:1px solid #CCCCCC}
+.thesaurusOverRide .thesaurusListContainer {padding:0px; top:147px; bottom:20px; position:fixed;width:94%; overflow-y:auto; }
+.thesaurusOverRide .ThesaurusSelectTerm_popup .thesaurusTermsChkBox {margin:2px 0 6px 0;}
+.thesaurusOverRide #suggestedTermId {position:fixed;top:200px;left:16px;}
+/*End here*/
+
+
+.thesaurusOverRide {min-height:440px !important;min-width:570px !important; overflow:hidden}
+
+.thesaurusWrapper .t-zone, .t-zone#facetsZone, .t-zone#selectedTermsZoneId {min-width: 0 !important; min-width: auto !important; }
+.t-zone#facetsZone {word-wrap: break-word; text-indent: -55px}
+.thesaurusOverRide .selectItem_Block {width: auto !important; min-width:550px;}
+
+.ThesaurusSelectTerm_popup .thesaurusOverRide {min-height: 0 !important;min-width: 0 !important;}
+
+
+
+
+
+
+
+#container.ipad {overflow:auto;min-width:auto;min-height:auto;width:100%;height:100%}
+#container.ipad .thesaurusResultBlock {position:relative;overflow:visible}
+/*#container.ipad .t-tree-container {height: 500px;overflow: scroll;}*/
+#container.ipad .thesaurusOverlayBottom {width:600px;position: fixed;bottom: 10px;}
+#container.ipad .t-zone#facetsZone {text-indent:0}
+
+
+
+#container.ipad{width:auto!important;min-height:0}
+#container.ipad .overlay_header_HelpLink{right:15px;top:3px}
+#thesaurusHeader{height:46px}
+#container.ipad .header_border_bottom{margin-bottom:20px}
+.thesaurusInroPara {margin:-4px 0 18px;}
+
+#container.ipad .selectItem_Block {margin:-1px 0 0 20px}
+
+#container.ipad .searchTerm_label {width:105px;margin-left:0}
+#container.ipad .searchTerm_radio {margin-left:111px;margin-right:7px}
+
+
+
+#container.ipad .thesaurusSearchInput {width:64%}
+#container.ipad .ThesaurusSelectTerm_popup .form_element_container {margin-bottom:8px; margin-top:-2px;}
+#container.ipad .ThesaurusSelectTerm_popup .tclose {margin:-5px -18px 0 0;cursor:pointer;z-index:99}
+#container.ipad .selectShadeBox {margin-top:-52px;cursor:pointer;min-width:210px}
+#container.ipad .selectShadeBox .smartsearch_panel .body, #container.ipad .selectShadeBox .toolbar_panel .body {padding:3px 25px 5px 25px;cursor:pointer;float:left}
+#container.ipad #thesaurusTermsDiv input[type="checkbox"]{margin-right:5px}
+#container.ipad #thesaurusTermsDiv input[type="radio"] {margin-right:8px}
+#container.ipad label {margin-left:-5px}
+/*#container.ipad .thesaurusOverlayBottom {position:fixed;bottom:20px;height:100px;width:94%;border-top:1px solid #CCCCCC;left:16px;;z-index:1; background:white;    bottom:0;padding-bottom:20px}*/
+#container.ipad #thesaurusHeader {position:fixed;top:0px;height:45px;width:100%;min-width:600px;background:url("../images/pagelayout/top_bar_bg.gif") repeat-x scroll left top white !important;left:0;padding:0 10px}
+#container.ipad #thesaurusHeader .thes_icon_help {padding:2px 20px 3px 0 !important;margin-right:10px}
+#container.ipad .searchTermFacets {margin: 0 16px 0 115px; line-height: 1.6em}
+#container.ipad .searchTermFacets span {/*margin:0 2px 0 1px;*/padding:0 2px;border:1px solid #90a3b1}
+#container.ipad .searchTermFacets span.active {background:#5b7896;color:white}
+#container.ipad .searchTermFacets span.inactive {border-color:#dbdbdb}
+#container.ipad .thesaurusOverlayBottom input[type="radio"] {margin-left:2px;margin-right:10px}
+#container.ipad .thesaurusResultBlock {overflow-y:auto;position:fixed;top:250px;bottom:120px;left:20px;right:20px;overflow-x:hidden;}
+#container.ipad #thesaurusTermsDiv {position:fixed;top:35px;left:16px;width:100%}
+/*#container.ipad .tclose {top:7px}*/
+
+#container.ipad .thesaurusLinksWrapper {border:none;padding:0}
+#container.ipad .contentWrapper.resultsTerm:hover {background-color:inherit}
+
+
+
+.thesaurusBackground .tclose {top:4px;right:4px}
+
+.thesaurusOverRide .ThesaurusSelectTerm_popup .tclose {top:12px;right:10px}
+#container.ipad .ThesaurusSelectTerm_popup .tclose {top:10px;right:24px}
+
+/*.webkit #thesaurusOverlayLayer {display:none !important}*/
+
+
+#container.ipad .thesaurusResultBlock {
+	position: fixed;
+	top: 210px;
+	bottom: 0;
+	left: auto;
+	right: auto;
+	width: 95%;padding-bottom:150px;
+}
+
+
+
+/*#container.ipad .thesaurusWrapper {position: fixed;
+top: 210px;
+bottom: 125px;
+overflow-y:scroll;
+overflow-x: hidden;
+width:90%}*/
+
+#container.ipad .thesaurusOverlayBottom {bottom:0;padding-bottom:30px;width:95%;background:#FFF;border-top:1px solid #EEE}
+
+
+
+/*
+#container.ipad #thesaurusTermsDiv {background:yellow}
+#container.ipad #thesaurusResultBlockDiv {background:lime}
+#container.ipad .thesaurusOverlayBottom {background:teal}
+#container.ipad #parentLayer {background:red}
+#container.ipad .thesaurusWrapper {background:blue}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.thesaurusOverRide #instructions {position:fixed; top:195px;width:93%;}
+.thesaurusOverRide .instructionalText {margin-top:10px}
+
+.relationalView .relatedTerms {margin-left:20px}
+.relationalView .form_element_container .selectItemCheck {margin: 0 3px 0 0 !important; padding:0}
+.relationalView .form_element_container .contentWrapper {margin-left: 20px}
+.thesaurusOverRide .form_element_container span {vertical-align:top}
+.thesaurusOverRide .icon_smallnotes, .thesaurusOverRide .icon_filter {text-decoration:none;}
+span.thesaurusTermLink{margin-right:5px;}
+.selectItemCheck.thesaurusTermCheck input.selection_checkbox.thesaurusTermCheckbox {margin-right:9px;}
+
+.barcodeUsername label, .barcodePassword label, .userandPass barcode{word-wrap:break-word; max-width:140px;}
+
+.alertsBlock .row .forLabel {line-height: 1em}
+.thesaurusOverRide #thesaurusTerms .lookup.thesaurusWrapper .thesaurusNoteTerm label {width:100px; margin-top:0px;}
+.thesaurusOverRide .thesaurusNoteTerm ul.bullet li {padding-right:11px; padding-bottom:0; background-position: -2px -1205px;}
+.thesaurusOverRide .thesaurusNoteTerm {margin-left:20px; zoom:1; margin-top: 10px;}
+.relationalView .form_element_container .contentWrapper .thesaurusNoteTerm {margin-left:0;}
+
+div.t-tree-container ul {background-image: url(../images/tree/tree_line.gif); background-repeat: repeat-y;}
+div.t-tree-container li.withLine ul {padding-top:20px; margin-top:-20px}
+div.t-tree-container li {background-image: url(../images/tree/tree_join.gif); line-height:22px; padding-bottom:2px; }
+div.t-tree-container li.t-last {background-color: white; background-image: url(../images/tree/tree_joinbottom.gif);}
+span.t-tree-icon {background:url(../images/icons/icon-expand.gif) no-repeat white; width:9px; height:9px; float:left; margin:8px 0 0 -12px }
+span.t-tree-icon.t-tree-expanded { background:url(../images/icons/icon-collapse.gif) no-repeat white; }
+span.t-tree-icon.t-leaf-node {display:none}
+div.t-tree-container ul, div.t-tree-container ul ul {margin-left:1px}
+div.t-tree-container ul ul ul {margin-bottom:10px}
+div.t-tree-container ul ul ul ul {margin-bottom:0}
+div.t-tree-container ul li {font-weight:bold}
+div.t-tree-container ul ul li {font-weight:normal}
+div.t-tree-container ul:first-child > li.t-last:first-child {background-image: url(../images/tree/tree_joinroot.gif); background-position:0 4px} /* Root of tree */
+div.t-tree-container .t-tree-label .contentWrapper {margin-left:3px}
+div.t-tree-container .t-tree-label input[type="checkbox"] {top:-2px}
+
+.thesaurusOverRide .useFor {margin-left: 22px}
+
+.thesaurusOverRide div.t-tree-container ul.bullet li {padding-left: 11px; background: url(../images/icons/bullets_sprite.gif) no-repeat -2px -1201px; zoom: 1;}
+div.t-tree-container ul.thesaurusQualifiers, div.t-tree-container ul.thesaurusQualifiers li {background:none; padding-left:0}
+.thesaurusNoteTerm label, .thesaurusWrapper .thesaurusNoteTerm .form_element_container .contentWrapper, .thesaurusNoteTerm .form_element_container .selectItemCheck {margin:0}
+
+.thesQualifiersExplode {margin-right:48px}
+.thesNotesExplode {right:37px;position:absolute}
+.thesaurusNotesRelated {padding-left:105px}
+ul.thesaurusQualifiers li {margin-bottom:-3px;}
+.thesaurusOverRide .thesaurusTerm {color:#00569F}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer .qualifiersContainer {margin:5px 0 10px -9px;}
+.outBound_linking_logo {word-wrap: break-word}
+.addShortcutWrapper{margin:15px 0 15px -5px}
+.addShortcutoverlay .db_list_container{background:#FFF;height:260px;}
+.addShortcutText{margin-top:-9px;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer .subSubTerms {margin-left:20px;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer .thesExplodeAndMajorLabels {margin-top:-20px;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer .divergenceText {margin-left:5px; color:#6C6C6C;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer ul.thesaurusQualifiers li {margin-bottom:-10px;}
+.COS_secRes #search_panel{width:930px;}
+.COS_secRes #search_inner_panel{width:785px !important;}
+
+.thesExplodeAndMajor div {width:70px;text-align:center;float:left;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer .thesExplodeAndMajor {margin-right:8px; display:inline-block;}
+.thesExplodeAndMajorLabels h4, .explodeLabel, .majorLabel {width:70px;text-align:center;position:fixed;margin-top:-20px; background:white}
+.explodeLabel, h4.majorLabel{margin-top:-32px !important;}
+
+#ThesaurusSelectedTermsOverlay .thesExplodeAndMajorLabels h4 {margin-top:0; position:fixed}
+.thesExplodeAndMajorLabels h4.major {margin-left:-80px}
+.thesExplodeAndMajorLabels h4.explode {margin-left:-150px}
+
+#widgetSetupDiv p{margin-bottom:12px;}
+.thesaurusNoteTerm ul.bullet li {clear: none}
+
+#thesaurusOverlayLayer {width:100%; position:absolute; top:0; left:0; bottom: 80px; background:transparent; display:none; z-index:9998}
+
+input.generatedSearchLink, input.generatedDBShortcut {border: 1px solid #58799A; width:393px; height:21px; margin:5px 0 6px; padding: 0 2px}
+input.generatedDBShortcut {width:510px}
+.error_panel.linkCopied {margin-bottom: 0; margin-top:4px;}
+.mrSignInBox .t-error{float:none}
+
+.exposedFieldRadio input.radio {width:auto;float:none}
+.exposedFieldRadio {width: 220px}
+
+.display_record_indexing_data .multilineFieldIndent {text-indent:-25px; padding-left:25px; display:block}
+.t-tree-container li {clear: left}
+.t-tree-label {display: block}
+.contentWrapper.resultsTerm:hover {background-color: #F4E99D}
+.resultsTerm {min-height:20px; padding-top:4px}
+.limiterWidth{width:490px;} /* Fixing width of limiters on advanced search page so they don't wrap */
+.thesaurusMainTerm .contentWrapper, .thesaurusMainTerm .selectItemCheck, .thesaurusMainTerm .thesExplodeAndMajor {padding-top: 3px; padding-bottom: 3px}
+.thesaurusOverRide .lookup.thesaurusWrapper .thesaurusMainTerm .indicator_collapse, .thesaurusOverRide .lookup.thesaurusWrapper .thesaurusMainTerm .indicator_expand {margin-top:4px}
+.thesaurusMainTerm .selectItemCheck {margin-right: 5px}
+.thesaurusQualifiers li {line-height:16px; padding-bottom:8px}
+
+.recentSearchDetails .limitsContainer p.recentSearchesDatabase{padding:0;}
+.targetNote .forNotes{width:44%;}
+
+.savedSearchesLabels .savedSearchesSet label, .updateBlockPagination ul.horizontal label{padding:0;}
+.savedSearchesLabels .indexing{padding:2px 0 0 0;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer input[type="checkbox"] {margin-right:11px; margin-left: 5px; top:0;}
+#ThesaurusSelectedTermsOverlay .popupInnerContainer label {display:inline}
+.thesaurusOverRide .tabWrapper li {clear:none; padding: 0}
+.thesaurusOverRide .tabContent {background: white}
+.thesaurusOverRide .tabItem a {background-position: left -694px}
+.thesaurusOverRide .tabItem span {background-position: right -648px}
+
+.thesaurusOverRide .thesaurusQualifiers.embase li {float:left; width:49%; min-width:250px; clear:none}
+.thesaurusOverRide .thesaurusQualifiers.embase label, #drugsAdminDisplay label {width: auto !important}
+
+
+
+/*** modifications - TO BE MERGED. DO NOT TOUCH IT BEFORE I SAY SO. // Vot ***/
+
+
+/*.thesaurusOverRide #instructions {position:fixed; top:195px;width:93%;}
+.thesaurusOverRide .instructionalText {margin-top:10px}*/
+
+.ipad .relationalView .relatedTerms {margin-left:20px}
+.ipad .relationalView .form_element_container .selectItemCheck {margin: 0 3px 0 0 !important; padding:0}
+.ipad .relationalView .form_element_container .contentWrapper {margin-left: 20px}
+/*.thesaurusOverRide .form_element_container span {vertical-align:top}
+.thesaurusOverRide .icon_smallnotes, .thesaurusOverRide .icon_filter {text-decoration:none;}*/
+.ipad span.thesaurusTermLink{margin-right:5px;}
+.ipad .selectItemCheck.thesaurusTermCheck input.selection_checkbox.thesaurusTermCheckbox {margin-right:9px;}
+
+/*.thesaurusOverRide #thesaurusTerms .lookup.thesaurusWrapper .thesaurusNoteTerm label {width:100px; margin-top:0px;}
+.thesaurusOverRide .thesaurusNoteTerm ul.bullet li {padding-right:11px; padding-bottom:0; background-position: -2px -1205px;}
+.thesaurusOverRide .thesaurusNoteTerm {margin-left:20px; zoom:1; margin-top: 10px;}*/
+.relationalView .form_element_container .contentWrapper .thesaurusNoteTerm {margin-left:0;}
+
+/*div.t-tree-container ul {background-image: url(../images/tree/tree_line.gif); background-repeat: repeat-y;}
+div.t-tree-container li.withLine ul {padding-top:20px; margin-top:-20px}
+div.t-tree-container li {background-image: url(../images/tree/tree_join.gif); line-height:22px; padding-bottom:2px; }
+div.t-tree-container li.t-last {background-color: white; background-image: url(../images/tree/tree_joinbottom.gif);}
+span.t-tree-icon {background:url(../images/icons/icon-expand.gif) no-repeat white; width:9px; height:9px; float:left; margin:8px 0 0 -12px }
+span.t-tree-icon.t-tree-expanded { background:url(../images/icons/icon-collapse.gif) no-repeat white; }
+span.t-tree-icon.t-leaf-node {display:none}
+div.t-tree-container ul, div.t-tree-container ul ul {margin-left:1px}
+div.t-tree-container ul ul ul {margin-bottom:10px}
+div.t-tree-container ul ul ul ul {margin-bottom:0}
+div.t-tree-container ul li {font-weight:bold}
+div.t-tree-container ul ul li {font-weight:normal}
+div.t-tree-container ul:first-child > li.t-last:first-child {background-image: url(../images/tree/tree_joinroot.gif); background-position:0 4px} /* Root of tree * /
+div.t-tree-container .t-tree-label .contentWrapper {margin-left:3px}
+div.t-tree-container .t-tree-label input[type="checkbox"] {top:-2px}*/
+
+/*.thesaurusOverRide .useFor {margin-left: 22px}
+
+.thesaurusOverRide div.t-tree-container ul.bullet li {padding-left: 11px; background: url(../images/icons/bullets_sprite.gif) no-repeat -2px -1201px; zoom: 1;}
+div.t-tree-container ul.thesaurusQualifiers, div.t-tree-container ul.thesaurusQualifiers li {background:none; padding-left:0}
+.thesaurusNoteTerm label, .thesaurusWrapper .thesaurusNoteTerm .form_element_container .contentWrapper, .thesaurusNoteTerm .form_element_container .selectItemCheck {margin:0}
+*/
+
+.ipad .thesQualifiersExplode {margin-right:48px}
+.ipad .thesNotesExplode {right:37px;position:absolute}
+.ipad .thesaurusNotesRelated {padding-left:105px}
+.ipad ul.thesaurusQualifiers li {margin-bottom:-3px;}
+/*.thesaurusOverRide .thesaurusTerm {color:#00569F}*/
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer .qualifiersContainer {margin:5px 0 10px -9px;}
+
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer .subSubTerms {margin-left:20px;}
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer .thesExplodeAndMajorLabels {margin-top:-20px;margin-right: -40px;}
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer .divergenceText {margin-left:5px; color:#6C6C6C;}
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer ul.thesaurusQualifiers li {margin-bottom:-10px;}
+
+
+.ipad .thesExplodeAndMajor div {width:70px;text-align:center;float:left;}
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer .thesExplodeAndMajor {margin-right:8px; display:inline-block;}
+.ipad .thesExplodeAndMajorLabels h4, .ipad .explodeLabel, .ipad .majorLabel {width:70px;text-align:center;position:fixed;margin-top:-20px; background:white}
+.ipad .explodeLabel, .ipad h4.majorLabel{margin-top:-32px !important;}
+
+.ipad #ThesaurusSelectedTermsOverlay .thesExplodeAndMajorLabels h4 {margin-top:0; position:fixed}
+.ipad .thesExplodeAndMajorLabels h4.major {margin-left:-80px}
+.ipad .thesExplodeAndMajorLabels h4.explode {margin-left:-150px}
+
+
+.ipad .thesaurusNoteTerm ul.bullet li {clear: none}
+.ipad #thesaurusOverlayLayer {width:100%; position:absolute; top:0; left:0; bottom: 80px; background:transparent; display:none; z-index:9998}
+
+
+.ipad .t-zone#selectedTermsZoneId {overflow-x:hidden}
+
+
+
+
+.ipad .t-tree-container li {clear: left}
+.ipad .t-tree-label {display: block}
+.ipad .contentWrapper.resultsTerm:hover {background-color: #F4E99D}
+.ipad .resultsTerm {min-height:20px; padding-top:4px}
+.ipad .thesaurusMainTerm .contentWrapper, .thesaurusMainTerm .selectItemCheck, .thesaurusMainTerm .thesExplodeAndMajor {padding-top: 3px; padding-bottom: 3px}
+/*.thesaurusOverRide .lookup.thesaurusWrapper .thesaurusMainTerm .indicator_collapse, .thesaurusOverRide .lookup.thesaurusWrapper .thesaurusMainTerm .indicator_expand {margin-top:4px}*/
+.ipad .thesaurusMainTerm .selectItemCheck {margin-right: 5px}
+.ipad .thesaurusQualifiers li {line-height:16px; padding-bottom:8px}
+
+
+.ipad .savedSearchesLabels .savedSearchesSet label, .updateBlockPagination ul.horizontal label{padding:0;}
+.ipad .savedSearchesLabels .indexing{padding:2px 0 0 0;}
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer input[type="checkbox"] {margin-right:11px; margin-left: 5px; top:0;}
+.ipad #ThesaurusSelectedTermsOverlay .popupInnerContainer label {display:inline}
+/*.thesaurusOverRide .tabWrapper li {clear:none; padding: 0}
+.thesaurusOverRide .tabContent {background: white}
+.thesaurusOverRide .tabItem a {background-position: left -694px}
+.thesaurusOverRide .tabItem span {background-position: right -648px}
+
+.thesaurusOverRide .thesaurusQualifiers.embase li {float:left; width:49%; min-width:250px; clear:none}
+.thesaurusOverRide .thesaurusQualifiers.embase label, #drugsAdminDisplay label {width: auto !important}
+*/
+
+
+
+
+
+
+
+
+
+.ipad .explodeLabel, .ipad h4.majorLabel, .ipad .thesExplodeAndMajorLabels h4, .ipad .explodeLabel, .ipad .majorLabel {margin-top: 0 !important;position:fixed;right:40px;}
+.ipad h4.explodeLabel {right:110px}
+
+.ipad #ThesaurusSelectedTermsOverlay{
+	background: white;
+	padding:10px;
+	z-index: 9999;
+	text-shadow: 0 0 5px #FFF;
+	position:fixed;
+
+	width: 80%;
+
+	max-height:500px;
+	left: 5%;
+	top: 230px;
+	bottom: 160px;
+	box-shadow: 0 5px 15px #777;
+
+	overflow-y:scroll
+}
+
+.ipad #ThesaurusSelectedTermsOverlay .explodeLabel, .ipad #ThesaurusSelectedTermsOverlay h4.majorLabel, .ipad #ThesaurusSelectedTermsOverlay .thesExplodeAndMajorLabels h4, .ipad #ThesaurusSelectedTermsOverlay .explodeLabel, .ipad #ThesaurusSelectedTermsOverlay .majorLabel {position:relative; float:none;margin-right:10px;display: inline-block}
+.ipad #ThesaurusSelectedTermsOverlay .thesExplodeAndMajorLabels {margin-top:-25px}
+/*
+#ThesaurusSelectedTermsOverlay .thesExplodeAndMajorLabels h4.major {margin-right:100px}
+#ThesaurusSelectedTermsOverlay .thesExplodeAndMajorLabels h4.explode {margin-right:150px}
+*/
+.ipad #ThesaurusSelectedTermsOverlay .thesaurusWrapper {padding:5px 0}
+
+.ipad .thesaurusWrapper .thesExplodeAndMajorLabels {position: fixed;right: 45px;z-index: 999;background: #FFF;margin-top: -30px;padding-top: 30px;}
+.ipad #instructions {margin: 10px 0;z-index: 1000;position: fixed;right: 50px;}
+
+
+.ipad .thesaurusResultBlock{
+	padding-top: 20px;
+	margin-top: -20px;
+}
+.ipad #instructions div.float_right {margin-top:-30px;}
+.ipad #thesaurusOverlayLayer {display:none !important}
+.ipad .results-wrapper .exclReviewsLOR {margin-right:95px}
+
+
+.ipad .relationalView, .ipad .hierarchicalView {padding-top:30px}
+
+.ipad #instructions .float_right {margin: 10px 0 0;z-index: 1000;position:fixed;right: 50px;background:white}
+.ipad #instructions .float_left {margin: -30px 0 0;z-index: 1000;position: fixed;left: 15px;background:white}
+
+
+
+
+/*#selectedTermsZoneId {position:relative;z-index:10000;background: yellow}*/
