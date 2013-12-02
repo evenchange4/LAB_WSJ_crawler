@@ -42,6 +42,8 @@ def day_parser(index, link)
 	end
 end
 
+
+
 # 1350 lists
 daily_lists = File.open("daily_list_index.txt", 'r').readlines
 daily_lists.each do |l|
