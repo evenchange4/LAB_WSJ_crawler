@@ -1,5 +1,5 @@
 require 'net/http'
-require 'Nokogiri'
+require 'nokogiri'
 require 'mechanize' 
 
 def page_parser(index, url)
