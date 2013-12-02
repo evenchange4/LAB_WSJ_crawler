@@ -12,3 +12,5 @@
 	33 http://search.proquest.com/publication.publicationissuebrowse:openissue/issuenav/02013Y11Y24$23Nov+24,+2013?t:ac=publications_10482
 	...
 	```
+
+## 2. 每天中每頁的（一頁含 20 筆 WSJ）

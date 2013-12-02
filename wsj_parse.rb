@@ -42,7 +42,7 @@ def day_parser(index, link)
 	end
 end
 
-
+Dir.mkdir("WSJ_raw_data", 0777) unless File.exists?("WSJ_raw_data")
 
 # 1350 lists
 daily_lists = File.open("daily_list_index.txt", 'r').readlines
