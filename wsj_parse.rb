@@ -17,6 +17,7 @@ def page_parser(index, url)
 			    file.write(@page.body)
 			end
 		end
+		sleep(3)
 	end
 	puts
 end
@@ -46,7 +47,8 @@ Dir.mkdir("WSJ_raw_data", 0777) unless File.exists?("WSJ_raw_data")
 
 # 1350 lists
 daily_lists = File.open("daily_list_index.txt", 'r').readlines
-daily_lists.each do |l|
+d = daily_lists.drop(136)
+d.each do |l|
 	temp = l.split(" ")
 	@index = temp[0]
 	@daily_link = temp[1]
